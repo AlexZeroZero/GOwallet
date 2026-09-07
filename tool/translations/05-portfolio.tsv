@@ -1,0 +1,30 @@
+资产总览	Asset overview
+钱包折合总资产	Estimated total value
+已知部分估值	Partial estimated value
+我的资产	My assets
+按币种汇总 · 下拉更新余额	Grouped by coin · Pull to refresh
+部分钱包仍在同步，请稍后查看	Some wallets are still syncing. Check again shortly.
+余额为最近同步结果；折合资产仅供参考。	Balances reflect the latest sync; valuations are estimates.
+行情未开启	Market data is off
+正在获取行情	Fetching market data
+行情暂不可用	Market data unavailable
+CoinGecko 参考行情	CoinGecko market estimates
+显示余额	Show balances
+隐藏余额	Hide balances
+{0} 个币种尚未计入：等待余额或有效行情	Excluded coins: {0} · Awaiting balances or valid prices
+{0} 个已添加币种	Added coins: {0}
+密钥由你持有	You hold the keys
+等待同步	Awaiting sync
+折合价值暂不可用	Estimate unavailable
+资产估值设置	Valuation settings
+计价货币	Display currency
+启用外部行情	Enable market data
+通过 CoinGecko 查询公开币价；不发送钱包地址或余额。服务商可看到设备 IP。价格超过 15 分钟或不可用时，不计入估值。	Fetch public prices from CoinGecko without sending wallet addresses or balances. The provider can see your device IP. Prices older than 15 minutes or unavailable prices are excluded.
+完成	Done
+关闭	Close
+已添加币种	Added coins
+点击币种查看钱包	Choose a coin to view wallets
+尚未添加钱包	No wallets added yet
+支持的币种	Supported coins
+创建新钱包或导入已有钱包	Create or import a wallet
+打开币种导航	Open coin navigation

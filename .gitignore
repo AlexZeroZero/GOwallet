@@ -1,0 +1,155 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+#CppWinRT manual install
+Microsoft.Windows*
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+android/app/.cxx
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# testing data
+test/services/coins/bitcoin/bitcoin_wallet_test_parameters.dart
+test/services/coins/firo/firo_wallet_test_parameters.dart
+test/services/coins/dogecoin/dogecoin_wallet_test_parameters.dart
+test/services/coins/namecoin/namecoin_wallet_test_parameters.dart
+test/services/coins/namecoin/namecoin_wallet_test_parameters.dart.txt # Legacy
+test/services/coins/bitcoincash/bitcoincash_wallet_test_parameters.dart
+test/services/coins/particl/particl_wallet_test_parameters.dart
+/integration_test/private.dart
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# asset symlinks
+/assets/default_themes
+/assets/icon
+/assets/lottie
+/assets/in_app_logo_icons
+/assets/svg
+
+# other
+coverage
+scripts/**/build
+/lib/external_api_keys.dart
+
+libepic_cash_wallet.dll
+libtor_ffi.dll
+flutter_libsparkmobile.dll
+secp256k1.dll
+/libisar.so
+/lib/app_config.g.dart
+/android/app/src/main/app_icon-playstore.png
+
+## other generated project files
+
+pubspec.yaml
+!/vendor/**/pubspec.yaml
+
+/android/app/build.gradle
+/android/app/src/debug/AndroidManifest.xml
+/android/app/src/profile/AndroidManifest.xml
+/android/app/src/main/AndroidManifest.xml
+/android/app/src/main/profile/AndroidManifest.xml
+/android/app/src/main/kotlin/com/cypherstack/stackwallet/MainActivity.kt
+/android/app/src/main/res/**/ic_launcher.png
+/android/app/src/main/res/**/splash.png
+
+/ios/Runner/Info.plist
+/ios/Runner.xcodeproj/project.pbxproj
+/ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png
+
+/linux/CMakeLists.txt
+/linux/my_application.cc
+
+/macos/Runner/Configs/AppInfo.xcconfig
+/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+/macos/Runner.xcodeproj/project.pbxproj
+/macos/Runner/Assets.xcassets/AppIcon.appiconset/*.png
+
+/windows/runner/Runner.rc
+/windows/runner/main.cpp
+/windows/CMakeLists.txt
+/windows/runner/resources/app_icon.ico
+
+# FVM Version Cache
+.fvm/
+
+scripts/linux/build/libsecret/subprojects/gi-docgen/.meson-subproject-wrap-hash.txt
+
+crypto_plugins/cs_monero/built_outputs
+crypto_plugins/cs_monero/build
+crypto_plugins/*.diff
+/devtools_options.yaml
+
+# generated interfaces
+lib/wl_gen/generated/
+
+# normally these aren't ignored but WL changes them...
+/linux/flutter/generated_plugin_registrant.cc
+/windows/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugins.cmake
+/windows/flutter/generated_plugins.cmake
+/macos/Flutter/GeneratedPluginRegistrant.swift
+
+/assets/windows/mwebd.exe
+/tool/build
+/debug.log
+debug-logs/
+
+# Build output — release artifacts are published via GitHub releases, not here.
+dist/*.apk
+dist/*.aab
+# Release metadata belongs WITH the release assets, versioned alongside them.
+# A SHA256SUMS committed here goes stale the moment a new version ships, and a
+# user verifying a current APK against it gets a mismatch that looks exactly
+# like tampering — worse than publishing no checksum at all.
+dist/SHA256SUMS
+dist/RELEASE_NOTES_*.md
+*.zip
+.build-tools/
+wallet-*.log
+/vendor/coinlib_flutter/android/.cxx/
+/vendor/coinlib_flutter/android/.gradle/
+/vendor/coinlib_flutter/android/src/main/jniLibs/
+
+/.private/
+/dist/GOWALLET-SHA256SUMS
+
+*.p12
+*.jks
+*.keystore
+*.dpapi
+.env
+.env.*
+android/key.properties
+/local-release/

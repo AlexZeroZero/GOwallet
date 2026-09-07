@@ -1,0 +1,131 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace "com.place.holder"
+    compileSdk flutter.compileSdkVersion
+//    ndkVersion flutter.ndkVersion
+    ndkVersion = "28.2.13676358"
+
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    }
+
+    defaultConfig {
+        applicationId "com.place.holder"
+        minSdk flutter.minSdkVersion
+        targetSdk flutter.targetSdkVersion
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_17
+            targetCompatibility JavaVersion.VERSION_17
+            coreLibraryDesugaringEnabled true
+        }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_17
+        }
+
+        dependencies {
+            coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+        }
+
+        // No ndk.abiFilters here: AGP rejects it alongside the abi splits set
+        // up by `flutter build apk --split-per-abi`. Flutter defaults to
+        // android-arm,android-arm64,android-x64 which is the same set we want.
+
+//        externalNativeBuild {
+//            cmake {
+//                arguments "-DANDROID_STL=c++_shared", '-DBUILD_TESTING=OFF', "-DANDROID_TOOLCHAIN=clang -v"
+//                cppFlags "-frtti -fexceptions -v -DANDROID -std=c++17"
+////                cppFlags "-std=c++11"
+//                version "3.10.2"
+//            }
+//        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias System.getenv('GOWALLET_KEY_ALIAS') ?: keystoreProperties['keyAlias']
+            keyPassword System.getenv('GOWALLET_KEY_PASSWORD') ?: keystoreProperties['keyPassword']
+            storeFile System.getenv('GOWALLET_KEYSTORE') ? file(System.getenv('GOWALLET_KEYSTORE')) : (keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null)
+            storePassword System.getenv('GOWALLET_KEY_PASSWORD') ?: keystoreProperties['storePassword']
+
+            // v3 is stated explicitly because AGP's default left it OFF, and the
+            // gap is invisible unless you go looking: the published v1.4.1 arm64
+            // APK carries exactly one signing block, 0x7109871a (v2). There is no
+            // 0xf05368c0 (v3) block in it.
+            //
+            // v3 is the scheme that carries a signing certificate LINEAGE, so it
+            // is the only thing that ever makes key rotation possible. An APK
+            // signed v2-only pins that install to this exact key forever: if the
+            // key is lost or has to be replaced, no future build can prove it
+            // descends from the current one, and every existing install refuses
+            // the update with INSTALL_FAILED_UPDATE_INCOMPATIBLE. The only remedy
+            // at that point is asking every user to uninstall and reinstall,
+            // which for a wallet means restoring from seed.
+            //
+            // Enabling this rotates nothing today -- it writes a lineage with the
+            // current key as the sole entry, which is the prerequisite a later
+            // `apksigner rotate` needs. It is backward compatible: v2 stays in
+            // the APK and pre-Android-9 devices keep verifying with it.
+            //
+            // v1 is deliberately NOT set here. The published APK already contains
+            // no META-INF/*.RSA, which AGP only does when minSdk >= 24, so the
+            // current default is already correct and pinning a number we cannot
+            // confirm from this checkout would risk breaking installs on the
+            // oldest supported devices.
+            enableV2Signing = true
+            enableV3Signing = true
+            // v4 emits a detached .idsig alongside the APK and only helps adb
+            // incremental install; it is not wanted for a released artifact.
+            enableV4Signing = false
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+
+    // not required. Just info
+    tasks.whenTaskAdded { task ->
+        if (task.name == 'assembleDebug') {
+            task.doFirst {
+                println "The compileSdkVersion is $flutter.compileSdkVersion"
+                println "The targetSdkVersion is $flutter.targetSdkVersion"
+                println "The ndkVersion is $ndkVersion"
+            }
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}

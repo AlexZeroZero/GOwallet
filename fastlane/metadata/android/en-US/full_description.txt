@@ -1,0 +1,13 @@
+BitFinite Wallet is a free, open source, non-custodial wallet for BitFinite (BFX) — a fair-launch, fixed-supply, SHA-256 proof-of-work cryptocurrency. Your private keys and recovery phrase never leave your device.
+
+Highlights:
+- Non-custodial — your keys and seed stay on your device, encrypted at rest.
+- Light wallet — connects to the BitFinite Electrum server; no full node needed to send, receive, and check balances.
+- BitFinite-native — supports BitFinite's CashAddr (bfx:) address format and consensus.
+- Send, receive, and scan QR codes; view your full transaction history.
+- Address book, favorite wallets, and custom nodes.
+- Open source. No ads. No tracking.
+
+BitFinite is a fair launch: no premine, no ICO, no pre-sale. Learn more, read the whitepaper, and explore the network at https://bitfinitechain.org
+
+Non-custodial means you are in full control — and fully responsible for backing up your recovery phrase. It cannot be recovered if lost.

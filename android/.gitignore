@@ -1,0 +1,14 @@
+gradle-wrapper.jar
+/.gradle
+/captures/
+/gradlew
+/gradlew.bat
+/local.properties
+/key.properties
+app/upload-keystore-campfire.jks
+app/upload-keystore-stackwallet.jks
+# BFX: never commit signing keystores
+*.jks
+keystore.jks
+GeneratedPluginRegistrant.java
+/.kotlin/

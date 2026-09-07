@@ -1,0 +1,350 @@
+547	通知按钮。打开通知页面。
+551	确定
+552	仅
+554	确定
+555	下一页将显示
+556	仅允许 Tor 流量
+557	仅允许非 Tor 流量
+558	打开发送页面
+559	在区块浏览器中查看
+560	打开钱包
+561	正在打开 {0}
+562	选项
+570	输出详情
+571	所有者地址
+573	两次输入的 PIN 不一致，请重试。
+574	PIN 长度不足！
+575	PIN must contain at least 6 digits
+576	PIN, biometrics & auto-lock
+579	附加口令
+580	两次输入的附加口令不一致
+581	密码（可选）
+582	粘贴按钮。从剪贴板粘贴以恢复钱包。
+583	粘贴按钮。将剪贴板内容粘贴到地址输入框。
+584	粘贴按钮。将剪贴板内容粘贴到配置输入框。
+585	粘贴按钮。将剪贴板内容粘贴到 FROST 步骤输入框。
+586	粘贴按钮。将剪贴板内容粘贴到密钥输入框。
+587	粘贴按钮。将剪贴板内容粘贴到备注输入框。
+588	粘贴地址
+589	粘贴支付码
+590	发生错误时暂停
+592	使用 {0} 支付
+594	暂时无法获取支付金额
+595	付款尚未确认，请稍后重试。
+596	已收到付款！
+601	端口
+604	偏好设置
+605	正在准备 RBF 替换交易…
+606	正在准备交易…
+607	预览
+609	预览发送
+610	之前的密钥
+611	之前的多签配置
+612	上一页
+613	价格图表，在所示区间内下跌
+614	价格图表，在所示区间内上涨
+615	隐私政策
+616	隐私提醒：
+617	私钥（WIF）
+618	私有查看密钥
+621	处理
+624	正在处理…
+630	帮助按钮。查看助记词说明。
+631	RBF 发送错误
+632	RBF 设置
+636	原因：{0}
+638	收款链接二维码
+639	接收 {0}
+640	推荐大多数用户使用。
+641	适合注重隐私的用户。
+642	刷新按钮。刷新概要中的数值。
+644	刷新高度已更新
+645	正在刷新…
+649	移除
+650	重命名钱包
+651	续期
+653	请求
+654	请求失败
+656	重新扫描
+657	重新扫描区块链
+658	重新扫描失败
+659	正在重新扫描区块链
+661	恢复
+663	恢复失败
+664	从文件恢复
+665	从 {0} 备份恢复
+666	恢复来源…
+667	恢复高度
+670	正在恢复钱包…
+671	正在恢复 {0}
+672	继续
+673	重试
+674	立即重试
+675	重试失败
+676	重复使用地址会降低隐私和安全性。确定默认重复使用地址吗？
+678	跳过
+681	保存
+682	保存为 SVG
+683	保存更改
+684	保存至…
+685	已保存至
+688	扫码按钮。打开相机扫描二维码。
+689	扫描二维码
+690	搜索
+691	搜索输入框。输入文字以搜索钱包。
+693	搜索…
+694	正在搜索…
+695	查看全部
+696	种子偏移量
+697	选择币种
+698	选择加密货币
+699	选择文件
+700	选择日志保存位置
+701	选择启动钱包
+702	已选币种（{0}）
+703	已选密钥
+704	正在选择
+705	发送
+707	发送金额
+708	发送来源
+709	从 {0} 发送
+710	发送 {0}
+711	向此地址发送 {0}
+713	正在发送交易
+714	服务器
+715	当前无法连接服务器
+716	服务器名称
+717	服务器连通测试成功
+718	无法连接服务器
+719	服务
+720	设置密钥
+722	正在设置钱包
+723	设置
+724	设置按钮。打开设置页面。
+725	设置按钮。打开钱包设置页面。
+726	分享
+727	分享功能即将推出
+732	显示
+733	显示二维码
+734	显示二维码
+735	显示 WIF 私钥
+737	显示助记词
+739	显示私有查看密钥
+740	签名
+741	签名 / 验证
+742	签名 / 验证
+743	签名
+744	签名者
+745	正在签名…
+747	跳过此过程可能导致钱包损坏。仅在迁移失败、无法继续时紧急使用。仍要跳过吗？
+766	开始
+769	开始扫描的位置…
+771	启动
+772	启动偏好
+773	第 {0}/{1} 步 — {2}
+774	停止
+777	子类型
+779	正在提交…
+780	帮助与支持
+783	币种符号
+784	启动时仅同步所选钱包
+785	正在同步
+786	同步偏好
+787	跟随系统主题
+788	再按一次返回键退出
+793	条款与条件
+794	条款与条件
+795	测试
+796	测试连接
+797	测试网
+798	钱包将被删除。
+799	无法打开相机。请在系统设置中允许 {0} 使用相机后重试。
+800	主题安装成功！
+801	主题已启用
+802	可能需要几分钟…
+803	可能需要一些时间，请不要离开此页面。
+805	发生异常，请联系支持人员
+807	币种简称
+808	请先创建备份文件，然后启用自动备份。
+818	合计
+819	跟踪
+822	交易编号
+823	交易已取消
+824	交易详情
+825	交易失败
+826	网络手续费
+827	交易已完成并成功广播！
+828	交易记录
+829	筛选交易
+830	转账
+834	重试
+835	交易十六进制数据（仅调试模式）
+836	交易子类型
+837	类型
+838	输入消息…
+839	输入关键词…
+840	输入内容…
+841	无法打开相机
+843	意外错误
+844	返回异常结果，未提供错误原因
+846	解冻
+847	单位
+848	未知错误
+849	发现未知错误
+852	更新
+853	更新失败
+854	正在更新自动备份
+858	正在更新钱包数据
+859	网址
+860	使用区块高度
+861	使用所选币
+862	使用加密货币金额
+863	使用当前值
+864	使用日期
+865	使用法币金额
+866	验证失败
+867	验证成功
+868	验证
+869	正在验证…
+870	查看详情
+871	查看密钥
+873	二维码按钮。打开相机扫描恢复钱包所需的二维码。
+874	查看二维码
+875	查看恢复数据
+876	查看助记词
+879	查看交易
+880	查看扩展公钥数据
+882	等待余额解锁 {0}
+884	钱包选项
+885	钱包地址
+886	钱包备份
+888	钱包名称
+889	名为“{0}”的钱包已存在
+890	钱包已重命名
+892	钱包设置
+893	钱包扩展公钥
+894	钱包扩展公钥
+895	钱包 {0}
+896	钱包
+897	警告！
+898	警告！不支持 Tor。
+899	可能需要一些时间。完成前退出将需要重新执行此过程。
+907	时间
+908	地点
+909	人员
+910	仍要保存此节点吗？
+911	仍要保存此服务器吗？
+914	年
+915	是
+916	你将发送全部余额，是否继续？
+917	你即将在区块浏览器中查看此交易。浏览器可能记录你的 IP 地址并将其与交易关联。请仅在信任 {0} 时继续。
+919	你正在关闭自动备份，之后可随时重新开启。已有备份文件不会被删除。请记得手动备份钱包，避免丢失重要信息。
+926	你必须至少发送 {0} {1}。
+929	钱包已设置完成。
+934	密钥
+935	助记词
+936	选择货币
+938	条款与条件
+939	扩展私钥
+941	{0}（无钱包）
+942	{0}（私有）
+943	{0}（公开）
+944	{0}（{1}）个钱包
+945	{0} 自动备份已启用并保存至：
+946	{0} 自动备份已保存至：
+947	{0} 使用体验
+948	{0} 密钥
+949	{0} 代币
+950	{0} 已存在！
+951	{0} 备份
+952	{0} 备份与恢复
+953	{0} 区块浏览器
+954	{0} 已删除
+955	{0} 不支持 Tor。继续操作会暴露你的 IP 地址。\n\n确定继续吗？
+956	{0} 日志
+957	{0} 节点
+958	{0} / {1}
+959	{0} 已保存！
+960	{0} 个签名
+961	已保存 {0} 个代币
+962	{0} 已卸载
+963	{0} 个单词
+964	Lock after {0} min without activity
+966	Next
+967	A self-custody wallet for smaller PoW networks.\nStarting with SCASH and SHIC.
+968	Main account
+969	Start with a wallet
+970	Your PoW assets
+971	Your keys, your responsibility
+972	Change PIN
+973	Allow screenshots
+974	Back up before receiving
+975	Check the network before entering an address
+976	Create / restore wallet
+977	Your recovery phrase restores access to your funds. Write it down offline and verify it. Never share it or store it in screenshots or chats.
+978	Send
+979	Cancel
+980	Receive only this coin
+981	Sync preferences
+982	Assets sent from another network may be lost. Test with a small amount first.
+983	Address book
+984	Copy address
+985	Appearance & display
+986	External market requests
+987	Security
+988	Security center
+989	Security settings
+990	You hold the keys and confirm every transfer.
+991	Keys stay on your device
+992	PIN not set
+993	Off; wallet queries use only your selected node
+994	On; requests are sent to external market services
+995	PIN enabled; failed attempts are rate limited
+996	Coin
+997	App lock
+998	Start restoring your wallet?
+999	Currently off; enable it in security settings
+1000	Restore existing wallet
+1001	Restore wallet
+1002	Restoration scans on-chain records. Keep the app open until it finishes.
+1003	My wallets
+1004	Manage assets separately by coin
+1005	Supported PoW networks
+1006	Receive
+1007	Create a recovery phrase or restore an existing wallet. GOwallet does not keep your recovery phrase for you.
+1008	Understand your connection and its risks
+1009	Local wallets
+1010	See all
+1011	Restoring wallet
+1012	Scanning addresses. Keep this page open.
+1013	Test connection & network
+1014	Add node
+1015	Add wallet
+1016	Your wallet is ready to view.
+1017	Generate new address
+1018	OK
+1019	Confirm transaction
+1020	Check the coin and network, the complete recipient address, and the amount, fee and total. Test with a small amount first. Broadcast transactions usually cannot be reversed.
+1021	Leaving the app
+1022	Back up your recovery phrase offline. We cannot reset it or recover your funds for you.
+1023	Verify the complete address after pasting. Broadcast transfers usually cannot be reversed.
+1024	Network
+1025	Auto-lock settings
+1026	Self-custody requires protecting your device and backups. Test sending and receiving with a small amount first.
+1027	Node details
+1028	Watch-only wallet
+1029	Review your protection settings
+1030	A home for every\nproof of work.
+1031	Settings
+1032	Set a secure PIN · Get started
+1033	Language / 语言
+1034	Three checks before sending
+1035	Verify your identity when returning
+1036	This watch-only wallet can receive funds and display transactions, but has no private keys for signing.
+1037	Rescan
+1038	Wallet
+1039	Wallet restored
+1040	Idle lock
+1041	Advanced options
+1042	Off by default. If enabled, avoid capturing recovery phrases, private keys, balances or other sensitive information.
+1043	Default nodes use unencrypted TCP. Nodes can see address queries; switch to TLS when available.

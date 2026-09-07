@@ -1,0 +1,76 @@
+GOwallet 帮助	GOwallet help
+请通过你取得 GOwallet 安装包的渠道反馈问题。不要提供助记词、私钥、PIN 或完整钱包备份。	Report issues through the channel where you obtained GOwallet. Never share your recovery phrase, private keys, PIN or complete wallet backup.
+反馈时可提供版本号、操作步骤和已遮盖敏感信息的截图。我们不会通过私信索要密钥或要求你先转账。	Include the app version, steps to reproduce and screenshots with sensitive details hidden. We will never ask for keys or an advance transfer in a private message.
+开启后向外部服务查询价格；关闭后不显示法币估值。	When enabled, prices are queried from external services. Fiat estimates are hidden when disabled.
+{0} 个钱包	{0} wallets
+Send all selected	发送全部已选金额
+发送全部 {0}	Send all {0}
+尝试次数过多，请等待 {0} 秒。重启应用不会解除等待。	Too many attempts. Wait {0} seconds. Restarting the app will not reset the wait.
+请等待 {0} 秒后重试	Wait {0} seconds before trying again
+PIN 不正确，请重试	Incorrect PIN. Try again.
+无法读取安全存储，请重试	Cannot read secure storage. Try again.
+无法读取安全存储，应用保持锁定。请重试。	Cannot read secure storage. The app remains locked. Try again.
+Fast	快速
+Average	标准
+Slow	慢速
+Custom	自定义
+0	\n外部请求开启
+1	\n外部请求关闭
+7	 日志仍可能包含敏感信息，例如交易或网络元数据。启用前请考虑隐私风险，并在分享前检查和遮盖敏感内容。
+8	 可能记录交易、金额、地址或网络活动等敏感元数据。相比之下，
+80	自动备份是 {0} 提供的本机数据备份功能。\n\n建议使用未在其他地方使用过的独立强密码。应用不会保存该密码。\n\n更多信息请参阅上游网站：
+249	缺少对应的恢复数据类型：{0}
+603	由 TzKT API 提供支持
+937	stackwallet.com。
+1476	以车钥匙为例
+1613	请选择安全的备份位置，并使用独立的强密码。
+Invalid port	端口无效
+Invalid host	主机地址无效
+Connecting	正在连接
+Normal	标准
+High	高
+Low	低
+Confirmed	已确认
+Pending	待确认
+Today	今天
+Yesterday	昨天
+Daily	每天
+Weekly	每周
+Monthly	每月
+1 个钱包	1 wallet
+全部余额	Total balance
+钱包已同步	Wallet synced
+同步中	Syncing
+连接异常	Connection error
+GOwallet Light	GOwallet 浅色
+GOwallet Dark	GOwallet 深色
+Button	按钮
+Back Button. Takes Back To Previous Page.	返回按钮。返回上一页。
+Every 10 minutes	每 10 分钟
+Every app start	每次启动应用
+After closing a cryptocurrency wallet	关闭币种钱包后
+{0} {1} ago	{0} {1}前
+second	秒
+seconds	秒
+minute	分钟
+minutes	分钟
+hour	小时
+hours	小时
+day	天
+days	天
+Selected node	当前节点
+Alternate node	备用节点
+Mining payout	挖矿收益
+Sent to self	转给自己
+Receiving	接收中
+Sending	发送中
+Anonymized	已匿名化
+Anonymizing	匿名化中
+Restored Funds	已恢复资金
+Sent (confirmed)	已发送（已确认）
+Receiving (waiting for sender)	接收中（等待发送方）
+Receiving (waiting for confirmations)	接收中（等待确认）
+Sending (waiting for receiver)	发送中（等待接收方）
+Sending (waiting for confirmations)	发送中（等待确认）
+{0} · {1} confirmation	{0} · {1} 次确认
+{0} · {1} confirmations	{0} · {1} 次确认

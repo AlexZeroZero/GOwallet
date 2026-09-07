@@ -1,0 +1,491 @@
+import 'package:bitfinite/gowallet/l10n/go_localizations.dart';
+import 'dart:async';
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
+import 'package:saf_stream/saf_stream.dart';
+import 'package:saf_util/saf_util.dart';
+
+import '../../app_config.dart';
+import '../../models/isar/models/blockchain_data/utxo.dart';
+import '../../models/isar/ordinal.dart';
+import '../../networking/http.dart';
+import '../../notifications/show_flush_bar.dart';
+import '../../pages/send_view/confirm_transaction_view.dart';
+import '../../providers/db/main_db_provider.dart';
+import '../../providers/global/prefs_provider.dart';
+import '../../providers/global/wallets_provider.dart';
+import '../../route_generator.dart';
+import '../../services/tor_service.dart';
+import '../../themes/stack_colors.dart';
+import '../../utilities/amount/amount.dart';
+import '../../utilities/amount/amount_formatter.dart';
+import '../../utilities/assets.dart';
+import '../../utilities/constants.dart';
+import '../../utilities/fs.dart';
+import '../../utilities/show_loading.dart';
+import '../../utilities/text_styles.dart';
+import '../../wallets/isar/providers/wallet_info_provider.dart';
+import '../../wallets/wallet/wallet_mixin_interfaces/ordinals_interface.dart';
+import '../../widgets/background.dart';
+import '../../widgets/custom_buttons/app_bar_icon_button.dart';
+import '../../widgets/desktop/primary_button.dart';
+import '../../widgets/desktop/secondary_button.dart';
+import '../../widgets/ordinal_image.dart';
+import '../../widgets/rounded_white_container.dart';
+import 'widgets/dialogs.dart';
+
+class OrdinalDetailsView extends ConsumerStatefulWidget {
+  const OrdinalDetailsView({
+    super.key,
+    required this.walletId,
+    required this.ordinal,
+  });
+
+  final String walletId;
+  final Ordinal ordinal;
+
+  static const routeName = "/ordinalDetailsView";
+
+  @override
+  ConsumerState<OrdinalDetailsView> createState() => _OrdinalDetailsViewState();
+}
+
+class _OrdinalDetailsViewState extends ConsumerState<OrdinalDetailsView> {
+  static const _spacing = 12.0;
+
+  late final UTXO? utxo;
+
+  @override
+  void initState() {
+    utxo = widget.ordinal.getUTXO(ref.read(mainDBProvider));
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final coin = ref.watch(pWalletCoin(widget.walletId));
+
+    return Background(
+      child: Scaffold(
+        backgroundColor: Theme.of(context).extension<StackColors>()!.background,
+        appBar: AppBar(
+          backgroundColor: Theme.of(
+            context,
+          ).extension<StackColors>()!.background,
+          leading: const AppBarBackButton(),
+          title: Text(
+            goTr(context, "Ordinal details"),
+            style: STextStyles.navBarTitle(context),
+          ),
+        ),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 39,
+                    ),
+                    child: _OrdinalImageGroup(
+                      ordinal: widget.ordinal,
+                      walletId: widget.walletId,
+                    ),
+                  ),
+                  _DetailsItemWCopy(
+                    title: goTr(context, "Inscription number"),
+                    data: widget.ordinal.inscriptionNumber.toString(),
+                  ),
+                  const SizedBox(height: _spacing),
+                  _DetailsItemWCopy(
+                    title: goTr(context, "Inscription ID"),
+                    data: widget.ordinal.inscriptionId,
+                  ),
+                  // const SizedBox(
+                  //   height: _spacing,
+                  // ),
+                  // // todo: add utxo status
+                  const SizedBox(height: _spacing),
+                  _DetailsItemWCopy(
+                    title: goTr(context, "Amount"),
+                    data: utxo == null
+                        ? "ERROR"
+                        : ref
+                              .watch(pAmountFormatter(coin))
+                              .format(
+                                Amount(
+                                  rawValue: BigInt.from(utxo!.value),
+                                  fractionDigits: coin.fractionDigits,
+                                ),
+                              ),
+                  ),
+                  const SizedBox(height: _spacing),
+                  _DetailsItemWCopy(
+                    title: goTr(context, "Owner address"),
+                    data: utxo?.address ?? "ERROR",
+                  ),
+                  const SizedBox(height: _spacing),
+                  _DetailsItemWCopy(
+                    title: goTr(context, "Transaction ID"),
+                    data: widget.ordinal.utxoTXID,
+                  ),
+                  const SizedBox(height: _spacing),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _DetailsItemWCopy extends StatelessWidget {
+  const _DetailsItemWCopy({super.key, required this.title, required this.data});
+
+  final String title;
+  final String data;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedWhiteContainer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(title, style: STextStyles.itemSubtitle(context)),
+              GestureDetector(
+                onTap: () async {
+                  await Clipboard.setData(ClipboardData(text: data));
+                  if (context.mounted) {
+                    unawaited(
+                      showFloatingFlushBar(
+                        type: FlushBarType.info,
+                        message: goTr(context, "Copied to clipboard"),
+                        context: context,
+                      ),
+                    );
+                  }
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      Assets.svg.copy,
+                      color: Theme.of(
+                        context,
+                      ).extension<StackColors>()!.infoItemIcons,
+                      width: 12,
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      goTr(context, "Copy"),
+                      style: STextStyles.infoSmall(context).copyWith(
+                        color: Theme.of(
+                          context,
+                        ).extension<StackColors>()!.infoItemIcons,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          SelectableText(data, style: STextStyles.itemSubtitle12(context)),
+        ],
+      ),
+    );
+  }
+}
+
+class _OrdinalImageGroup extends ConsumerWidget {
+  const _OrdinalImageGroup({
+    super.key,
+    required this.walletId,
+    required this.ordinal,
+  });
+
+  final String walletId;
+  final Ordinal ordinal;
+
+  static const _spacing = 12.0;
+
+  Future<String?> _getDocsDir() async {
+    try {
+      if (Platform.isAndroid) {
+        return await FS.pickDirectory();
+      }
+
+      return (await getApplicationDocumentsDirectory()).path;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<String> _savePngToFile(WidgetRef ref) async {
+    final HTTP client = HTTP();
+
+    final response = await client.get(
+      url: Uri.parse(ordinal.content),
+      proxyInfo: !AppConfig.hasFeature(AppFeature.tor)
+          ? null
+          : ref.read(prefsChangeNotifierProvider).useTor
+          ? ref.read(pTorService).getProxyInfo()
+          : null,
+    );
+
+    if (response.code != 200) {
+      throw Exception(
+        "OrdinalDetailsView _savePngToFile statusCode=${response.code} body=${response.bodyBytes}",
+      );
+    }
+
+    final bytes = response.bodyBytes;
+
+    final dirPath = await _getDocsDir();
+    if (dirPath == null) {
+      throw Exception("Failed to get directory path to save ordinal image");
+    }
+
+    final fileName = "ordinal_${ordinal.inscriptionNumber}.png";
+
+    final filePath = path.join(dirPath, fileName);
+
+    if (Platform.isAndroid) {
+      if (await SafUtil().exists(filePath, false)) {
+        throw Exception("File already exists");
+      }
+
+      await SafStream().writeFileBytes(
+        dirPath,
+        fileName,
+        "png",
+        Uint8List.fromList(bytes),
+      );
+    } else {
+      final File imgFile = File(filePath);
+
+      if (imgFile.existsSync()) {
+        throw Exception("File already exists");
+      }
+
+      await imgFile.writeAsBytes(bytes);
+    }
+
+    return filePath;
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        // Text(
+        //   "${ordinal.inscriptionId}", // Use any other property you want
+        //   style: STextStyles.w600_16(context),
+        // ),
+        // const SizedBox(
+        //   height: _spacing,
+        // ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(
+            Constants.size.circularBorderRadius,
+          ),
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              color: Colors.transparent,
+              child: OrdinalImage(url: ordinal.content),
+            ),
+          ),
+        ),
+        const SizedBox(height: _spacing),
+        Row(
+          children: [
+            Expanded(
+              child: SecondaryButton(
+                label: goTr(context, "Download"),
+                icon: SvgPicture.asset(
+                  Assets.svg.arrowDown,
+                  width: 10,
+                  height: 12,
+                  color: Theme.of(
+                    context,
+                  ).extension<StackColors>()!.buttonTextSecondary,
+                ),
+                buttonHeight: ButtonHeight.l,
+                iconSpacing: 4,
+                onPressed: () async {
+                  bool didError = false;
+                  final filePath = await showLoading<String>(
+                    whileFuture: _savePngToFile(ref),
+                    context: context,
+                    rootNavigator: true,
+                    message: goTr(context, "Saving ordinal image"),
+                    onException: (e) {
+                      didError = true;
+                      String msg = e.toString();
+                      while (msg.isNotEmpty && msg.startsWith("Exception:")) {
+                        msg = msg.substring(10).trim();
+                      }
+                      showFloatingFlushBar(
+                        type: FlushBarType.warning,
+                        message: msg,
+                        context: context,
+                      );
+                    },
+                  );
+
+                  if (!didError && context.mounted) {
+                    await showFloatingFlushBar(
+                      type: FlushBarType.success,
+                      message: goTr(context, "Image saved to {0}", [filePath]),
+                      context: context,
+                    );
+                  }
+                },
+              ),
+            ),
+            const SizedBox(width: _spacing),
+            Expanded(
+              child: PrimaryButton(
+                label: goTr(context, "Send"),
+                icon: SvgPicture.asset(
+                  Assets.svg.send,
+                  width: 10,
+                  height: 10,
+                  color: Theme.of(
+                    context,
+                  ).extension<StackColors>()!.buttonTextPrimary,
+                ),
+                buttonHeight: ButtonHeight.l,
+                iconSpacing: 4,
+                onPressed: () async {
+                  final utxo = ordinal.getUTXO(ref.read(mainDBProvider));
+                  if (utxo == null) {
+                    unawaited(
+                      showFloatingFlushBar(
+                        type: FlushBarType.warning,
+                        message: goTr(context, "Could not find ordinal UTXO"),
+                        context: context,
+                      ),
+                    );
+                    return;
+                  }
+
+                  // Step 1: Confirm unfreeze
+                  if (utxo.isBlocked) {
+                    final unfreezeResponse = await showDialog<String?>(
+                      context: context,
+                      builder: (_) => const SendOrdinalUnfreezeDialog(),
+                    );
+                    if (unfreezeResponse != "unfreeze") return;
+                  }
+
+                  if (!context.mounted) return;
+
+                  // Step 2: Get recipient address
+                  final address = await showDialog<String?>(
+                    context: context,
+                    builder: (_) => OrdinalRecipientAddressDialog(
+                      inscriptionNumber: ordinal.inscriptionNumber,
+                    ),
+                  );
+                  if (address == null || address.isEmpty) return;
+
+                  // Validate address
+                  final wallet = ref.read(pWallets).getWallet(walletId);
+                  if (!wallet.cryptoCurrency.validateAddress(address)) {
+                    if (context.mounted) {
+                      unawaited(
+                        showFloatingFlushBar(
+                          type: FlushBarType.warning,
+                          message: goTr(context, "Invalid address"),
+                          context: context,
+                        ),
+                      );
+                    }
+                    return;
+                  }
+
+                  if (!context.mounted) return;
+
+                  // Step 3: Prepare the transaction
+                  final OrdinalsInterface? ordinalsWallet =
+                      wallet is OrdinalsInterface ? wallet : null;
+                  if (ordinalsWallet == null) {
+                    unawaited(
+                      showFloatingFlushBar(
+                        type: FlushBarType.warning,
+                        message: goTr(
+                          context,
+                          "Wallet does not support ordinals",
+                        ),
+                        context: context,
+                      ),
+                    );
+                    return;
+                  }
+
+                  bool didError = false;
+                  final txData = await showLoading(
+                    whileFuture: ordinalsWallet.prepareOrdinalSend(
+                      ordinalUtxo: utxo,
+                      recipientAddress: address,
+                    ),
+                    context: context,
+                    rootNavigator: true,
+                    message: goTr(context, "Preparing transaction..."),
+                    onException: (e) {
+                      didError = true;
+                      String msg = e.toString();
+                      while (msg.isNotEmpty && msg.startsWith("Exception:")) {
+                        msg = msg.substring(10).trim();
+                      }
+                      if (context.mounted) {
+                        showFloatingFlushBar(
+                          type: FlushBarType.warning,
+                          message: msg,
+                          context: context,
+                        );
+                      }
+                    },
+                  );
+
+                  if (didError || txData == null || !context.mounted) return;
+
+                  // Step 4: Navigate to confirm transaction view
+                  await Navigator.of(context).push(
+                    RouteGenerator.getRoute<void>(
+                      shouldUseMaterialRoute:
+                          RouteGenerator.useMaterialPageRoute,
+                      builder: (_) => ConfirmTransactionView(
+                        walletId: walletId,
+                        txData: txData,
+                        onSuccess: () {},
+                      ),
+                      settings: const RouteSettings(
+                        name: ConfirmTransactionView.routeName,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}

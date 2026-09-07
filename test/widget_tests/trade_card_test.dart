@@ -1,0 +1,94 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:bitfinite/models/exchange/response_objects/trade.dart';
+import 'package:bitfinite/models/isar/stack_theme.dart';
+import 'package:bitfinite/themes/coin_icon_provider.dart';
+import 'package:bitfinite/themes/stack_colors.dart';
+import 'package:bitfinite/themes/theme_providers.dart';
+import 'package:bitfinite/themes/theme_service.dart';
+import 'package:bitfinite/widgets/trade_card.dart';
+
+import '../sample_data/theme_json.dart';
+import 'trade_card_test.mocks.dart';
+
+@GenerateMocks([
+  ThemeService,
+  IThemeAssets,
+])
+void main() {
+  testWidgets("Test Trade card builds", (widgetTester) async {
+    final mockThemeService = MockThemeService();
+    final mockIThemeAssets = MockIThemeAssets();
+
+    when(mockIThemeAssets.txExchangeFailed).thenAnswer(
+      (_) =>
+          "${Directory.current.path}/test/sample_data/light/assets/dummy.svg",
+    );
+    when(mockThemeService.getTheme(themeId: "light")).thenAnswer(
+      (_) => StackTheme.fromJson(
+        json: lightThemeJsonMap,
+      ),
+    );
+    final trade = Trade(
+        uuid: "uuid",
+        tradeId: "trade id",
+        rateType: "Estimate rate",
+        direction: "",
+        timestamp: DateTime.parse("1662544771"),
+        updatedAt: DateTime.parse("1662544771"),
+        payInCurrency: "BTC",
+        payInAmount: "10",
+        payInAddress: "btc address",
+        payInNetwork: "",
+        payInExtraId: "",
+        payInTxid: "",
+        payOutCurrency: "xmr",
+        payOutAmount: "10",
+        payOutAddress: "xmr address",
+        payOutNetwork: "",
+        payOutExtraId: "",
+        payOutTxid: "",
+        refundAddress: "refund address",
+        refundExtraId: "",
+        status: "Failed",
+        exchangeName: "Some Exchange");
+
+    await widgetTester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          pThemeService.overrideWithValue(mockThemeService),
+          themeAssetsProvider.overrideWithProvider(
+            StateProvider(
+              (ref) => mockIThemeAssets,
+            ),
+          ),
+          coinIconProvider.overrideWithProvider(
+            (argument) => Provider<String>((_) =>
+                "${Directory.current.path}/test/sample_data/light/assets/dummy.svg"),
+          ),
+        ],
+        child: MaterialApp(
+          theme: ThemeData(
+            extensions: [
+              StackColors.fromStackColorTheme(
+                StackTheme.fromJson(
+                  json: lightThemeJsonMap,
+                ),
+              ),
+            ],
+          ),
+          home: TradeCard(trade: trade, onTap: () {}),
+        ),
+      ),
+    );
+
+    expect(find.byType(TradeCard), findsOneWidget);
+    expect(find.text("BTC → XMR"), findsOneWidget);
+    expect(find.text("Some Exchange"), findsOneWidget);
+  });
+}

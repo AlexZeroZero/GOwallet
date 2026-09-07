@@ -1,0 +1,75 @@
+import 'package:mockito/annotations.dart';
+import 'package:bitfinite/services/node_service.dart';
+import 'package:bitfinite/services/wallets.dart';
+import 'package:bitfinite/themes/theme_service.dart';
+
+@GenerateMocks(
+  [
+    Wallets,
+    ThemeService,
+  ],
+  customMocks: [
+    MockSpec<NodeService>(),
+    // MockSpec<WalletsService>(),
+  ],
+)
+void main() {
+  // testWidgets("Test wallet info row displays correctly", (widgetTester) async {
+  //   final wallets = MockWallets();
+  //   final mockThemeService = MockThemeService();
+  //   final CoinServiceAPI wallet = MockBitcoinWallet();
+  //   when(mockThemeService.getTheme(themeId: "light")).thenAnswer(
+  //     (_) => StackTheme.fromJson(
+  //       json: lightThemeJsonMap,
+  //     ),
+  //   );
+  //   when(wallet.coin).thenAnswer((_) => Coin.bitcoin);
+  //   when(wallet.walletName).thenAnswer((_) => "some wallet");
+  //   when(wallet.walletId).thenAnswer((_) => "some-wallet-id");
+  //   when(wallet.balance).thenAnswer(
+  //     (_) => Balance(
+  //       total: Amount.zero,
+  //       spendable: Amount.zero,
+  //       blockedTotal: Amount.zero,
+  //       pendingSpendable: Amount.zero,
+  //     ),
+  //   );
+  //
+  //   final wallet = Manager(wallet);
+  //   when(wallets.getManagerProvider("some-wallet-id")).thenAnswer(
+  //       (realInvocation) => ChangeNotifierProvider((ref) => manager));
+  //
+  //   const walletInfoRow = WalletInfoRow(walletId: "some-wallet-id");
+  //   await widgetTester.pumpWidget(
+  //     ProviderScope(
+  //       overrides: [
+  //         pWallets.overrideWithValue(wallets),
+  //         pThemeService.overrideWithValue(mockThemeService),
+  //         coinIconProvider.overrideWithProvider(
+  //           (argument) => Provider<String>((_) =>
+  //               "${Directory.current.path}/test/sample_data/light/assets/dummy.svg"),
+  //         ),
+  //       ],
+  //       child: MaterialApp(
+  //         theme: ThemeData(
+  //           extensions: [
+  //             StackColors.fromStackColorTheme(
+  //               StackTheme.fromJson(
+  //                 json: lightThemeJsonMap,
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //         home: const Material(
+  //           child: walletInfoRow,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  //
+  //   await widgetTester.pumpAndSettle();
+  //
+  //   expect(find.text("some wallet"), findsOneWidget);
+  //   expect(find.byType(WalletInfoRowBalance), findsOneWidget);
+  // });
+}

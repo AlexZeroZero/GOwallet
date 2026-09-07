@@ -1,0 +1,73 @@
+import 'package:bitfinite/gowallet/l10n/go_localizations.dart';
+import 'dart:typed_data';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../../frost_route_generator.dart';
+import '../../../../../providers/frost_wallet/frost_wallet_providers.dart';
+import '../../../../../utilities/util.dart';
+import '../../../../../widgets/custom_buttons/simple_copy_button.dart';
+import '../../../../../widgets/desktop/primary_button.dart';
+import '../../../../../widgets/detail_item.dart';
+import '../../../../../widgets/frost_step_user_steps.dart';
+import '../../../../wallet_view/transaction_views/tx_v2/transaction_v2_details_view.dart';
+
+class FrostCreateStep4 extends ConsumerStatefulWidget {
+  const FrostCreateStep4({super.key});
+
+  static const String routeName = "/frostCreateStep4";
+  static const String title = "Verify multisig ID";
+
+  @override
+  ConsumerState<FrostCreateStep4> createState() => _FrostCreateStep4State();
+}
+
+class _FrostCreateStep4State extends ConsumerState<FrostCreateStep4> {
+  static const info = [
+    "Ensure your multisig ID matches that of each other participant.",
+  ];
+
+  late final Uint8List multisigId;
+
+  @override
+  void initState() {
+    multisigId = ref.read(pFrostCompletedKeyGenData.state).state!.multisigId;
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          const FrostStepUserSteps(userSteps: info),
+          const SizedBox(height: 12),
+          DetailItem(
+            title: goTr(context, "Multisig ID"),
+            detail: multisigId.toString(),
+            button: Util.isDesktop
+                ? IconCopyButton(data: multisigId.toString())
+                : SimpleCopyButton(data: multisigId.toString()),
+          ),
+          if (!Util.isDesktop) const Spacer(),
+          const SizedBox(height: 12),
+          PrimaryButton(
+            label: goTr(context, "Confirm"),
+            onPressed: () {
+              ref.read(pFrostCreateCurrentStep.state).state = 5;
+              Navigator.of(context).pushNamed(
+                ref
+                    .read(pFrostScaffoldArgs)!
+                    .stepRoutes[ref.read(pFrostCreateCurrentStep) - 1]
+                    .routeName,
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}

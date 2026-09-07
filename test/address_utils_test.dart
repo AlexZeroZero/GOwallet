@@ -1,0 +1,135 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:bitfinite/utilities/address_utils.dart';
+import 'package:bitfinite/wallets/crypto_currency/crypto_currency.dart';
+
+void main() {
+  const String firoAddress = "a6ESWKz7szru5syLtYAPRhHLdKvMq3Yt1j";
+
+  test("condense address", () {
+    final condensedAddress = AddressUtils.condenseAddress(firoAddress);
+    expect(condensedAddress, "a6ESW...3Yt1j");
+  });
+
+  test("parse a valid uri string A", () {
+    const uri = "dogecoin:$firoAddress?amount=50&label=eggs";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNotNull);
+    expect(result!.scheme, "dogecoin");
+    expect(result.address, firoAddress);
+    expect(result.amount, "50");
+    expect(result.label, "eggs");
+  });
+
+  test("parse a valid uri string B", () {
+    const uri = "firo:$firoAddress?amount=50&message=eggs+are+good";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNotNull);
+    expect(result!.scheme, "firo");
+    expect(result.address, firoAddress);
+    expect(result.amount, "50");
+    expect(result.message, "eggs are good");
+  });
+
+  test("parse a valid uri string C", () {
+    const uri = "bitcoin:$firoAddress?amount=50.1&message=eggs%20are%20good%21";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNotNull);
+    expect(result!.scheme, "bitcoin");
+    expect(result.address, firoAddress);
+    expect(result.amount, "50.1");
+    expect(result.message, "eggs are good!");
+  });
+
+  test("parse an invalid uri string", () {
+    const uri = "firo$firoAddress?amount=50&label=eggs";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNull);
+  });
+
+  test("parse an invalid string", () {
+    const uri = "$firoAddress?amount=50&label=eggs";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNull);
+  });
+
+  test("parse an invalid uri string", () {
+    const uri = ":::  8 \\ %23";
+    expect(AddressUtils.parsePaymentUri(uri), isNull);
+  });
+
+  test("parse double prefix type address", () {
+    const uri =
+        "bitcoin:xel:$firoAddress?amount=50.1&message=eggs%20are%20good%21";
+    final result = AddressUtils.parsePaymentUri(uri);
+    expect(result, isNotNull);
+    expect(result!.scheme, "bitcoin");
+    expect(result.address, "xel:$firoAddress");
+    expect(result.amount, "50.1");
+    expect(result.message, "eggs are good!");
+  });
+
+  test("encode a list of (mnemonic) words/strings as a json object", () {
+    final List<String> list = [
+      "hello",
+      "word",
+      "something",
+      "who",
+      "green",
+      "seven",
+    ];
+    final result = AddressUtils.encodeQRSeedData(list);
+    expect(
+      result,
+      '{"mnemonic":["hello","word","something","who","green","seven"]}',
+    );
+  });
+
+  test("decode a valid json string to Map<String, dynamic>", () {
+    const jsonString =
+        '{"mnemonic":["hello","word","something","who","green","seven"]}';
+    final result = AddressUtils.decodeQRSeedData(jsonString);
+    expect(result, {
+      "mnemonic": ["hello", "word", "something", "who", "green", "seven"],
+    });
+  });
+
+  test("decode an invalid json string to Map<String, dynamic>", () {
+    const jsonString =
+        '{"mnemonic":"hello","word","something","who","green","seven"]}';
+
+    expect(AddressUtils.decodeQRSeedData(jsonString), {});
+  });
+
+  test("build a uri string with empty params", () {
+    expect(
+      AddressUtils.buildUriString(
+        Firo(CryptoCurrencyNetwork.main).uriScheme,
+        firoAddress,
+        {},
+      ),
+      "firo:$firoAddress",
+    );
+  });
+
+  test("build a uri string with one param", () {
+    expect(
+      AddressUtils.buildUriString(
+        Firo(CryptoCurrencyNetwork.main).uriScheme,
+        firoAddress,
+        {"amount": "10.0123"},
+      ),
+      "firo:$firoAddress?amount=10.0123",
+    );
+  });
+
+  test("build a uri string with some params", () {
+    expect(
+      AddressUtils.buildUriString(
+        Firo(CryptoCurrencyNetwork.main).uriScheme,
+        firoAddress,
+        {"amount": "10.0123", "message": "Some kind of message!"},
+      ),
+      "firo:$firoAddress?amount=10.0123&message=Some+kind+of+message%21",
+    );
+  });
+}

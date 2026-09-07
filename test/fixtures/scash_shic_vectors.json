@@ -1,0 +1,37 @@
+{
+  "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+  "cases": [
+    {
+      "coin": "scash",
+      "purpose": 84,
+      "path": "m/84'/805'/0'/0/0",
+      "public_key": "0305bea131e800e091c380a6121aa662c8231d4a9f61eda5389bea1480244576fb",
+      "address": "scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv",
+      "scripthash": "84a73d15a2655e22593a9db6a00e25a62771f680bbb23aa0fa5fc2a502e14e10"
+    },
+    {
+      "coin": "scash",
+      "purpose": 44,
+      "path": "m/44'/805'/0'/0/0",
+      "public_key": "029fa5b8a19fe51ec22e0b3f90cb819a208e5669025a880d382f0e920686709a76",
+      "address": "1LtuqCxKQ4TvDz8nPMJEPP9gbRwbDStxft",
+      "scripthash": "2f5f886e1aff84c5c08688ce92767ffc1abf653223337a3fc1a5536098240212"
+    },
+    {
+      "coin": "shibacoin",
+      "purpose": 44,
+      "path": "m/44'/4474'/0'/0/0",
+      "public_key": "038afe6bd4fc5adb606d225e88e36c388563a007be27fb498c7d570f130a61ebe8",
+      "address": "SaSYBTNVp14qZfYtvd3EaVoUWtLvLyaPni",
+      "scripthash": "42e49f905621bae87c49922e3bd206f6b65b090f6bf7db8d3e20e90a7e4cfb06"
+    },
+    {
+      "coin": "pepecoin",
+      "purpose": 44,
+      "path": "m/44'/3434'/0'/0/0",
+      "public_key": "02f84576e2b5c404d4eca0e70c5e32aabe3c4fd48d8cb31441ee3fe8c103373a8c",
+      "address": "PsGyoVVSD9VTYoDZGp5FmRB2BSoE69f9ZV",
+      "scripthash": "5d22ac0e053e02d5c6bd025f79224efe59a839437f4a25d1eadba0d8ec79e24b"
+    }
+  ]
+}

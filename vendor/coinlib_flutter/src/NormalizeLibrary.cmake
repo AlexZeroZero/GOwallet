@@ -1,0 +1,5 @@
+if(EXISTS "${VERSIONED}")
+  configure_file("${VERSIONED}" "${PLAIN}" COPYONLY)
+elseif(NOT EXISTS "${PLAIN}")
+  message(FATAL_ERROR "secp256k1 shared library was not built")
+endif()

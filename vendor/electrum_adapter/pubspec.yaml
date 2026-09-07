@@ -1,0 +1,29 @@
+name: electrum_adapter
+description: A client for ElectrumX servers
+version: 3.0.2
+homepage: https://github.com/cypherstack/electrum_adapter
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  async: ^2.9.0
+  equatable: ^2.0.5
+  json_rpc_2: ^4.0.0
+  stream_channel: ^2.1.0
+  stack_trace: ^1.10.0
+  socks_socket: ^1.1.1
+
+dev_dependencies:
+  test: ^1.16.0
+  timing: ^1.0.0
+  analyzer: ^6.2.0
+  lints: ^3.0.0
+  tor_ffi_plugin:
+    git:
+      url: https://github.com/cypherstack/tor.git
+      ref: 16c9e709e984ec89e8715ce378b038c93ad7add3
+
+#dependency_overrides:
+#  json_stream_parser:
+#    path: ../../repos/dart-json-stream-decoder

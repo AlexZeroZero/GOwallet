@@ -1,0 +1,8 @@
+title = "GOwallet public source secret checks"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Exact non-secret public identifiers only; no blanket docs/test exclusions"
+regexTarget = "secret"
+regexes = ['''^gowallet\.pin\.attempts\.v1$''', '''^EPjFWaJUwYUoRwzwkH4H8gNB7zHW9tLT6NCKB8S4yh6h$''']
