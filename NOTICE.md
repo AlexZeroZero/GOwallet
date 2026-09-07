@@ -24,3 +24,11 @@ license) for Android storage failure/migration hardening, and sqlite3_flutter_li
 0.5.25 (upstream MIT license) for rebuilding the same public-domain SQLite 3.46.1
 source with Android compiler hardening. Their original licenses and precise patch
 notes are retained in each vendor directory. This does not imply upstream endorsement.
+# GOwallet 1.0.2 Isar native rebuild
+
+The Android Isar native library is rebuilt from isar-community 3.3.0-dev.2
+and libmdbx v0.13.8 with compiler hardening. Apache-2.0 and declared MPL-2.0
+notices are preserved with the vendored source; pinned commits, changes,
+Rust dependency lockfile and build instructions are in
+`vendor/isar_native/GOWALLET-PATCHES.md`. Wallet schemas and the hosted Dart
+Isar APIs remain unchanged. This does not imply upstream endorsement.

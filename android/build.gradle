@@ -8,6 +8,22 @@ allprojects {
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
+    if (project.name == "isar_community_flutter_libs") {
+        project.afterEvaluate { nativeProject ->
+            // Keep the hosted Dart/plugin API; package our reviewed native build.
+            def nativeDirectory = rootProject.file("../vendor/isar_native/android")
+            nativeProject.android.sourceSets.main.jniLibs.setSrcDirs([nativeDirectory])
+            nativeProject.tasks.named("preBuild").configure {
+                doFirst {
+                    ["arm64-v8a", "armeabi-v7a", "x86_64"].each { abi ->
+                        if (!new File(nativeDirectory, "${abi}/libisar.so").isFile()) {
+                            throw new GradleException("Missing GOwallet Isar ${abi}. Run tool/build_isar_android.py before building Android.")
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 subprojects {
     project.evaluationDependsOn(":app")

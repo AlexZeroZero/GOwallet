@@ -4,7 +4,8 @@ param(
     [string]$JavaHome = $env:JAVA_HOME,
     [string]$BuildRoot = 'D:\electrum-wallet-build',
     [string]$TempRoot = 'D:\wallet-tmp',
-    [string]$SigningDirectory = ''
+    [string]$SigningDirectory = '',
+    [string]$IsarNdkDirectory = ''
 )
 $ErrorActionPreference = 'Stop'
 $walletSource = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
@@ -51,11 +52,18 @@ try {
     if ($LASTEXITCODE) {
         throw 'Dependency/platform generation failed; see wallet-pub-get.log. Enable Windows Developer Mode if Flutter requires symlink support.'
     }
+    if (-not $IsarNdkDirectory) {
+        $isarAndroidSdk = if ($env:ANDROID_HOME) { $env:ANDROID_HOME } else { $env:ANDROID_SDK_ROOT }
+        if (-not $isarAndroidSdk) { throw 'Set ANDROID_HOME or pass -IsarNdkDirectory for the native Isar build.' }
+        $IsarNdkDirectory = Join-Path $isarAndroidSdk 'ndk/28.0.13004108'
+    }
+    & $Python tool/build_isar_android.py --ndk $IsarNdkDirectory
+    if ($LASTEXITCODE) { throw 'Isar native build/verification failed; see vendor/isar_native/GOWALLET-PATCHES.md for prerequisites.' }
     $goMode = if ($Release) { 'release' } else { 'debug' }
     & flutter build apk "--$goMode" --no-pub --target-platform android-arm64,android-x64
     if ($LASTEXITCODE) { throw 'Android build failed' }
     New-Item -ItemType Directory -Path dist -Force | Out-Null
-    $goApk = "gowallet-1.0.1-android-$goMode.apk"
+    $goApk = "gowallet-1.0.2-android-$goMode.apk"
     Copy-Item -LiteralPath "build/app/outputs/flutter-apk/app-$goMode.apk" -Destination "dist/$goApk"
     $walletHash = (Get-FileHash "dist/$goApk" -Algorithm SHA256).Hash.ToLowerInvariant()
     Set-Content dist/GOWALLET-SHA256SUMS "$walletHash  $goApk"
