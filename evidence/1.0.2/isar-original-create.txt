@@ -1,0 +1,5 @@
+Isar=3.3.0-dev.2 libmdbx=v0.13.8 phase=create
+DATA_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]},{"amount":-12,"bytes":[],"enabled":false,"id":2,"label":"beta","tags":[]}]
+INDEX_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]}]
+schema/data/count/index/link/integrity: PASS
+PASS

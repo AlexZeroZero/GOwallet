@@ -1,5 +1,7 @@
 # GOwallet 1.0.1 安全修复与验证
 
+> 最新修复：Isar 加固已在 [1.0.2 安全修复与验证](VERIFICATION-1.0.2.md) 完成并记录；本文保留原版本的历史结果。
+
 日期：2026-09-07。版本 **1.0.1+10**，Android 包名 `org.gowallet.pow`。这是项目侧修复、回归测试及第三方工具扫描记录，**不是独立安全机构审计认证，也不表示所有风险已消除**。
 
 [下载 1.0.1](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.1) · [完整证据](../evidence/1.0.1) · [MobSF 原始 PDF](../evidence/1.0.1/mobsf-report.pdf) · [1.0.0 历史复核](SECURITY-FOLLOWUP.md)

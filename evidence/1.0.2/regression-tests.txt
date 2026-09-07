@@ -1,0 +1,253 @@
+00:00 +0: loading test/gowallet_actions_network_test.dart
+00:00 +0: test/gowallet_actions_network_test.dart: (setUpAll)
+00:00 +0: test/gowallet_actions_network_test.dart: translated wallet actions retain identity and callbacks
+00:00 +1: test/gowallet_auth_guard_test.dart: delayed success cannot unlock after background and resume
+00:00 +2: test/gowallet_actions_network_test.dart: node connection test accepts matching genesis and closes TCP
+00:00 +3: test/gowallet_actions_network_test.dart: node connection test accepts matching genesis and closes TCP
+00:00 +4: test/gowallet_actions_network_test.dart: node connection test accepts matching genesis and closes TCP
+00:00 +5: test/gowallet_actions_network_test.dart: node connection test rejects wrong genesis and closes TCP
+error [null] Bad state: The Electrum server is serving a different blockchain. Check the coin and port.
+#0      verifyElectrumNetwork (package:bitfinite/electrumx_rpc/verify_network.dart:4:5)
+#1      checkElectrumServer (package:bitfinite/utilities/connection_check/electrum_connection_check.dart:75:7)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///test/gowallet_actions_network_test.dart:77:13)
+<asynchronous suspension>
+#3      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#4      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#5      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+, ERROR: Bad state: The Electrum server is serving a different blockchain. Check the coin and port., STRACE: #0      verifyElectrumNetwork (package:bitfinite/electrumx_rpc/verify_network.dart:4:5)
+#1      checkElectrumServer (package:bitfinite/utilities/connection_check/electrum_connection_check.dart:75:7)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///test/gowallet_actions_network_test.dart:77:13)
+<asynchronous suspension>
+#3      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#4      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#5      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:00 +6: test/gowallet_actions_network_test.dart: (tearDownAll)
+00:03 +6: test/gowallet_auth_widget_test.dart: real lockscreen accepts delayed biometrics only in original foreground: background=false
+00:04 +7: test/gowallet_auth_widget_test.dart: real lockscreen accepts delayed biometrics only in original foreground: background=false
+00:04 +8: test/gowallet_auth_widget_test.dart: real lockscreen accepts delayed biometrics only in original foreground: background=false
+00:04 +9: test/gowallet_auth_widget_test.dart: real lockscreen accepts delayed biometrics only in original foreground: background=false
+00:04 +10: test/gowallet_auth_widget_test.dart: real lockscreen accepts delayed biometrics only in original foreground: background=false
+00:04 +11: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:04 +12: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +13: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +14: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +15: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +16: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +17: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +18: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +19: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +20: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +21: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +22: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +23: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +24: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +25: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +26: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +27: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +28: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +29: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +30: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +31: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:05 +32: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +33: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +34: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +35: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +36: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +37: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +38: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +39: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +40: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:06 +41: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +42: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +43: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +44: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +45: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +46: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:07 +47: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +48: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +49: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +50: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +51: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +52: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +53: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +54: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +55: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +56: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +57: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +58: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +59: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +60: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +61: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +62: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:08 +63: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +64: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +65: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +66: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +67: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +68: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +69: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +70: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +71: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +72: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +73: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +74: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +75: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +76: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +77: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +78: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +78: test/gowallet_transaction_security_test.dart: broadcast mismatch rejected before local UTXOs or history writes
+debug [null] confirmSend txData: TxData{feeRateType: null, feeRateAmount: null, satsPerVByte: null, fee: null, vSize: null, raw: 030000000111111111111111111111111111111111111111111111111111111111111111110000000000ffffffff0100ca9a3b000000001976a9144ba436039406f86b618f74af9f6bb22b6acf177c88ac00000000, txid: null, txHash: null, note: null, noteOnChain: null, memo: null, recipients: null, utxos: null, usedUTXOs: null, frostSigners: null, changeAddress: null, paynymAccountLite: null, ethEIP1559Fee: null, web3dartTransaction: null, nonce: null, chainId: null, solInstructions: null, pendingTransaction: null, pendingSalviumTransaction: null, tezosOperationsList: null, sparkRecipients: null, sparkMints: null, usedSparkCoins: null, otherData: null, tempTx: null, ignoreCachedBalanceChecks: false, opNameState: null, sparkNameInfo: null, vExtraData: null, overrideVersion: null, opReturnData: null, type: TxType.regular, }, ERROR: null, STRACE: null
+error [null] Exception rethrown from confirmSend(): , ERROR: Bad state: Node returned a different transaction ID; broadcast status is unknown, refresh wallet before retrying, STRACE: #0      VerifiedPrevouts.checkBroadcast (package:bitfinite/gowallet/verified_prevouts.dart:87:7)
+#1      PepecoinWallet.validateBroadcastResponse (package:bitfinite/wallets/wallet/impl/pepecoin_wallet.dart:55:24)
+#2      ElectrumXInterface.confirmSend (package:bitfinite/wallets/wallet/wallet_mixin_interfaces/electrumx_interface.dart:2379:7)
+<asynchronous suspension>
+#3      Throws._matchFuture (package:matcher/src/expect/throws_matcher.dart:103:19)
+<asynchronous suspension>
+#4      _expect.<anonymous closure> (package:matcher/src/expect/expect.dart:153:17)
+<asynchronous suspension>
+#5      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+#6      expectLater.<anonymous closure> (package:flutter_test/src/widget_tester.dart:508:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///test/gowallet_transaction_security_test.dart:287:7)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:09 +79: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +79: test/gowallet_transaction_security_test.dart: fee cap rejects server rate and retains only previously safe cache
+error [null] Exception rethrown from _getFees(): Bad state: Node fee estimate exceeds wallet safety limit
+Stack trace: #0      ElectrumXInterface.fees (package:bitfinite/wallets/wallet/wallet_mixin_interfaces/electrumx_interface.dart:1882:9)
+<asynchronous suspension>
+#1      Throws._matchFuture (package:matcher/src/expect/throws_matcher.dart:103:19)
+<asynchronous suspension>
+#2      _expect.<anonymous closure> (package:matcher/src/expect/expect.dart:153:17)
+<asynchronous suspension>
+#3      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+#4      expectLater.<anonymous closure> (package:flutter_test/src/widget_tester.dart:508:19)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///test/gowallet_transaction_security_test.dart:310:7)
+<asynchronous suspension>
+#6      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#8      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+, ERROR: Bad state: Node fee estimate exceeds wallet safety limit, STRACE: #0      ElectrumXInterface.fees (package:bitfinite/wallets/wallet/wallet_mixin_interfaces/electrumx_interface.dart:1882:9)
+<asynchronous suspension>
+#1      Throws._matchFuture (package:matcher/src/expect/throws_matcher.dart:103:19)
+<asynchronous suspension>
+#2      _expect.<anonymous closure> (package:matcher/src/expect/expect.dart:153:17)
+<asynchronous suspension>
+#3      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+#4      expectLater.<anonymous closure> (package:flutter_test/src/widget_tester.dart:508:19)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///test/gowallet_transaction_security_test.dart:310:7)
+<asynchronous suspension>
+#6      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#8      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+debug [null] fetched fees: {fast: 2500, medium: 2500, slow: 2500, numberOfBlocksFast: 1, numberOfBlocksAverage: 5, numberOfBlocksSlow: 20}, ERROR: null, STRACE: null
+error [null] Exception rethrown from _getFees(): Bad state: Node fee estimate exceeds wallet safety limit
+Stack trace: #0      ElectrumXInterface.fees (package:bitfinite/wallets/wallet/wallet_mixin_interfaces/electrumx_interface.dart:1882:9)
+<asynchronous suspension>
+#1      main.<anonymous closure> (file:///test/gowallet_transaction_security_test.dart:314:14)
+<asynchronous suspension>
+#2      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#3      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#4      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+, ERROR: Bad state: Node fee estimate exceeds wallet safety limit, STRACE: #0      ElectrumXInterface.fees (package:bitfinite/wallets/wallet/wallet_mixin_interfaces/electrumx_interface.dart:1882:9)
+<asynchronous suspension>
+#1      main.<anonymous closure> (file:///test/gowallet_transaction_security_test.dart:314:14)
+<asynchronous suspension>
+#2      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#3      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#4      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:09 +80: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +81: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +82: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +83: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +83: test/scash_shic_signing_test.dart: m/84'/805'/0'/0/0: independent address vectors and offline transaction signing
+trace [null] getAddressType(scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv) type is P2WPKHAddress, ERROR: null, STRACE: null
+error [null] getAddressType(scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchvx) failed, ERROR: Instance of 'InvalidBech32Checksum', STRACE: #0      new Bech32.decode (package:coinlib/src/encode/bech32.dart:157:7)
+#1      new Bech32Address.fromString (package:coinlib/src/address.dart:183:27)
+#2      new Address.fromString (package:coinlib/src/address.dart:39:30)
+#3      ElectrumXCurrencyInterface.getAddressType (package:bitfinite/wallets/crypto_currency/interfaces/electrumx_currency_interface.dart:17:36)
+#4      PublicElectrumCurrency.validateAddress (package:bitfinite/wallets/crypto_currency/intermediate/public_electrum_currency.dart:108:43)
+#5      main.<anonymous closure> (file:///test/scash_shic_signing_test.dart:46:21)
+#6      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:25)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#8      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:09 +84: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:09 +84: test/scash_shic_signing_test.dart: m/44'/805'/0'/0/0: independent address vectors and offline transaction signing
+trace [null] getAddressType(1LtuqCxKQ4TvDz8nPMJEPP9gbRwbDStxft) type is P2PKHAddress, ERROR: null, STRACE: null
+error [null] getAddressType(1LtuqCxKQ4TvDz8nPMJEPP9gbRwbDStxftx) failed, ERROR: Instance of 'InvalidBase58Checksum', STRACE: #0      new Address.fromString (package:coinlib/src/address.dart:48:9)
+#1      ElectrumXCurrencyInterface.getAddressType (package:bitfinite/wallets/crypto_currency/interfaces/electrumx_currency_interface.dart:17:36)
+#2      PublicElectrumCurrency.validateAddress (package:bitfinite/wallets/crypto_currency/intermediate/public_electrum_currency.dart:108:43)
+#3      main.<anonymous closure> (file:///test/scash_shic_signing_test.dart:46:21)
+#4      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:25)
+<asynchronous suspension>
+#5      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#6      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:09 +85: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +85: test/scash_shic_signing_test.dart: m/44'/4474'/0'/0/0: independent address vectors and offline transaction signing
+trace [null] getAddressType(SaSYBTNVp14qZfYtvd3EaVoUWtLvLyaPni) type is P2PKHAddress, ERROR: null, STRACE: null
+error [null] getAddressType(SaSYBTNVp14qZfYtvd3EaVoUWtLvLyaPnix) failed, ERROR: Instance of 'InvalidBase58Checksum', STRACE: #0      new Address.fromString (package:coinlib/src/address.dart:48:9)
+#1      ElectrumXCurrencyInterface.getAddressType (package:bitfinite/wallets/crypto_currency/interfaces/electrumx_currency_interface.dart:17:36)
+#2      Shibacoin.getAddressType (package:bitfinite/wallets/crypto_currency/coins/shibacoin.dart:56:24)
+#3      PublicElectrumCurrency.validateAddress (package:bitfinite/wallets/crypto_currency/intermediate/public_electrum_currency.dart:108:43)
+#4      main.<anonymous closure> (file:///test/scash_shic_signing_test.dart:46:21)
+#5      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:25)
+<asynchronous suspension>
+#6      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#7      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+
+00:10 +86: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +87: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +88: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +89: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +90: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +91: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +92: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +93: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +94: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +95: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +96: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:10 +97: test/gowallet_backup_crypto_test.dart: backup v2 round trip, wrong password, tamper with recomputed checksum
+00:12 +98: All tests passed!

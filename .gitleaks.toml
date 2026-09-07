@@ -8,8 +8,8 @@ regexTarget = "secret"
 regexes = ['''^gowallet\.pin\.attempts\.v1$''', '''^EPjFWaJUwYUoRwzwkH4H8gNB7zHW9tLT6NCKB8S4yh6h$''']
 
 [[allowlists]]
-description = "Reviewed apksigner public-key digests in the 1.0.1 signature evidence; not private keys"
+description = "Reviewed apksigner public-key digests in the 1.0.1 and 1.0.2 signature evidence; not private keys"
 condition = "AND"
-paths = ['''^evidence[\\/]1\.0\.1[\\/]signature\.txt$''']
+paths = ['''^evidence[\\/]1\.0\.[12][\\/]signature\.txt$''']
 regexTarget = "secret"
 regexes = ['''^6938e5a7ea9a3824f8cb652500bdb8e394f473f1c05afd378ee41a9713b11b6b$''', '''^15b30eb2b6b18c30e592a0419c16f1a92f8f3730$''', '''^88954447925b665e9fc9c4f8a837ba24$''']

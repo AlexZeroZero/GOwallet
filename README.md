@@ -1,8 +1,8 @@
 # GOwallet 1.0
 
-面向小型 PoW 币种的开源、非托管 Android 钱包。当前版本 **1.0.1（versionCode 10）**，支持 SCASH、SHIC、Pepecoin（PEP），以及交易格式兼容的自定义 Electrum 币种与网络。
+面向小型 PoW 币种的开源、非托管 Android 钱包。当前版本 **1.0.2（versionCode 11）**，支持 SCASH、SHIC、Pepecoin（PEP），以及交易格式兼容的自定义 Electrum 币种与网络。
 
-[下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.1) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.1 修复与文件校验](docs/VERIFICATION-1.0.1.md) · [构建源码](docs/BUILD.md)
+[下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.2) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.2 修复与文件校验](docs/VERIFICATION-1.0.2.md) · [构建源码](docs/BUILD.md)
 
 <img src="docs/go042-launch-widget-zh.png" alt="GOwallet 中文启动画面" width="260"> <img src="docs/go042-launch-widget-en.png" alt="GOwallet English launch screen" width="260">
 
@@ -62,7 +62,7 @@ Electrum / ElectrumX：查询历史、UTXO、费用，转发已签名交易
 
 发布包的实际扫描结果、SHA-256、签名指纹和验证步骤在 [查毒验证说明](docs/VERIFICATION.md) 及 Release 附件中公开。源码复核、攻击模拟、依赖公告扫描和验证限制见 [安全审核记录](docs/SECURITY-REVIEW.md)。
 
-1.0.1 修复了 Android 安全存储错误回退及迁移可靠性问题，并补齐 SQLite 原生编译加固。98 项 Dart 回归、17 项 Android 存储测试及同签名覆盖安装验证通过；ClamAV 感染文件 0。详见 [1.0.1 修复、完整报告与仍未修复项](docs/VERIFICATION-1.0.1.md)。Isar 加固告警仍待处理。
+1.0.2 在此前存储修复基础上完成 Isar 原生加固，保持原数据库版本与格式。98 项钱包回归、最终 APK 内数据库双向兼容/批量写入/中断恢复、同签名覆盖安装验证通过；ClamAV 感染文件 0。Isar 的 3 项高等级、3 项警告已消除，原生规则总数降为 **4 high / 5 warning**，MobSF 综合评分仍为 **59/100**。详见 [1.0.2 完整报告、证据与剩余边界](docs/VERIFICATION-1.0.2.md)。
 
 1.0.0 历史 [MobSF 自动扫描完整报告与告警说明](docs/AUTOMATED-SECURITY.md)：官方 v4.5.2 在本地隔离环境扫描同一正式 APK，评分 **59/100**；Scorecard 为 **1 high、7 warning**，原生库另有加固告警，均保留公开。提供 PDF、JSON、日志和校验值。**这是第三方工具的自托管扫描，不是独立机构审计通过；VirusTotal 多引擎结果尚未取得。**
 

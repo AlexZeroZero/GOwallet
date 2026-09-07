@@ -1,0 +1,9 @@
+Isar=3.3.0-dev.2 libmdbx=v0.13.8 phase=stress
+DATA_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]},{"amount":-12,"bytes":[],"enabled":false,"id":2,"label":"beta","tags":[]},{"amount":42,"bytes":[128],"enabled":true,"id":3,"label":"gamma","tags":["SHIC"]}]
+INDEX_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]}]
+schema/data/count/index/link/integrity: PASS
+DATA_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]},{"amount":-12,"bytes":[],"enabled":false,"id":2,"label":"beta","tags":[]},{"amount":42,"bytes":[128],"enabled":true,"id":3,"label":"gamma","tags":["SHIC"]}]
+INDEX_JSON=[{"amount":9876543210,"bytes":[0,1,255],"enabled":true,"id":1,"label":"alpha","tags":["SCASH","中文"]}]
+schema/data/count/index/link/integrity: PASS
+1040 batch writes/deletes, including 16 large values, page/index integrity: PASS
+PASS

@@ -1,0 +1,17 @@
+[
+  {
+    "abi": "arm64-v8a",
+    "cmake_c_flags": "-O2 -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security",
+    "note": "Existing unchanged secp256k1 source build already enables FORTIFY; absence of dynamic _chk symbols alone does not establish that the flag is disabled."
+  },
+  {
+    "abi": "armeabi-v7a",
+    "cmake_c_flags": "-O2 -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security",
+    "note": "Existing unchanged secp256k1 source build already enables FORTIFY; absence of dynamic _chk symbols alone does not establish that the flag is disabled."
+  },
+  {
+    "abi": "x86_64",
+    "cmake_c_flags": "-O2 -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security",
+    "note": "Existing unchanged secp256k1 source build already enables FORTIFY; absence of dynamic _chk symbols alone does not establish that the flag is disabled."
+  }
+]

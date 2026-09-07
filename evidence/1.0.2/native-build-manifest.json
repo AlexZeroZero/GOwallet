@@ -1,0 +1,55 @@
+{
+  "isar": "3.3.0-dev.2",
+  "libmdbx": "v0.13.8",
+  "rust": "1.88.0",
+  "ndk": "28.0.13004108",
+  "android_api": 24,
+  "source_sha256": "34fb51267762c3fd6ace60c4825f7d165761ad0842b5fb2ad5223afe03765eec",
+  "binaries": [
+    {
+      "abi": "arm64-v8a",
+      "sha256": "b829fa03d133dfc538da15f57c5d127a5d2c69b2609608187b2acbe41f7cf3ff",
+      "bytes": 1310632,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "stack_canary": true,
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    },
+    {
+      "abi": "armeabi-v7a",
+      "sha256": "a10026a0e11fccde3ebfd4f32bec0604c8a7f56e81ee71d10d39d15bde610c65",
+      "bytes": 1127316,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "stack_canary": true,
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    },
+    {
+      "abi": "x86_64",
+      "sha256": "5aa340608cd3a2f38e97aecba49d7c601ef3ff3b06d6ce9f63af4968e69cccc6",
+      "bytes": 1453480,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "stack_canary": true,
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    }
+  ]
+}

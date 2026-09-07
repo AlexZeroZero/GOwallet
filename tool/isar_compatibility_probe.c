@@ -24,6 +24,7 @@ API(int64_t, isar_txn_begin, (void *, void **, bool, bool, bool, int64_t));
 API(int64_t, isar_txn_finish, (void *, bool));
 API(int64_t, isar_json_import, (void *, void *, const char *, const uint8_t *, uint32_t));
 API(int64_t, isar_count, (void *, void *, int64_t *));
+API(int64_t, isar_delete, (void *, void *, int64_t, bool *));
 API(void *, isar_qb_create, (void *));
 API(void *, isar_qb_build, (void *));
 API(void, isar_q_free, (void *));
@@ -94,13 +95,13 @@ static void verify(void *instance, void *collection, int64_t expected) {
 }
 
 int main(int argc, char **argv) {
-    if (argc != 4) { fprintf(stderr, "Usage: probe LIB FIXTURE_DIRECTORY create|upgrade|crash|read\n"); return 1; }
+    if (argc != 4) { fprintf(stderr, "Usage: probe LIB FIXTURE_DIRECTORY create|upgrade|stress|crash|read\n"); return 1; }
     require(strstr(argv[2], "/data/local/tmp/gowallet-isar-") == argv[2], "dedicated fixture directory required");
     void *handle = dlopen(argv[1], RTLD_NOW | RTLD_LOCAL);
     if (!handle) { fprintf(stderr, "dlopen: %s\n", dlerror()); return 2; }
     LOAD(isar_version); LOAD(isar_mdbx_version); LOAD(isar_instance_create); LOAD(isar_instance_close);
     LOAD(isar_instance_get_collection); LOAD(isar_instance_verify); LOAD(isar_txn_begin); LOAD(isar_txn_finish);
-    LOAD(isar_json_import); LOAD(isar_count); LOAD(isar_qb_create); LOAD(isar_qb_build); LOAD(isar_q_free);
+    LOAD(isar_json_import); LOAD(isar_count); LOAD(isar_delete); LOAD(isar_qb_create); LOAD(isar_qb_build); LOAD(isar_q_free);
     LOAD(isar_q_export_json); LOAD(isar_free_json); LOAD(isar_key_create); LOAD(isar_key_add_string);
     LOAD(isar_qb_add_index_where_clause); LOAD(isar_link); LOAD(isar_link_verify); LOAD(isar_get_error); LOAD(isar_free_string);
     require(strcmp(isar_version(), "3.3.0-dev.2") == 0, "Isar version unchanged");
@@ -126,6 +127,30 @@ int main(int argc, char **argv) {
         import(collection, txn, "[{\"id\":99,\"label\":\"rollback\"}]");
         check(isar_txn_finish(txn, false)); verify(instance, collection, 3);
         puts("unique constraint/explicit transaction rollback: PASS");
+    } else if (strcmp(argv[3], "stress") == 0) {
+        verify(instance, collection, 3);
+        check(isar_txn_begin(instance, &txn, true, true, false, 0));
+        char payload[12288], long_value[10001];
+        memset(long_value, 'x', sizeof(long_value)-1); long_value[sizeof(long_value)-1] = 0;
+        for (int i = 0; i < 1040; ++i) {
+            int size = snprintf(payload, sizeof(payload),
+                "[{\"id\":%d,\"label\":\"load-%04d\",\"amount\":9876543210,\"tags\":[\"%s\"]}]",
+                1000+i, i, i < 1024 ? "page-split" : long_value);
+            require(size > 0 && size < (int)sizeof(payload), "bounded stress fixture");
+            import(collection, txn, payload);
+        }
+        check(isar_txn_finish(txn, true));
+        check(isar_txn_begin(instance, &txn, true, false, false, 0));
+        int64_t count = 0; check(isar_count(collection, txn, &count));
+        require(count == 1043, "batch insert and overflow records retained");
+        check(isar_instance_verify(instance, txn)); check(isar_txn_finish(txn, false));
+        check(isar_txn_begin(instance, &txn, true, true, false, 0));
+        for (int i = 0; i < 1040; ++i) {
+            bool deleted = false; check(isar_delete(collection, txn, 1000+i, &deleted));
+            require(deleted, "each stress fixture deleted");
+        }
+        check(isar_txn_finish(txn, true)); verify(instance, collection, 3);
+        puts("1040 batch writes/deletes, including 16 large values, page/index integrity: PASS");
     } else if (strcmp(argv[3], "crash") == 0) {
         verify(instance, collection, 3);
         check(isar_txn_begin(instance, &txn, true, true, false, 0));

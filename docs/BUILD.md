@@ -1,6 +1,10 @@
-# Build GOwallet 1.0.1
+# Build GOwallet 1.0.2
 
-The release uses Flutter 3.47.0 (Dart 3.13.0), JDK 17, Android SDK 36 and NDK 28.2.13676358 (application) and 28.0.13004108 (vendored SQLite). Build from the public release tag and preserve `pubspec.lock`. Templates generate the ignored `pubspec.yaml`, Android flavor and assets; do not use the inherited upstream flavor generator for GOwallet.
+The release uses Flutter 3.47.0 (Dart 3.13.0), JDK 17, Android SDK 36 and NDK 28.2.13676358 (application) and 28.0.13004108 (vendored SQLite and Isar). Build from the public release tag and preserve `pubspec.lock`. Templates generate the ignored `pubspec.yaml`, Android flavor and assets; do not use the inherited upstream flavor generator for GOwallet.
+
+## Native Isar prerequisite (1.0.2)
+
+Isar is now built from pinned C/Rust source; its prebuilt Pub binaries are not used on Android. Install Rust 1.88.0, its three Android targets, a host C linker and libclang. Set Cargo/compiler PATH and LIBCLANG_PATH as described in [the native build instructions](../vendor/isar_native/GOWALLET-PATCHES.md). The tested Windows host uses MinGW GNU Rust. The native build uses the committed Cargo.lock and keeps Isar 3.3.0-dev.2 / libmdbx v0.13.8. Python 3.11+ is required for the Cargo advisory checker.
 
 ## Windows
 
@@ -9,12 +13,13 @@ Install Git, Python 3, Flutter and the Android toolchain. Put Flutter/Dart on PA
 ```powershell
 git clone https://github.com/AlexZeroZero/GOwallet.git
 cd GOwallet
-git checkout v1.0.1
+git checkout v1.0.2
 python tool/configure_electrum_wallet.py
 $env:FLUTTER_WINDOWS = 'false'
 $env:FLUTTER_LINUX = 'false'
 $env:FLUTTER_MACOS = 'false'
 flutter pub get --enforce-lockfile
+python tool/build_isar_android.py --ndk "$env:ANDROID_HOME/ndk/28.0.13004108"
 flutter build apk --debug --no-pub --target-platform android-arm64,android-x64
 ```
 
@@ -28,7 +33,7 @@ The helper disables unrelated desktop plugin generation for its process and rest
 
 By default the helper keeps its PKCS12 key and Windows-user-bound DPAPI password in ignored `.private/gowallet-signing`. Back them up securely; DPAPI ciphertext alone is not a portable signing backup. To reuse an existing publisher identity, pass `-SigningDirectory` pointing to its protected external directory. Missing files in an explicitly supplied directory cause failure. Never commit that directory, Android `key.properties`, credentials or keystores.
 
-Other build hosts may use the generator and Flutter directly, providing `GOWALLET_KEYSTORE`, `GOWALLET_KEY_ALIAS` and `GOWALLET_KEY_PASSWORD` privately to Gradle for a release build. These platforms have not been validated for this release. The official signing key is not part of the source, and independently signed builds cannot overwrite the official installation. Byte-for-byte reproducibility has not been independently established.
+Other build hosts may use the generator and Flutter directly, providing `GOWALLET_KEYSTORE`, `GOWALLET_KEY_ALIAS` and `GOWALLET_KEY_PASSWORD` privately to Gradle for a release build. These alternative build hosts have not been validated for this release. The official signing key is not part of the source, and independently signed builds cannot overwrite the official installation. Byte-for-byte reproducibility has not been independently established.
 
 ## Regression checks
 

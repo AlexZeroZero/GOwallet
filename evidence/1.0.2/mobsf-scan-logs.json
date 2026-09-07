@@ -1,0 +1,319 @@
+{
+  "logs": [
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Generating Hashes",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Extracting APK",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Unzipping",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Parsing APK with androguard",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Extracting APK features using aapt/aapt2",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:07",
+      "status": "Getting Hardcoded Certificates/Keystores",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:09",
+      "status": "Parsing AndroidManifest.xml",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:09",
+      "status": "Extracting Manifest Data",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:09",
+      "status": "Manifest Analysis Started",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:09",
+      "status": "Performing Static Analysis on: GOwallet (org.gowallet.pow)",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:15",
+      "status": "Fetching Details from Play Store: org.gowallet.pow",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Checking for Malware Permissions",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Fetching icon path",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Library Binary Analysis Started",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/x86_64/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/x86_64/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/x86_64/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/x86_64/libflutter.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/x86_64/libapp.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/armeabi-v7a/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/armeabi-v7a/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/armeabi-v7a/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/arm64-v8a/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/arm64-v8a/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/arm64-v8a/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:18",
+      "status": "Analyzing lib/arm64-v8a/libflutter.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing lib/arm64-v8a/libapp.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/x86_64/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/x86_64/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/x86_64/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/x86_64/libflutter.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/x86_64/libapp.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/armeabi-v7a/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/armeabi-v7a/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/armeabi-v7a/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/arm64-v8a/libsqlite3.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/arm64-v8a/libisar.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/arm64-v8a/libsecp256k1.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/arm64-v8a/libflutter.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Analyzing apktool_out/lib/arm64-v8a/libapp.so",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:19",
+      "status": "Reading Code Signing Certificate",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:20",
+      "status": "Running APKiD 3.1.0",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:26",
+      "status": "Updating Trackers Database....",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:26",
+      "status": "Detecting Trackers",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:27",
+      "status": "Decompiling APK to Java with JADX",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:36",
+      "status": "Converting DEX to Smali",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:36",
+      "status": "Code Analysis Started on - java_source",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:39",
+      "status": "Android SBOM Analysis Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:40",
+      "status": "Android SAST Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:40",
+      "status": "Android API Analysis Started",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:41",
+      "status": "Android API Analysis Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:41",
+      "status": "Android Permission Mapping Started",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:42",
+      "status": "Android Permission Mapping Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:42",
+      "status": "Android Behaviour Analysis Started",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:43",
+      "status": "Android Behaviour Analysis Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:43",
+      "status": "Extracting Emails and URLs from Source Code",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:44",
+      "status": "Email and URL Extraction Completed",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:44",
+      "status": "Extracting String data from APK",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:44",
+      "status": "Extracting String data from SO",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:46",
+      "status": "Extracting String data from Code",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:46",
+      "status": "Extracting String values and entropies from Code",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:46",
+      "status": "Performing Malware check on extracted domains",
+      "exception": null
+    },
+    {
+      "timestamp": "2026-09-07 03:32:51",
+      "status": "Saving to Database",
+      "exception": null
+    }
+  ]
+}

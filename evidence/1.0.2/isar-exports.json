@@ -1,0 +1,23 @@
+[
+  {
+    "abi": "arm64-v8a",
+    "original_sha256": "e19ceba8bfdba9a32e4699c42ea00232909ac2fa9f366f0815da76970b1cf561",
+    "release_sha256": "83728eb07680406b039fc301461aa19e9a0d9051f7f23fa636bf46c74a954fc2",
+    "defined_global_exports": 93,
+    "export_names_identical": true
+  },
+  {
+    "abi": "armeabi-v7a",
+    "original_sha256": "074d45d8eb0a86743f2d33292d29e2f01c2a257cf559713239bf9d6b32d95dc4",
+    "release_sha256": "ab68e0b43f195cff9914a635222158582a93ee8bb0ff90fcaa15058df8b29c2b",
+    "defined_global_exports": 93,
+    "export_names_identical": true
+  },
+  {
+    "abi": "x86_64",
+    "original_sha256": "e6d416ee49e649c3837a5aa52e2bf7d8142a4e7fc03fffcd00e935afd66be59d",
+    "release_sha256": "f947647bf4a51f9237d4b94e1b11f14bf17dedd9b3f0392953203b598db96c1b",
+    "defined_global_exports": 93,
+    "export_names_identical": true
+  }
+]

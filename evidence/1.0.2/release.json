@@ -1,0 +1,84 @@
+{
+  "version": "1.0.2+11",
+  "package": "org.gowallet.pow",
+  "apk_size_bytes": 96780231,
+  "apk_sha256": "c944ad5725d5836e5428459043a82f217267b68db7b4dce20ec8a9afa2b37b4a",
+  "certificate_sha256": "6e796fcb039900ddf4e0bd6b488fe524f665049b37fc480454fcf0f4c5a43f6e",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "apk_code_commit": "173d71c",
+  "signature_v2_v3": true,
+  "recorded_at_utc": "2026-09-07T03:35:57.632601+00:00",
+  "regression_tests_passed": 98,
+  "upgrade": {
+    "from": "1.0.1+10",
+    "to": "1.0.2+11",
+    "environment": "Android API 35 x86_64 emulator with existing synthetic wallets",
+    "in_place_install": "PASS",
+    "existing_pin_unlock": "PASS",
+    "scash_and_custom_btc_retained": true,
+    "scash_address_before_and_after": "scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv",
+    "screenshot_protection_black_capture": true,
+    "runtime_error_lines": 0
+  },
+  "isar": {
+    "version": "3.3.0-dev.2",
+    "libmdbx": "v0.13.8",
+    "all_three_abis_canary_fortify_relro_nx": true,
+    "all_three_abis_global_export_names_identical": true,
+    "exact_release_x86_64_library_compatibility": "PASS",
+    "phases": [
+      "old create",
+      "release read/write",
+      "1040 batch writes/deletes including 16 large values",
+      "process death with uncommitted transaction",
+      "old reread",
+      "release reread"
+    ],
+    "raw_upstream_rust_lockfile_unavailable": true,
+    "new_rust_registry_dependencies_locked": true
+  },
+  "mobsf": {
+    "score": 59,
+    "scorecard_counts": {
+      "high": 1,
+      "warning": 7,
+      "info": 2,
+      "secure": 2,
+      "hotspot": 1
+    },
+    "unique_native_rule_counts": {
+      "high": 4,
+      "warning": 5
+    },
+    "previous_unique_native_rule_counts": {
+      "high": 7,
+      "warning": 8
+    },
+    "isar_high_warning_rules": 0,
+    "raw_exports_sha256": {
+      "mobsf-report.json": "0fe515d1bcb1e39a6d5f4c0d768300b3ad7479dac00de3084aee77509dc35490",
+      "mobsf-scorecard.json": "2a649cc82d1db5047b560e0b67f98bd57c65f78826d6070e008dd0a873cd0e04",
+      "mobsf-scan-logs.json": "5ea0bd6fe48ece09615917828f47d3cb7f3f9ae887b06993957caf59fc4024fa",
+      "scan-metadata.json": "431fb62469d83a935ffbdc1cf2f8eeeba6f3f63b8ee6ac28466c49ee41599b9e",
+      "mobsf-report.pdf": "96db08336d58c0a7ac4444cdcddcaf4d362a73d256d891d1a48b9f8f2889fd98"
+    },
+    "publication_transform": "JSON indentation only, semantic values unchanged; PDF byte-identical; no finding suppression",
+    "pdf_pages": 52
+  },
+  "cargo_osv": {
+    "packages_checked": 91,
+    "advisories": [
+      "RUSTSEC-2024-0436 (paste 1.0.15 unmaintained; compile-time procedural macro)"
+    ]
+  },
+  "limits": [
+    "No independent audit certification or zero-vulnerability guarantee",
+    "No physical phone/TEE or real-fund broadcast test",
+    "No full uninstall/device-restore exercise",
+    "Native compatibility runs on x86_64; ARM ABIs statically checked",
+    "No full SPV implementation",
+    "Remaining Flutter AOT/other hardening and code rules preserved",
+    "VirusTotal not completed"
+  ]
+}
