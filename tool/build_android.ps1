@@ -37,6 +37,12 @@ if ($env:HTTPS_PROXY) {
     if ($walletProxy.UserInfo) { throw 'Configure authenticated Gradle proxies separately.' }
     $env:GRADLE_OPTS = "-Dhttps.proxyHost=$($walletProxy.Host) -Dhttps.proxyPort=$($walletProxy.Port) -Dhttp.proxyHost=$($walletProxy.Host) -Dhttp.proxyPort=$($walletProxy.Port)"
 }
+$goDesktopFlags = @{}
+foreach ($goFlag in @('FLUTTER_WINDOWS', 'FLUTTER_LINUX', 'FLUTTER_MACOS')) {
+    $goDesktopFlags[$goFlag] = [Environment]::GetEnvironmentVariable($goFlag, 'Process')
+    # This helper builds Android only; avoid unrelated desktop plugin symlinks.
+    [Environment]::SetEnvironmentVariable($goFlag, 'false', 'Process')
+}
 Push-Location $BuildRoot
 try {
     & $Python tool/configure_electrum_wallet.py
@@ -56,4 +62,7 @@ try {
 } finally {
     Pop-Location
     $env:GOWALLET_KEY_PASSWORD = $null
+    foreach ($goFlag in $goDesktopFlags.Keys) {
+        [Environment]::SetEnvironmentVariable($goFlag, $goDesktopFlags[$goFlag], 'Process')
+    }
 }

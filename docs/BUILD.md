@@ -11,11 +11,16 @@ git clone https://github.com/AlexZeroZero/GOwallet.git
 cd GOwallet
 git checkout v1.0.0
 python tool/configure_electrum_wallet.py
+$env:FLUTTER_WINDOWS = 'false'
+$env:FLUTTER_LINUX = 'false'
+$env:FLUTTER_MACOS = 'false'
 flutter pub get --enforce-lockfile
 flutter build apk --debug --no-pub --target-platform android-arm64,android-x64
 ```
 
 For a signed release, the Windows helper loads or creates a local signing identity. Set your actual JDK/Python paths and choose a new ASCII junction pointing to this checkout:
+
+The helper disables unrelated desktop plugin generation for its process and restores the environment afterwards. It fails on dependency/platform generation errors. Explicit Flutter global/project desktop feature overrides may still require Developer Mode for symlinks.
 
 ```powershell
 ./tool/build_android.ps1 -Release -Python python -JavaHome $env:JAVA_HOME -BuildRoot D:\gowallet-build -TempRoot D:\gowallet-tmp
