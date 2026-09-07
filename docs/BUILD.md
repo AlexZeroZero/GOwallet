@@ -1,6 +1,6 @@
-# Build GOwallet 1.0.0
+# Build GOwallet 1.0.1
 
-The release uses Flutter 3.47.0 (Dart 3.13.0), JDK 17, Android SDK 36 and NDK 28.2.13676358. Build from the public release tag and preserve `pubspec.lock`. Templates generate the ignored `pubspec.yaml`, Android flavor and assets; do not use the inherited upstream flavor generator for GOwallet.
+The release uses Flutter 3.47.0 (Dart 3.13.0), JDK 17, Android SDK 36 and NDK 28.2.13676358 (application) and 28.0.13004108 (vendored SQLite). Build from the public release tag and preserve `pubspec.lock`. Templates generate the ignored `pubspec.yaml`, Android flavor and assets; do not use the inherited upstream flavor generator for GOwallet.
 
 ## Windows
 
@@ -9,7 +9,7 @@ Install Git, Python 3, Flutter and the Android toolchain. Put Flutter/Dart on PA
 ```powershell
 git clone https://github.com/AlexZeroZero/GOwallet.git
 cd GOwallet
-git checkout v1.0.0
+git checkout v1.0.1
 python tool/configure_electrum_wallet.py
 $env:FLUTTER_WINDOWS = 'false'
 $env:FLUTTER_LINUX = 'false'
@@ -41,3 +41,13 @@ python tool/audit_pub_osv.py --output evidence/pub-osv.json
 ```
 
 These tests use fixtures/mocks; live network tests are separate and no real-fund broadcast is implied. Some inherited upstream analyzer warnings remain. Optional inherited submodules are not required by the GOwallet Android flavor; their revisions and licenses are preserved. Native dependencies and tools must still be installed/downloaded by the build system.
+
+## Android storage fault-injection tests (1.0.1)
+
+With an API 24+ test device/emulator connected and the generated Android project configured:
+
+```powershell
+./android/gradlew.bat -p android :flutter_secure_storage:connectedDebugAndroidTest --console=plain
+```
+
+Release evidence used an API 35 x86_64 emulator and 17 tests with isolated synthetic namespaces, not user wallet data. See [verification and limits](VERIFICATION-1.0.1.md). Local `flutter_secure_storage` and `sqlite3_flutter_libs` overrides are intentional; preserve them and the lockfile. SQLite source is fetched with a fixed SHA-256 and compiled locally, so CMake and the specified NDK are required. Original plugin licenses and all platform sources remain under `vendor/`.

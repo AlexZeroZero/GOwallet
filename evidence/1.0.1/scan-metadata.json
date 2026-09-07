@@ -1,0 +1,9 @@
+{
+  "started_at_utc": "2026-09-07T02:26:17.780308+00:00",
+  "completed_at_utc": "2026-09-07T02:27:03.731872+00:00",
+  "image": "opensecurity/mobile-security-framework-mobsf:v4.5.2",
+  "image_digest": "sha256:af94f81f8b13872cdf556327fab58f52d446299fe153be6e1eeec177f31b503b",
+  "apk_sha256": "e3a4dff2a9b74d1cdd148bd4997104dce02099e6e14d6a5d93ce75213761e50d",
+  "mode": "Self-hosted automatic static APK scan; no suppressions; no dynamic device analysis",
+  "api_bound_to": "127.0.0.1 only"
+}

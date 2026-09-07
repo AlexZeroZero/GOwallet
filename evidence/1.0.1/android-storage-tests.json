@@ -1,0 +1,94 @@
+{
+  "source_junit_sha256": "279ebc83108af8e5c77c60c17fef3f16966c8e8b482318fec2632bdb68a534f7",
+  "tests": 17,
+  "failures": 0,
+  "errors": 0,
+  "environment": "Android API 35 x86_64 emulator; real AndroidKeyStore/EncryptedSharedPreferences APIs in isolated synthetic test namespaces; not a physical TEE test",
+  "cases": [
+    {
+      "name": "emptyLegacyStoreMetadataDoesNotBreakReadAll",
+      "seconds": "0.196",
+      "result": "PASS"
+    },
+    {
+      "name": "damagedWrappedKeyIsNotOverwritten",
+      "seconds": "0.133",
+      "result": "PASS"
+    },
+    {
+      "name": "authenticatedCiphertextTamperingIsRejectedWithoutWipe",
+      "seconds": "0.081",
+      "result": "PASS"
+    },
+    {
+      "name": "unauthenticatedModeIsRejectedWithoutCreatingData",
+      "seconds": "0.003",
+      "result": "PASS"
+    },
+    {
+      "name": "existingGcmIdentityAndNormalOperationsRemainCompatible",
+      "seconds": "0.158",
+      "result": "PASS"
+    },
+    {
+      "name": "normalGcmDoesNotTouchLegacyKeys",
+      "seconds": "0.103",
+      "result": "PASS"
+    },
+    {
+      "name": "methodChannelFailureNeverResetsEvenWhenResetWasRequested",
+      "seconds": "0.054",
+      "result": "PASS"
+    },
+    {
+      "name": "conflictingCopiesArePreservedForRecovery",
+      "seconds": "0.131",
+      "result": "PASS"
+    },
+    {
+      "name": "interruptionAfterCopyCanRetryWithoutOverwritingOrLosingData",
+      "seconds": "0.181",
+      "result": "PASS"
+    },
+    {
+      "name": "failedReadbackNeverDeletesSource",
+      "seconds": "0.182",
+      "result": "PASS"
+    },
+    {
+      "name": "initializationFailureNeverReturnsMissingWritesOrDeletesAndCanRetry",
+      "seconds": "0.207",
+      "result": "PASS"
+    },
+    {
+      "name": "missingRsaKeyIsNotRecreatedDuringRecovery",
+      "seconds": "0.157",
+      "result": "PASS"
+    },
+    {
+      "name": "corruptLegacyCiphertextPreventsPartialMigration",
+      "seconds": "0.131",
+      "result": "PASS"
+    },
+    {
+      "name": "normalWriteCommitFailureReachesCaller",
+      "seconds": "0.053",
+      "result": "PASS"
+    },
+    {
+      "name": "failedTargetCommitRetainsAllLegacyValues",
+      "seconds": "0.207",
+      "result": "PASS"
+    },
+    {
+      "name": "missingWrappedLegacyKeyIsNeverRegenerated",
+      "seconds": "0.13",
+      "result": "PASS"
+    },
+    {
+      "name": "cbcMigratesMultipleValuesInSameBackingFile",
+      "seconds": "0.183",
+      "result": "PASS"
+    }
+  ]
+}

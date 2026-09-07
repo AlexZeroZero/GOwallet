@@ -1,0 +1,78 @@
+{
+  "recorded_at_utc": "2026-09-07T02:30:52.567793+00:00",
+  "version": "1.0.1+10",
+  "package": "org.gowallet.pow",
+  "apk_sha256": "e3a4dff2a9b74d1cdd148bd4997104dce02099e6e14d6a5d93ce75213761e50d",
+  "apk_size_bytes": 96731051,
+  "apk_code_commit": "7de5f44",
+  "certificate_sha256": "6e796fcb039900ddf4e0bd6b488fe524f665049b37fc480454fcf0f4c5a43f6e",
+  "signature_v2_v3": true,
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "supported_flutter_abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "extra_native_only_abi": "armeabi-v7a (no Flutter libapp/libflutter for this ABI)",
+  "wallet_regression_tests_passed": 98,
+  "android_storage_tests_passed": 17,
+  "upgrade": {
+    "from": "1.0.0+9",
+    "to": "1.0.1+10",
+    "adb_install_r": "Success",
+    "existing_pin_unlock": "PASS",
+    "existing_custom_btc_visible": true,
+    "scash_address_before_and_after": "scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv",
+    "screenshot_protection_black_capture": true,
+    "runtime_error_lines": 0
+  },
+  "sqlite": {
+    "version_and_source_id_unchanged": true,
+    "feature_options_unchanged_except_compiler_identifier": true,
+    "old_database_read_by_exact_release_library": "PASS",
+    "original_library_reread": "PASS",
+    "checks": [
+      "schema",
+      "integer/blob data",
+      "WAL",
+      "FTS5",
+      "RTREE",
+      "JSON",
+      "integrity_check",
+      "transaction rollback"
+    ],
+    "stack_canary_detected_all_three_abis": true,
+    "fortify_symbols_detected_all_three_abis": true,
+    "isar_binaries_unchanged": true
+  },
+  "mobsf": {
+    "score": 59,
+    "scorecard_counts": {
+      "high": 1,
+      "warning": 7,
+      "info": 2,
+      "secure": 2,
+      "hotspot": 1
+    },
+    "raw_exports_sha256": {
+      "mobsf-report.json": "c508c321331cfb7d27934435b3dde87c39dfa92000ee78d0a1a9c59d2a19d84a",
+      "mobsf-scorecard.json": "ebec3c82caac1b18147e1f3eb734768c72981dd83d915b3da041e910d3097718",
+      "mobsf-scan-logs.json": "19b3e0e38e6efbd530c0b793f88bd1b6dadd1bf87f7693588378d5cdc1be48ae",
+      "scan-metadata.json": "67db1b6a586c628ecdfd3b7aabffb2df3301748da4d4aa0cde2e504060e4455a",
+      "mobsf-report.pdf": "636fbf2f75b6d8e0b3934d85a8798ec9eac33400a374a3e51a22b8e34ee81011"
+    },
+    "publication_transform": "JSON indentation only, values unchanged; PDF byte-identical; no finding suppression",
+    "unique_native_rule_counts": {
+      "high": 7,
+      "warning": 8
+    }
+  },
+  "limits": [
+    "No independent security certification",
+    "No physical-phone/TEE test or real-fund broadcast",
+    "No full SPV implementation",
+    "No full uninstall and restore device exercise",
+    "Isar/native remaining hardening findings remain open; Dart AOT generic checks need applicability assessment",
+    "VirusTotal not completed; no multi-engine pass claimed"
+  ]
+}

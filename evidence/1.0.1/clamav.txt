@@ -1,0 +1,13 @@
+dist\gowallet-1.0.1-android-release.apk: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628051
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 219.94 MiB
+Data read: 92.25 MiB (ratio 2.38:1)
+Time: 69.103 sec (1 m 9 s)
+Start Date: 2026:09:07 10:25:57
+End Date:   2026:09:07 10:27:07

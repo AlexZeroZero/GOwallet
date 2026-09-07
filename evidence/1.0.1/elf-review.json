@@ -1,0 +1,660 @@
+{
+  "apk_sha256": "e3a4dff2a9b74d1cdd148bd4997104dce02099e6e14d6a5d93ce75213761e50d",
+  "observed_at_utc": "2026-09-07T02:25:40.035238+00:00",
+  "tool": "Android NDK 28.0.13004108, LLVM 19.0.0 llvm-readelf",
+  "mode": "Read-only analysis of copies of exact release ELF entries; no APK changes; no live wallet access",
+  "binaries": [
+    {
+      "apk_path": "lib/arm64-v8a/libapp.so",
+      "sha256": "f9f11bf10516acbe2b3a59c4e4b58fdb6db5a90c6744783131b4559f9ecf8e84",
+      "size": 25756552,
+      "gnu_relro_segment": false,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x1",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x97a0ad 0x97a0ad R   0x10000",
+        "LOAD           0x980000 0x0000000000980000 0x0000000000980000 0xf02410 0xf02410 R E 0x10000",
+        "LOAD           0x1890000 0x0000000001890000 0x0000000001890000 0x000068 0x000068 RW  0x10000"
+      ],
+      "sections": [
+        ".note.gnu.build-id",
+        ".dynstr",
+        ".dynsym",
+        ".hash",
+        ".rodata",
+        ".eh_frame",
+        ".text",
+        ".dynamic",
+        ".bss",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [],
+      "relocation_section_count": 0,
+      "no_relocations_reported": true,
+      "stack_chk_dynamic_symbols": [],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 4
+    },
+    {
+      "apk_path": "lib/arm64-v8a/libflutter.so",
+      "sha256": "2d3bdc3833ba4497ab07f2cd8ea878c9e94f24936510a895b260d317e6c57fdd",
+      "size": 11747528,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0xad7da0 0xad7da0 R E 0x10000",
+        "LOAD           0xad7da0 0x0000000000ae7da0 0x0000000000ae7da0 0x05a2f8 0x05b260 RW  0x10000",
+        "LOAD           0xb32098 0x0000000000b52098 0x0000000000b52098 0x0016e8 0x0107c8 RW  0x10000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        "__lcxx_override",
+        "malloc_hook",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".init_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [
+        "__fwrite_chk",
+        "__memcpy_chk",
+        "__memmove_chk",
+        "__poll_chk",
+        "__pread_chk",
+        "__read_chk",
+        "__readlink_chk",
+        "__strcpy_chk",
+        "__strlen_chk",
+        "__write_chk"
+      ],
+      "dynamic_symbol_count": 553
+    },
+    {
+      "apk_path": "lib/arm64-v8a/libisar.so",
+      "sha256": "e19ceba8bfdba9a32e4699c42ea00232909ac2fa9f366f0815da76970b1cf561",
+      "size": 1292184,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0463cc 0x0463cc R   0x4000",
+        "LOAD           0x0463d0 0x000000000004a3d0 0x000000000004a3d0 0x0eecc0 0x0eecc0 R E 0x4000",
+        "LOAD           0x135090 0x000000000013d090 0x000000000013d090 0x005260 0x005f70 RW  0x4000",
+        "LOAD           0x13a2f0 0x00000000001462f0 0x00000000001462f0 0x000b38 0x003760 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".gcc_except_table",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".init_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 217
+    },
+    {
+      "apk_path": "lib/arm64-v8a/libsecp256k1.so",
+      "sha256": "9fe4494a4336c41a5f49161ef61a5caf8eef3ea9cd3a109daa6cd8ea3f5deadc",
+      "size": 1250416,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x130820 0x130820 R E 0x4000",
+        "LOAD           0x130820 0x0000000000134820 0x0000000000134820 0x0003a0 0x0007e0 RW  0x4000",
+        "LOAD           0x130bc0 0x0000000000138bc0 0x0000000000138bc0 0x000010 0x000010 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 83
+    },
+    {
+      "apk_path": "lib/arm64-v8a/libsqlite3.so",
+      "sha256": "9d1619b2211ac2d1c726b8008628e6df59bad66ebf0356be6272fa6f27ce596e",
+      "size": 1559832,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x176c80 0x176c80 R E 0x4000",
+        "LOAD           0x176c80 0x000000000017ac80 0x000000000017ac80 0x002588 0x003380 RW  0x4000",
+        "LOAD           0x179208 0x0000000000181208 0x0000000000181208 0x003270 0x003778 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [
+        "__memcpy_chk",
+        "__memmove_chk",
+        "__memset_chk",
+        "__strchr_chk",
+        "__strlen_chk"
+      ],
+      "dynamic_symbol_count": 332
+    },
+    {
+      "apk_path": "lib/armeabi-v7a/libisar.so",
+      "sha256": "074d45d8eb0a86743f2d33292d29e2f01c2a257cf559713239bf9d6b32d95dc4",
+      "size": 1107124,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x00000000 0x00000000 0x2aeca 0x2aeca R   0x4000",
+        "LOAD           0x02aed0 0x0002eed0 0x0002eed0 0xdf410 0xdf410 R E 0x4000",
+        "LOAD           0x10a2e0 0x001122e0 0x001122e0 0x0341c 0x03d20 RW  0x4000",
+        "LOAD           0x10d700 0x00119700 0x00119700 0x00694 0x01015 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rel.dyn",
+        ".ARM.exidx",
+        ".rel.plt",
+        ".ARM.extab",
+        ".rodata",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".init_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".ARM.attributes",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x0000001e (FLAGS)        BIND_NOW",
+        "0x6ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 212
+    },
+    {
+      "apk_path": "lib/armeabi-v7a/libsecp256k1.so",
+      "sha256": "08c98cf47379778603b2b70249c8513d5c43331d81c8e30a7ee341b9d3959f7a",
+      "size": 1157084,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x00000000 0x00000000 0x119f00 0x119f00 R E 0x1000",
+        "LOAD           0x119f00 0x0011af00 0x0011af00 0x00220 0x01100 RW  0x1000",
+        "LOAD           0x11a120 0x0011c120 0x0011c120 0x00008 0x00008 RW  0x1000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rel.dyn",
+        ".ARM.exidx",
+        ".rel.plt",
+        ".rodata",
+        ".ARM.extab",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".comment",
+        ".ARM.attributes",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x0000001e (FLAGS)        BIND_NOW",
+        "0x6ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail",
+        "__stack_chk_guard"
+      ],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 84
+    },
+    {
+      "apk_path": "lib/armeabi-v7a/libsqlite3.so",
+      "sha256": "0b7ecd0b5c9e82cc5f88bf0dd0e43b199f5b16ab5b4c2ebf7aef87592f6d5486",
+      "size": 1056896,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x00000000 0x00000000 0xfe620 0xfe620 R E 0x1000",
+        "LOAD           0x0fe620 0x000ff620 0x000ff620 0x017a8 0x019e0 RW  0x1000",
+        "LOAD           0x0ffdc8 0x00101dc8 0x00101dc8 0x01c00 0x01e48 RW  0x1000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".dynstr",
+        ".rel.dyn",
+        ".ARM.exidx",
+        ".rel.plt",
+        ".ARM.extab",
+        ".rodata",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".ARM.attributes",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x0000001e (FLAGS)        BIND_NOW",
+        "0x6ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail",
+        "__stack_chk_guard"
+      ],
+      "fortify_dynamic_symbols": [
+        "__memcpy_chk",
+        "__memmove_chk",
+        "__memset_chk",
+        "__strchr_chk",
+        "__strlen_chk"
+      ],
+      "dynamic_symbol_count": 333
+    },
+    {
+      "apk_path": "lib/x86_64/libapp.so",
+      "sha256": "5132716b95d1963ec0e1e9917a01b5a50fa4267241c3962279285f1ed97c59a2",
+      "size": 26739592,
+      "gnu_relro_segment": false,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x1",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x97b61d 0x97b61d R   0x10000",
+        "LOAD           0x980000 0x0000000000980000 0x0000000000980000 0xffec40 0xffec40 R E 0x10000",
+        "LOAD           0x1980000 0x0000000001980000 0x0000000001980000 0x000068 0x000068 RW  0x10000"
+      ],
+      "sections": [
+        ".note.gnu.build-id",
+        ".dynstr",
+        ".dynsym",
+        ".hash",
+        ".rodata",
+        ".eh_frame",
+        ".text",
+        ".dynamic",
+        ".bss",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [],
+      "relocation_section_count": 0,
+      "no_relocations_reported": true,
+      "stack_chk_dynamic_symbols": [],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 4
+    },
+    {
+      "apk_path": "lib/x86_64/libflutter.so",
+      "sha256": "5353b686126446f1aafe42e5703b9a97ca3a32f5d5f76240026ddbef719fb811",
+      "size": 13051040,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0xc16cf0 0xc16cf0 R E 0x10000",
+        "LOAD           0xc16cf0 0x0000000000c26cf0 0x0000000000c26cf0 0x058650 0x059310 RW  0x10000",
+        "LOAD           0xc6f340 0x0000000000c8f340 0x0000000000c8f340 0x002818 0x011ef0 RW  0x10000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        "__lcxx_override",
+        "malloc_hook",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".init_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [
+        "__fwrite_chk",
+        "__memcpy_chk",
+        "__memmove_chk",
+        "__poll_chk",
+        "__pread_chk",
+        "__read_chk",
+        "__readlink_chk",
+        "__strcpy_chk",
+        "__strlen_chk",
+        "__write_chk"
+      ],
+      "dynamic_symbol_count": 556
+    },
+    {
+      "apk_path": "lib/x86_64/libisar.so",
+      "sha256": "e6d416ee49e649c3837a5aa52e2bf7d8142a4e7fc03fffcd00e935afd66be59d",
+      "size": 1431024,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0481c8 0x0481c8 R   0x4000",
+        "LOAD           0x0481d0 0x000000000004c1d0 0x000000000004c1d0 0x10eab0 0x10eab0 R E 0x4000",
+        "LOAD           0x156c80 0x000000000015ec80 0x000000000015ec80 0x0054b8 0x006380 RW  0x4000",
+        "LOAD           0x15c138 0x0000000000168138 0x0000000000168138 0x000b48 0x003788 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".gcc_except_table",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".init_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 214
+    },
+    {
+      "apk_path": "lib/x86_64/libsecp256k1.so",
+      "sha256": "9f9a4c670cabb0537cc549b757d2c56f3f4ce15afcd8e77c96ec41ff8fb8ee37",
+      "size": 1308200,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x13e9f0 0x13e9f0 R E 0x4000",
+        "LOAD           0x13e9f0 0x00000000001429f0 0x00000000001429f0 0x000388 0x000610 RW  0x4000",
+        "LOAD           0x13ed78 0x0000000000146d78 0x0000000000146d78 0x000010 0x000010 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [],
+      "dynamic_symbol_count": 83
+    },
+    {
+      "apk_path": "lib/x86_64/libsqlite3.so",
+      "sha256": "0dd8d94ebd7a5c7cc3d887ea8043a1a91f334d0731a699009acd4caff7a43dc9",
+      "size": 1566912,
+      "gnu_relro_segment": true,
+      "gnu_stack_line": "GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0",
+      "load_segments": [
+        "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x178730 0x178730 R E 0x4000",
+        "LOAD           0x178730 0x000000000017c730 0x000000000017c730 0x002660 0x0028d0 RW  0x4000",
+        "LOAD           0x17ad90 0x0000000000182d90 0x0000000000182d90 0x003290 0x0037b1 RW  0x4000"
+      ],
+      "sections": [
+        ".note.android.ident",
+        ".note.gnu.build-id",
+        ".dynsym",
+        ".gnu.version",
+        ".gnu.version_r",
+        ".gnu.hash",
+        ".dynstr",
+        ".rela.dyn",
+        ".rela.plt",
+        ".rodata",
+        ".eh_frame_hdr",
+        ".eh_frame",
+        ".text",
+        ".plt",
+        ".data.rel.ro",
+        ".fini_array",
+        ".dynamic",
+        ".got",
+        ".got.plt",
+        ".relro_padding",
+        ".data",
+        ".bss",
+        ".comment",
+        ".shstrtab"
+      ],
+      "dynamic_binding_lines": [
+        "0x000000000000001e (FLAGS)        BIND_NOW",
+        "0x000000006ffffffb (FLAGS_1)      NOW"
+      ],
+      "relocation_section_count": 2,
+      "no_relocations_reported": false,
+      "stack_chk_dynamic_symbols": [
+        "__stack_chk_fail"
+      ],
+      "fortify_dynamic_symbols": [
+        "__memcpy_chk",
+        "__memmove_chk",
+        "__memset_chk",
+        "__strchr_chk",
+        "__strlen_chk"
+      ],
+      "dynamic_symbol_count": 332
+    }
+  ]
+}

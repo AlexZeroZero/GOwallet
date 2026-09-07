@@ -1,0 +1,87 @@
+{
+  "high": [
+    {
+      "title": "The App uses the encryption mode CBC with PKCS5/PKCS7 padding. This configuration is vulnerable to padding oracle attacks.",
+      "description": "The App uses the encryption mode CBC with PKCS5/PKCS7 padding. This configuration is vulnerable to padding oracle attacks.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x04g-Testing-Cryptography.md#identifying-insecure-andor-deprecated-cryptographic-algorithms-mstg-crypto-4\n\nFiles:\ns/AbstractC0693i.java, line(s) 105\nx1/h.java, line(s) 72",
+      "section": "code"
+    }
+  ],
+  "warning": [
+    {
+      "title": "Launch Mode of activity (org.gowallet.pow.MainActivity) is not standard.",
+      "description": "An Activity should not be having the launch mode attribute set to \"singleTask/singleInstance\" as it becomes root Activity and it is possible for other applications to read the contents of the calling Intent. So it is required to use the \"standard\" launch mode attribute when sensitive information is included in an Intent.",
+      "section": "manifest"
+    },
+    {
+      "title": "Broadcast Receiver (androidx.profileinstaller.ProfileInstallReceiver) is Protected by a permission, but the protection level of the permission should be checked. Permission: android.permission.DUMP [android:exported=true]",
+      "description": "A Broadcast Receiver is found to be shared with other apps on the device therefore leaving it accessible to any other application on the device. It is protected by a permission which is not defined in the analysed application. As a result, the protection level of the permission should be checked where it is defined. If it is set to normal or dangerous, a malicious application can request and obtain the permission and interact with the component. If it is set to signature, only applications signed with the same certificate can obtain the permission.",
+      "section": "manifest"
+    },
+    {
+      "title": "App can read/write to External Storage. Any App can read data written to External Storage.",
+      "description": "App can read/write to External Storage. Any App can read data written to External Storage.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#external-storage\n\nFiles:\nA/c.java, line(s) 252\nA1/f.java, line(s) 320,798,802\nc2/AbstractC0350h.java, line(s) 111,133\nc2/C0351i.java, line(s) 131",
+      "section": "code"
+    },
+    {
+      "title": "The App uses an insecure Random Number Generator.",
+      "description": "The App uses an insecure Random Number Generator.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x04g-Testing-Cryptography.md#weak-random-number-generators\n\nFiles:\nt2/AbstractC0708a.java, line(s) 3\nt2/b.java, line(s) 3\nu2/C0723a.java, line(s) 3",
+      "section": "code"
+    },
+    {
+      "title": "Files may contain hardcoded sensitive information like usernames, passwords, keys etc.",
+      "description": "Files may contain hardcoded sensitive information like usernames, passwords, keys etc.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#checking-memory-for-sensitive-data-mstg-storage-10\n\nFiles:\ncom/dexterous/flutterlocalnotifications/FlutterLocalNotificationsPlugin.java, line(s) 141\ncom/dexterous/flutterlocalnotifications/isolate/IsolatePreferences.java, line(s) 10,11\ncom/dexterous/flutterlocalnotifications/models/NotificationDetails.java, line(s) 55,69",
+      "section": "code"
+    },
+    {
+      "title": "App creates temp file. Sensitive information should never be written into a temp file.",
+      "description": "App creates temp file. Sensitive information should never be written into a temp file.\n\n\nFiles:\ncom/journeyapps/barcodescanner/b.java, line(s) 253",
+      "section": "code"
+    },
+    {
+      "title": "This app may contain hardcoded secrets",
+      "description": "The following secrets were identified from the app. Ensure that these are not secrets or private information.\n\"library_zxingandroidembedded_author\" : \"JourneyApps\"\n\"library_zxingandroidembedded_authorWebsite\" : \"https://journeyapps.com/\"\n000000010010001101000101011001111000100110101011110011011110111100010203040506071011121314151617202122232425262730313233343536374041424344454647505152535455565760616263646566677071727374757677000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff\n00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899\n00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899000000010010001101000101011001111000100110101011110011011110111100010203040506071011121314151617202122232425262730313233343536374041424344454647505152535455565760616263646566677071727374757677000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff\n00112233445566778899\n0123456789ABCDEF0123456789abcdef\n0123456789abcdefABCDEF\n0123456789abcdefABCDEFxX+\n0451907c2eaa8467e848c0067bfe8ed4\n18446744073709551615\n5f77625673248ee5846fbcaf5d3e1a3878386fd7\n6b00bc3880198600130e1cf62b8f8a93494488cc\n8df24be66531469e576a806749a0202ae26b8d08\nc9c2ab54ba1f5f46360f1b4f35d849cd3f080e6fc2b6c60e91b16c63f69a1e33\ned00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899\nVGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK\nVGhpcyBpcyB0aGUga2V5IGZvcihBIHNlY3XyZZBzdG9yYWdlIEFFUyBLZXkK\nVGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIHNlY3VyZSBzdG9yYWdlCg\nvkCmdPushDescriptorSetWithTemplate2KHR",
+      "section": "secrets"
+    }
+  ],
+  "info": [
+    {
+      "title": "The App logs information. Sensitive information should never be logged.",
+      "description": "The App logs information. Sensitive information should never be logged.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#logs\n\nFiles:\nA1/c.java, line(s) 245\nA1/f.java, line(s) 220,283,307,444,450,458,479,835,837,841,776\nB/i.java, line(s) 288,299,307,235\nC/A.java, line(s) 53,67,89,100,183\nC/B.java, line(s) 35\nC/D.java, line(s) 98\nC/v.java, line(s) 213,200\nC/w.java, line(s) 76\nC/x.java, line(s) 46,78\nC/y.java, line(s) 63,249\nH/j.java, line(s) 37\nI/d.java, line(s) 72\nI1/b.java, line(s) 8,12,20,24\nJ2/b.java, line(s) 109\nL/AbstractC0245y.java, line(s) 45\nL/C0221c0.java, line(s) 808,858,586,598,605,614,849\nL/O.java, line(s) 666,629,665\nL/S.java, line(s) 45\nL/V.java, line(s) 45,54,68,88,102,115,131\nL0/a.java, line(s) 150,160,170,176\nL0/b.java, line(s) 43,56,63\nL0/c.java, line(s) 142\nN/e.java, line(s) 82\nO/i.java, line(s) 39,38\nR/b.java, line(s) 35,94,118\nR/d.java, line(s) 126\nV/a.java, line(s) 776,871,1031,1034,1044,1051,1087,1110,1119,1126,1143,1152,1184,1202,1209,1216,1259,1281,1299,1305,1383,1389,1395,1464,1553,1662,1699,1712,1719,1903,1967,1987,2000,2031,2061,2126,2170,2185,2189,2231,2515,493,608,616,626,639,182,621,940,1414,1423,1505,1517,1896,2050,2141,2201,2204\nX/AbstractComponentCallbacksC0277q.java, line(s) 807,856,1056,1612,872\nX/C.java, line(s) 70,80\nX/C0261a.java, line(s) 48,99,108,144\nX/C0262b.java, line(s) 125\nX/C0266f.java, line(s) 890,1462,82,95,114,144,247,291,306,322,333,582,603,622,648,654,661,702,727,744,745,754,756,765,819,847,856,858,884,1039,1040,1048,1055,1056,1062,1083,1287,1308,1312,1426,1431,1434,1438,1544,1585\nX/DialogInterfaceOnCancelListenerC0275o.java, line(s) 126,231,240,243,329,373\nX/K.java, line(s) 261,271,298,830,831,838,843,1354,1422,2073,2184,2192,2144,2145,2153,2161,536,1392,279,447,865,1388,1460,1676,1686,1696,1718,1803,1814,1849,2013,2020,2063,2337,2343,238,245,392,399,416,423\nX/N.java, line(s) 56,89,96,64,69,164,167\nX/Q.java, line(s) 74,100,212,238,280,323,377,396,407,418,533,562,567,603,647,747,755,204,310,468,667,726,773\nX/S.java, line(s) 249,260,310,333,356\nX/V.java, line(s) 161,170\nX/Y.java, line(s) 21\nX/b0.java, line(s) 675,153,160,167,173,184,314,323,331,337,345,358,433,494,502,511,588,724,732,740,748,782,787,805,815,829,879,898,914,928\nY/c.java, line(s) 178,193,96\nb1/C0321e.java, line(s) 40,76\nb1/g.java, line(s) 40,34\nc1/AbstractC0342a.java, line(s) 17\nc2/C0351i.java, line(s) 171\ncom/dexterous/flutterlocalnotifications/ActionBroadcastReceiver.java, line(s) 69,78\ncom/dexterous/flutterlocalnotifications/FlutterLocalNotificationsPlugin.java, line(s) 1187,1251\ncom/dexterous/flutterlocalnotifications/ScheduledNotificationReceiver.java, line(s) 33\ncom/journeyapps/barcodescanner/a.java, line(s) 623,673,154,315,413,483\ncom/journeyapps/barcodescanner/b.java, line(s) 125,150,259\nd2/C0409i.java, line(s) 18,34,48\nf/d.java, line(s) 280,284\ni0/AbstractC0487a.java, line(s) 79\nj/LayoutInflaterFactory2C0551e.java, line(s) 1829,1525,2038,2614,2618,2245\nj/n.java, line(s) 132\nj/t.java, line(s) 58,68,78,87,103,115,124\nj/v.java, line(s) 77,92\nm0/C0586a.java, line(s) 16\nm0/C0590e.java, line(s) 22,28\nn/g.java, line(s) 220,271,338\no/MenuItemC0614c.java, line(s) 303\np/AbstractC0657w.java, line(s) 50\np/C0660z.java, line(s) 203,208,213,218,977\np/D.java, line(s) 102,162,171,428\np/N.java, line(s) 441,558,241,246,314\np/P.java, line(s) 191,219\np/Q.java, line(s) 145,366\np/U.java, line(s) 134,172,420,154,192,285,299,342,347,426,429,481\np/V.java, line(s) 51\np/g0.java, line(s) 115\np/h0.java, line(s) 105\np/j0.java, line(s) 34,44,64,66,68\np0/f.java, line(s) 68\np0/o.java, line(s) 159,162,165,168,221,224,227,230,258,260,262,264,266,268\ns/AbstractC0693i.java, line(s) 196,109\ns/AbstractC0695k.java, line(s) 27\ns/C0688d.java, line(s) 522,560,574,699,399,401,410,423,500\ns/C0689e.java, line(s) 134,174,240,211,214,219,225\ns/C0690f.java, line(s) 241,243,252,257\ns/C0692h.java, line(s) 62,71\ns/C0696l.java, line(s) 234,263,270\nu/AbstractC0710b.java, line(s) 47\nu0/C0712a.java, line(s) 24,34,43\nv0/C0726a.java, line(s) 20\nv0/q.java, line(s) 64,104,108,192,195,218,285,291,296,390\nv0/u.java, line(s) 358,362,367\nv0/y.java, line(s) 37\nw0/C0740b.java, line(s) 1650,1531\nw0/h.java, line(s) 569,3710,4106,599,1055,1060\nw0/k.java, line(s) 3312,3389,3399,2539,2568,2586,2607,2636,2661,2689,2707,4595,1875,1912,1929,3394\nw1/f.java, line(s) 219\ny1/l.java, line(s) 124\nz/d.java, line(s) 108,208\nz/k.java, line(s) 2044,2043\nz/r.java, line(s) 223,234,240,297,322,332,344,352,222,233,239,296,321,331,343,351,176,243,291,313\nz1/AbstractC0803c.java, line(s) 28,29,33,38,44,67,70,75,85,102,108,111,137,146,148,152,157,168,170,174,187,190,198,201,206\nz1/C0801a.java, line(s) 99,120,139\nz1/g.java, line(s) 62,79,99,117,140,66,86,104,121\nz1/h.java, line(s) 100,95,341,152,253,283,249,255,297,305\nz1/l.java, line(s) 30\nz1/n.java, line(s) 30\nz1/q.java, line(s) 44,45",
+      "section": "code"
+    },
+    {
+      "title": "This App copies data to clipboard. Sensitive data should not be copied to clipboard as other applications can access it.",
+      "description": "This App copies data to clipboard. Sensitive data should not be copied to clipboard as other applications can access it.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x04b-Mobile-App-Security-Testing.md#clipboard\n\nFiles:\nio/flutter/plugin/editing/l.java, line(s) 5,127,137\nio/flutter/plugin/platform/C0509i.java, line(s) 10,539",
+      "section": "code"
+    }
+  ],
+  "secure": [
+    {
+      "title": "This app has capabilities to prevent tapjacking attacks.",
+      "description": "This app has capabilities to prevent tapjacking attacks.\nhttps://github.com/MobSF/owasp-mstg/blob/master/Document/0x05h-Testing-Platform-Interaction.md#testing-for-overlay-attacks-mstg-platform-9\n\nFiles:\norg/gowallet/pow/MainActivity.java, line(s) 81",
+      "section": "code"
+    },
+    {
+      "title": "This application has no privacy trackers",
+      "description": "This application does not include any user or device trackers. Unable to find trackers during static analysis.",
+      "section": "trackers"
+    }
+  ],
+  "hotspot": [
+    {
+      "title": "Found 2 critical permission(s)",
+      "description": "Ensure that these permissions are required by the application.\n\nandroid.permission.CAMERA (dangerous): take pictures and videos - Allows application to take pictures and videos with the camera. This allows the application to collect images that the camera is seeing at any time.\n\nandroid.permission.POST_NOTIFICATIONS (dangerous): allows an app to post notifications. - Allows an app to post notifications",
+      "section": "permissions"
+    }
+  ],
+  "total_trackers": 432,
+  "trackers": 0,
+  "security_score": 59,
+  "app_name": "GOwallet",
+  "file_name": "gowallet-1.0.1-android-release.apk",
+  "hash": "ccb4ec78004070ee1c4b8659d0ee0281",
+  "version_name": "",
+  "version": "v4.5.2",
+  "title": "AppSec Scorecard",
+  "efr01": false
+}
