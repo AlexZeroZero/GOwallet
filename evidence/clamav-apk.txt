@@ -1,0 +1,17 @@
+GOwallet 1.0.0 final signed APK scan. Engine stdout returned APK: OK and exit 0.
+Local timestamps below are UTC+08:00.
+
+-------------------------------------------------------------------------------
+
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3628051
+Engine version: 1.5.4
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 219.96 MiB
+Data read: 92.25 MiB (ratio 2.38:1)
+Time: 63.852 sec (1 m 3 s)
+Start Date: 2026:09:07 09:03:14
+End Date:   2026:09:07 09:04:18

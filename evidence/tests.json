@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-09-07T01:03:05.049056+00:00",
+  "version": "1.0.0+9",
+  "regression_tests_passed": 98,
+  "test_scope": [
+    "test/gowallet*_test.dart",
+    "test/scash_shic_signing_test.dart",
+    "test/scash_shic_wallet_test.dart"
+  ],
+  "native_test_library": {
+    "name": "secp256k1.dll",
+    "sha256": "9197cae47f98e4651efc93ae55c9f21fa4e4bfc98194b597861417d6450e1c01",
+    "source": "Existing local build of bitcoin-core/secp256k1 v0.5.0; Windows test host only, not the Android APK library"
+  },
+  "targeted_analysis": {
+    "result": "PASS",
+    "files": [
+      "lib/gowallet/verified_prevouts.dart",
+      "lib/gowallet/bounded_fee.dart",
+      "lib/gowallet/go_launch_art.dart"
+    ]
+  },
+  "limits": [
+    "Synthetic/mocked regression tests, not real-fund broadcast",
+    "Targeted analysis only; inherited whole-project warnings remain",
+    "Not an independent third-party audit"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-09-07T01:03:15.740197+00:00",
+  "version": "1.0.0+9",
+  "package": "org.gowallet.pow",
+  "app_code_commit": "d14c311d4f2ee67d14f7f24efe463a534355fa0f",
+  "apk": "gowallet-1.0.0-android-release.apk",
+  "bytes": 96733087,
+  "sha256": "a960cc5ad89c6586061e704247e586b50e171723050b5d9cb1434bcb6e5fc901",
+  "certificate_sha256": "6e796fcb039900ddf4e0bd6b488fe524f665049b37fc480454fcf0f4c5a43f6e",
+  "apk_v2_v3_signature": "PASS",
+  "same_signing_identity_as_0_4_2": true,
+  "zip_crc": "PASS",
+  "min_android_api": 24,
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "android_backup_disabled": true,
+  "debuggable": false,
+  "limits": [
+    "Static APK checks; does not itself verify device upgrade, malware or SPV correctness"
+  ]
+}

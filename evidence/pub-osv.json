@@ -1,0 +1,1784 @@
+{
+  "checked_at": "2026-09-07T00:54:48.418162+00:00",
+  "scope": "Hosted Pub dependencies only; excludes git, local, native binaries and SDK",
+  "packages": [
+    {
+      "package": {
+        "name": "_fe_analyzer_shared",
+        "ecosystem": "Pub"
+      },
+      "version": "90.0.0"
+    },
+    {
+      "package": {
+        "name": "analyzer",
+        "ecosystem": "Pub"
+      },
+      "version": "8.3.0"
+    },
+    {
+      "package": {
+        "name": "another_flushbar",
+        "ecosystem": "Pub"
+      },
+      "version": "1.12.32"
+    },
+    {
+      "package": {
+        "name": "ansicolor",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.3"
+    },
+    {
+      "package": {
+        "name": "archive",
+        "ecosystem": "Pub"
+      },
+      "version": "4.0.9"
+    },
+    {
+      "package": {
+        "name": "args",
+        "ecosystem": "Pub"
+      },
+      "version": "2.7.0"
+    },
+    {
+      "package": {
+        "name": "async",
+        "ecosystem": "Pub"
+      },
+      "version": "2.13.0"
+    },
+    {
+      "package": {
+        "name": "basic_utils",
+        "ecosystem": "Pub"
+      },
+      "version": "5.8.2"
+    },
+    {
+      "package": {
+        "name": "blockchain_signer",
+        "ecosystem": "Pub"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "package": {
+        "name": "blockchain_utils",
+        "ecosystem": "Pub"
+      },
+      "version": "3.6.0"
+    },
+    {
+      "package": {
+        "name": "boolean_selector",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.2"
+    },
+    {
+      "package": {
+        "name": "borsh_annotation",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.2"
+    },
+    {
+      "package": {
+        "name": "bs58check",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "build",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "build_config",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "build_daemon",
+        "ecosystem": "Pub"
+      },
+      "version": "4.1.1"
+    },
+    {
+      "package": {
+        "name": "build_resolvers",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.3"
+    },
+    {
+      "package": {
+        "name": "build_runner",
+        "ecosystem": "Pub"
+      },
+      "version": "2.7.1"
+    },
+    {
+      "package": {
+        "name": "build_runner_core",
+        "ecosystem": "Pub"
+      },
+      "version": "9.3.1"
+    },
+    {
+      "package": {
+        "name": "built_collection",
+        "ecosystem": "Pub"
+      },
+      "version": "5.1.1"
+    },
+    {
+      "package": {
+        "name": "built_value",
+        "ecosystem": "Pub"
+      },
+      "version": "8.12.4"
+    },
+    {
+      "package": {
+        "name": "calendar_date_picker2",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.9"
+    },
+    {
+      "package": {
+        "name": "camera_macos",
+        "ecosystem": "Pub"
+      },
+      "version": "0.0.9"
+    },
+    {
+      "package": {
+        "name": "camera_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "2.12.0"
+    },
+    {
+      "package": {
+        "name": "cbor",
+        "ecosystem": "Pub"
+      },
+      "version": "6.5.1"
+    },
+    {
+      "package": {
+        "name": "characters",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.1"
+    },
+    {
+      "package": {
+        "name": "charcode",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.0"
+    },
+    {
+      "package": {
+        "name": "checked_yaml",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.4"
+    },
+    {
+      "package": {
+        "name": "cli_config",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "cli_util",
+        "ecosystem": "Pub"
+      },
+      "version": "0.4.2"
+    },
+    {
+      "package": {
+        "name": "clock",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.2"
+    },
+    {
+      "package": {
+        "name": "code_builder",
+        "ecosystem": "Pub"
+      },
+      "version": "4.11.1"
+    },
+    {
+      "package": {
+        "name": "collection",
+        "ecosystem": "Pub"
+      },
+      "version": "1.19.1"
+    },
+    {
+      "package": {
+        "name": "connectivity_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "4.0.2"
+    },
+    {
+      "package": {
+        "name": "connectivity_plus_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.4"
+    },
+    {
+      "package": {
+        "name": "convert",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.2"
+    },
+    {
+      "package": {
+        "name": "coverage",
+        "ecosystem": "Pub"
+      },
+      "version": "1.15.0"
+    },
+    {
+      "package": {
+        "name": "cross_file",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.5+2"
+    },
+    {
+      "package": {
+        "name": "crypto",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.7"
+    },
+    {
+      "package": {
+        "name": "cryptography",
+        "ecosystem": "Pub"
+      },
+      "version": "2.9.0"
+    },
+    {
+      "package": {
+        "name": "csslib",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "cupertino_icons",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.9"
+    },
+    {
+      "package": {
+        "name": "dart_base_x",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "dart_bs58",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "dart_numerics",
+        "ecosystem": "Pub"
+      },
+      "version": "0.0.6"
+    },
+    {
+      "package": {
+        "name": "dart_style",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.3"
+    },
+    {
+      "package": {
+        "name": "dartx",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "dbus",
+        "ecosystem": "Pub"
+      },
+      "version": "0.7.12"
+    },
+    {
+      "package": {
+        "name": "decimal",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.4"
+    },
+    {
+      "package": {
+        "name": "dependency_validator",
+        "ecosystem": "Pub"
+      },
+      "version": "5.0.5"
+    },
+    {
+      "package": {
+        "name": "desktop_drop",
+        "ecosystem": "Pub"
+      },
+      "version": "0.4.4"
+    },
+    {
+      "package": {
+        "name": "device_info_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "10.1.2"
+    },
+    {
+      "package": {
+        "name": "device_info_plus_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "7.0.3"
+    },
+    {
+      "package": {
+        "name": "digest_auth",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "dio",
+        "ecosystem": "Pub"
+      },
+      "version": "5.9.2"
+    },
+    {
+      "package": {
+        "name": "dio_web_adapter",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.2"
+    },
+    {
+      "package": {
+        "name": "drift",
+        "ecosystem": "Pub"
+      },
+      "version": "2.31.0"
+    },
+    {
+      "package": {
+        "name": "drift_dev",
+        "ecosystem": "Pub"
+      },
+      "version": "2.31.0"
+    },
+    {
+      "package": {
+        "name": "drift_flutter",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.8"
+    },
+    {
+      "package": {
+        "name": "dropdown_button2",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.9"
+    },
+    {
+      "package": {
+        "name": "ed25519_hd_key",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.0"
+    },
+    {
+      "package": {
+        "name": "eip1559",
+        "ecosystem": "Pub"
+      },
+      "version": "0.6.2"
+    },
+    {
+      "package": {
+        "name": "eip55",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "emojis",
+        "ecosystem": "Pub"
+      },
+      "version": "0.9.9"
+    },
+    {
+      "package": {
+        "name": "equatable",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.8"
+    },
+    {
+      "package": {
+        "name": "event_bus",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "fake_async",
+        "ecosystem": "Pub"
+      },
+      "version": "1.3.3"
+    },
+    {
+      "package": {
+        "name": "ffi",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.0"
+    },
+    {
+      "package": {
+        "name": "file",
+        "ecosystem": "Pub"
+      },
+      "version": "7.0.1"
+    },
+    {
+      "package": {
+        "name": "file_picker",
+        "ecosystem": "Pub"
+      },
+      "version": "10.3.10"
+    },
+    {
+      "package": {
+        "name": "fixnum",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "fixnum_nanodart",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "flutter_hooks",
+        "ecosystem": "Pub"
+      },
+      "version": "0.20.5"
+    },
+    {
+      "package": {
+        "name": "flutter_launcher_icons",
+        "ecosystem": "Pub"
+      },
+      "version": "0.13.1"
+    },
+    {
+      "package": {
+        "name": "flutter_lints",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.2"
+    },
+    {
+      "package": {
+        "name": "flutter_local_notifications",
+        "ecosystem": "Pub"
+      },
+      "version": "17.2.4"
+    },
+    {
+      "package": {
+        "name": "flutter_local_notifications_linux",
+        "ecosystem": "Pub"
+      },
+      "version": "4.0.1"
+    },
+    {
+      "package": {
+        "name": "flutter_local_notifications_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "7.2.0"
+    },
+    {
+      "package": {
+        "name": "flutter_native_splash",
+        "ecosystem": "Pub"
+      },
+      "version": "2.4.7"
+    },
+    {
+      "package": {
+        "name": "flutter_plugin_android_lifecycle",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.33"
+    },
+    {
+      "package": {
+        "name": "flutter_riverpod",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.4"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage",
+        "ecosystem": "Pub"
+      },
+      "version": "8.1.0"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage_linux",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.3"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage_macos",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.3"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.2"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage_web",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "name": "flutter_secure_storage_windows",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "name": "flutter_svg",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.4"
+    },
+    {
+      "package": {
+        "name": "freezed",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.5"
+    },
+    {
+      "package": {
+        "name": "freezed_annotation",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "frontend_server_client",
+        "ecosystem": "Pub"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "glob",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.3"
+    },
+    {
+      "package": {
+        "name": "google_fonts",
+        "ecosystem": "Pub"
+      },
+      "version": "6.3.3"
+    },
+    {
+      "package": {
+        "name": "google_identity_services_web",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.3+1"
+    },
+    {
+      "package": {
+        "name": "googleapis_auth",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "graphs",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.2"
+    },
+    {
+      "package": {
+        "name": "grpc",
+        "ecosystem": "Pub"
+      },
+      "version": "4.2.0"
+    },
+    {
+      "package": {
+        "name": "hex",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "hive",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.3"
+    },
+    {
+      "package": {
+        "name": "hive_ce",
+        "ecosystem": "Pub"
+      },
+      "version": "2.19.3"
+    },
+    {
+      "package": {
+        "name": "hive_ce_flutter",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.4"
+    },
+    {
+      "package": {
+        "name": "hive_ce_generator",
+        "ecosystem": "Pub"
+      },
+      "version": "1.9.3"
+    },
+    {
+      "package": {
+        "name": "hive_test",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "html",
+        "ecosystem": "Pub"
+      },
+      "version": "0.15.6"
+    },
+    {
+      "package": {
+        "name": "http",
+        "ecosystem": "Pub"
+      },
+      "version": "1.6.0"
+    },
+    {
+      "package": {
+        "name": "http2",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.1"
+    },
+    {
+      "package": {
+        "name": "http_multi_server",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.2"
+    },
+    {
+      "package": {
+        "name": "http_parser",
+        "ecosystem": "Pub"
+      },
+      "version": "4.1.2"
+    },
+    {
+      "package": {
+        "name": "image",
+        "ecosystem": "Pub"
+      },
+      "version": "4.8.0"
+    },
+    {
+      "package": {
+        "name": "import_sorter",
+        "ecosystem": "Pub"
+      },
+      "version": "4.6.0"
+    },
+    {
+      "package": {
+        "name": "intl",
+        "ecosystem": "Pub"
+      },
+      "version": "0.20.3"
+    },
+    {
+      "package": {
+        "name": "io",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.5"
+    },
+    {
+      "package": {
+        "name": "isar_community",
+        "ecosystem": "Pub"
+      },
+      "version": "3.3.0-dev.2"
+    },
+    {
+      "package": {
+        "name": "isar_community_flutter_libs",
+        "ecosystem": "Pub"
+      },
+      "version": "3.3.0-dev.2"
+    },
+    {
+      "package": {
+        "name": "isar_community_generator",
+        "ecosystem": "Pub"
+      },
+      "version": "3.3.0-dev.2"
+    },
+    {
+      "package": {
+        "name": "isolate_channel",
+        "ecosystem": "Pub"
+      },
+      "version": "0.6.1"
+    },
+    {
+      "package": {
+        "name": "js",
+        "ecosystem": "Pub"
+      },
+      "version": "0.6.7"
+    },
+    {
+      "package": {
+        "name": "json_annotation",
+        "ecosystem": "Pub"
+      },
+      "version": "4.9.0"
+    },
+    {
+      "package": {
+        "name": "json_rpc_2",
+        "ecosystem": "Pub"
+      },
+      "version": "4.1.0"
+    },
+    {
+      "package": {
+        "name": "json_serializable",
+        "ecosystem": "Pub"
+      },
+      "version": "6.11.2"
+    },
+    {
+      "package": {
+        "name": "keyboard_dismisser",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "leak_tracker",
+        "ecosystem": "Pub"
+      },
+      "version": "11.0.2"
+    },
+    {
+      "package": {
+        "name": "leak_tracker_flutter_testing",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.10"
+    },
+    {
+      "package": {
+        "name": "leak_tracker_testing",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.2"
+    },
+    {
+      "package": {
+        "name": "lints",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "local_auth",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.0"
+    },
+    {
+      "package": {
+        "name": "local_auth_android",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.56"
+    },
+    {
+      "package": {
+        "name": "local_auth_darwin",
+        "ecosystem": "Pub"
+      },
+      "version": "1.6.1"
+    },
+    {
+      "package": {
+        "name": "local_auth_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "package": {
+        "name": "local_auth_windows",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.11"
+    },
+    {
+      "package": {
+        "name": "logging",
+        "ecosystem": "Pub"
+      },
+      "version": "1.3.0"
+    },
+    {
+      "package": {
+        "name": "lottie",
+        "ecosystem": "Pub"
+      },
+      "version": "3.3.2"
+    },
+    {
+      "package": {
+        "name": "matcher",
+        "ecosystem": "Pub"
+      },
+      "version": "0.12.20"
+    },
+    {
+      "package": {
+        "name": "material_color_utilities",
+        "ecosystem": "Pub"
+      },
+      "version": "0.13.0"
+    },
+    {
+      "package": {
+        "name": "memoize",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "meta",
+        "ecosystem": "Pub"
+      },
+      "version": "1.19.0"
+    },
+    {
+      "package": {
+        "name": "mime",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.6"
+    },
+    {
+      "package": {
+        "name": "mockingjay",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "mockito",
+        "ecosystem": "Pub"
+      },
+      "version": "5.6.3"
+    },
+    {
+      "package": {
+        "name": "mocktail",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "monero_rpc",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "mutex",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "mweb_client",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "nm",
+        "ecosystem": "Pub"
+      },
+      "version": "0.5.0"
+    },
+    {
+      "package": {
+        "name": "node_preamble",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.2"
+    },
+    {
+      "package": {
+        "name": "on_chain",
+        "ecosystem": "Pub"
+      },
+      "version": "4.5.0"
+    },
+    {
+      "package": {
+        "name": "package_config",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.0"
+    },
+    {
+      "package": {
+        "name": "package_info_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "8.3.1"
+    },
+    {
+      "package": {
+        "name": "package_info_plus_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.1"
+    },
+    {
+      "package": {
+        "name": "path",
+        "ecosystem": "Pub"
+      },
+      "version": "1.9.1"
+    },
+    {
+      "package": {
+        "name": "path_parsing",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "package": {
+        "name": "path_provider",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.5"
+    },
+    {
+      "package": {
+        "name": "path_provider_android",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.22"
+    },
+    {
+      "package": {
+        "name": "path_provider_foundation",
+        "ecosystem": "Pub"
+      },
+      "version": "2.5.1"
+    },
+    {
+      "package": {
+        "name": "path_provider_linux",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.1"
+    },
+    {
+      "package": {
+        "name": "path_provider_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.2"
+    },
+    {
+      "package": {
+        "name": "path_provider_windows",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.0"
+    },
+    {
+      "package": {
+        "name": "permission_handler",
+        "ecosystem": "Pub"
+      },
+      "version": "12.0.1"
+    },
+    {
+      "package": {
+        "name": "permission_handler_android",
+        "ecosystem": "Pub"
+      },
+      "version": "13.0.1"
+    },
+    {
+      "package": {
+        "name": "permission_handler_apple",
+        "ecosystem": "Pub"
+      },
+      "version": "9.4.7"
+    },
+    {
+      "package": {
+        "name": "permission_handler_html",
+        "ecosystem": "Pub"
+      },
+      "version": "0.1.3+5"
+    },
+    {
+      "package": {
+        "name": "permission_handler_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "4.3.0"
+    },
+    {
+      "package": {
+        "name": "permission_handler_windows",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.1"
+    },
+    {
+      "package": {
+        "name": "petitparser",
+        "ecosystem": "Pub"
+      },
+      "version": "7.0.2"
+    },
+    {
+      "package": {
+        "name": "pinenacl",
+        "ecosystem": "Pub"
+      },
+      "version": "0.6.0"
+    },
+    {
+      "package": {
+        "name": "platform",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.6"
+    },
+    {
+      "package": {
+        "name": "plugin_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.8"
+    },
+    {
+      "package": {
+        "name": "pointycastle",
+        "ecosystem": "Pub"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "pool",
+        "ecosystem": "Pub"
+      },
+      "version": "1.5.2"
+    },
+    {
+      "package": {
+        "name": "posix",
+        "ecosystem": "Pub"
+      },
+      "version": "6.5.0"
+    },
+    {
+      "package": {
+        "name": "pretty_dio_logger",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.0"
+    },
+    {
+      "package": {
+        "name": "protobuf",
+        "ecosystem": "Pub"
+      },
+      "version": "4.2.0"
+    },
+    {
+      "package": {
+        "name": "pub_semver",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.0"
+    },
+    {
+      "package": {
+        "name": "pubspec_parse",
+        "ecosystem": "Pub"
+      },
+      "version": "1.5.0"
+    },
+    {
+      "package": {
+        "name": "qr",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.2"
+    },
+    {
+      "package": {
+        "name": "qr_code_scanner_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "name": "qr_flutter",
+        "ecosystem": "Pub"
+      },
+      "version": "4.1.0"
+    },
+    {
+      "package": {
+        "name": "quiver",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.2"
+    },
+    {
+      "package": {
+        "name": "rational",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.3"
+    },
+    {
+      "package": {
+        "name": "recase",
+        "ecosystem": "Pub"
+      },
+      "version": "4.1.0"
+    },
+    {
+      "package": {
+        "name": "retry",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.2"
+    },
+    {
+      "package": {
+        "name": "riverpod",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "saf_stream",
+        "ecosystem": "Pub"
+      },
+      "version": "0.12.3"
+    },
+    {
+      "package": {
+        "name": "saf_util",
+        "ecosystem": "Pub"
+      },
+      "version": "0.11.0"
+    },
+    {
+      "package": {
+        "name": "sec",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "share_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "7.2.2"
+    },
+    {
+      "package": {
+        "name": "share_plus_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "3.4.0"
+    },
+    {
+      "package": {
+        "name": "shelf",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.2"
+    },
+    {
+      "package": {
+        "name": "shelf_packages_handler",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.2"
+    },
+    {
+      "package": {
+        "name": "shelf_static",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.3"
+    },
+    {
+      "package": {
+        "name": "shelf_web_socket",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "socks5_proxy",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.3+dev.3"
+    },
+    {
+      "package": {
+        "name": "socks_socket",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "source_gen",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "source_helper",
+        "ecosystem": "Pub"
+      },
+      "version": "1.3.8"
+    },
+    {
+      "package": {
+        "name": "source_map_stack_trace",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.2"
+    },
+    {
+      "package": {
+        "name": "source_maps",
+        "ecosystem": "Pub"
+      },
+      "version": "0.10.13"
+    },
+    {
+      "package": {
+        "name": "source_span",
+        "ecosystem": "Pub"
+      },
+      "version": "1.10.2"
+    },
+    {
+      "package": {
+        "name": "sqlite3",
+        "ecosystem": "Pub"
+      },
+      "version": "2.9.0"
+    },
+    {
+      "package": {
+        "name": "sqlite3_flutter_libs",
+        "ecosystem": "Pub"
+      },
+      "version": "0.5.25"
+    },
+    {
+      "package": {
+        "name": "sqlparser",
+        "ecosystem": "Pub"
+      },
+      "version": "0.43.1"
+    },
+    {
+      "package": {
+        "name": "stack_trace",
+        "ecosystem": "Pub"
+      },
+      "version": "1.12.1"
+    },
+    {
+      "package": {
+        "name": "state_notifier",
+        "ecosystem": "Pub"
+      },
+      "version": "0.7.2+1"
+    },
+    {
+      "package": {
+        "name": "stellar_flutter_sdk",
+        "ecosystem": "Pub"
+      },
+      "version": "2.2.2"
+    },
+    {
+      "package": {
+        "name": "stream_channel",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.4"
+    },
+    {
+      "package": {
+        "name": "stream_transform",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "name": "string_scanner",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.1"
+    },
+    {
+      "package": {
+        "name": "string_validator",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.0"
+    },
+    {
+      "package": {
+        "name": "term_glyph",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.2"
+    },
+    {
+      "package": {
+        "name": "test",
+        "ecosystem": "Pub"
+      },
+      "version": "1.31.1"
+    },
+    {
+      "package": {
+        "name": "test_api",
+        "ecosystem": "Pub"
+      },
+      "version": "0.7.12"
+    },
+    {
+      "package": {
+        "name": "test_core",
+        "ecosystem": "Pub"
+      },
+      "version": "0.6.18"
+    },
+    {
+      "package": {
+        "name": "time",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.6"
+    },
+    {
+      "package": {
+        "name": "timezone",
+        "ecosystem": "Pub"
+      },
+      "version": "0.9.4"
+    },
+    {
+      "package": {
+        "name": "timing",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "tint",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "toml",
+        "ecosystem": "Pub"
+      },
+      "version": "0.17.0"
+    },
+    {
+      "package": {
+        "name": "tuple",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.2"
+    },
+    {
+      "package": {
+        "name": "typed_data",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.0"
+    },
+    {
+      "package": {
+        "name": "universal_io",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.1"
+    },
+    {
+      "package": {
+        "name": "unorm_dart",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.2"
+    },
+    {
+      "package": {
+        "name": "url_launcher",
+        "ecosystem": "Pub"
+      },
+      "version": "6.3.2"
+    },
+    {
+      "package": {
+        "name": "url_launcher_android",
+        "ecosystem": "Pub"
+      },
+      "version": "6.3.28"
+    },
+    {
+      "package": {
+        "name": "url_launcher_ios",
+        "ecosystem": "Pub"
+      },
+      "version": "6.4.1"
+    },
+    {
+      "package": {
+        "name": "url_launcher_linux",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.2"
+    },
+    {
+      "package": {
+        "name": "url_launcher_macos",
+        "ecosystem": "Pub"
+      },
+      "version": "3.2.5"
+    },
+    {
+      "package": {
+        "name": "url_launcher_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "2.3.2"
+    },
+    {
+      "package": {
+        "name": "url_launcher_web",
+        "ecosystem": "Pub"
+      },
+      "version": "2.4.2"
+    },
+    {
+      "package": {
+        "name": "url_launcher_windows",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.5"
+    },
+    {
+      "package": {
+        "name": "uuid",
+        "ecosystem": "Pub"
+      },
+      "version": "4.5.3"
+    },
+    {
+      "package": {
+        "name": "vector_graphics",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.20"
+    },
+    {
+      "package": {
+        "name": "vector_graphics_codec",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.13"
+    },
+    {
+      "package": {
+        "name": "vector_graphics_compiler",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "vector_math",
+        "ecosystem": "Pub"
+      },
+      "version": "2.4.2"
+    },
+    {
+      "package": {
+        "name": "vm_service",
+        "ecosystem": "Pub"
+      },
+      "version": "15.0.2"
+    },
+    {
+      "package": {
+        "name": "wakelock_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "0.3.0"
+    },
+    {
+      "package": {
+        "name": "wakelock_plus",
+        "ecosystem": "Pub"
+      },
+      "version": "1.3.3"
+    },
+    {
+      "package": {
+        "name": "wakelock_plus_platform_interface",
+        "ecosystem": "Pub"
+      },
+      "version": "1.4.0"
+    },
+    {
+      "package": {
+        "name": "wallet",
+        "ecosystem": "Pub"
+      },
+      "version": "0.0.18"
+    },
+    {
+      "package": {
+        "name": "wasm_interop",
+        "ecosystem": "Pub"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "watcher",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "name": "web",
+        "ecosystem": "Pub"
+      },
+      "version": "0.5.1"
+    },
+    {
+      "package": {
+        "name": "web3dart",
+        "ecosystem": "Pub"
+      },
+      "version": "3.0.1"
+    },
+    {
+      "package": {
+        "name": "web_socket_channel",
+        "ecosystem": "Pub"
+      },
+      "version": "2.4.5"
+    },
+    {
+      "package": {
+        "name": "webkit_inspection_protocol",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "name": "win32",
+        "ecosystem": "Pub"
+      },
+      "version": "5.15.0"
+    },
+    {
+      "package": {
+        "name": "win32_registry",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.5"
+    },
+    {
+      "package": {
+        "name": "xdg_directories",
+        "ecosystem": "Pub"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "package": {
+        "name": "xml",
+        "ecosystem": "Pub"
+      },
+      "version": "6.6.1"
+    },
+    {
+      "package": {
+        "name": "xxh3",
+        "ecosystem": "Pub"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "yaml",
+        "ecosystem": "Pub"
+      },
+      "version": "3.1.3"
+    },
+    {
+      "package": {
+        "name": "yaml_writer",
+        "ecosystem": "Pub"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "zxcvbn",
+        "ecosystem": "Pub"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "zxing2",
+        "ecosystem": "Pub"
+      },
+      "version": "0.2.4"
+    }
+  ]
+}

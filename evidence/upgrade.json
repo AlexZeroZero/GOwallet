@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-09-07T01:09:24.751502+00:00",
+  "upgrade": "0.4.2+8 -> 1.0.0+9, adb install -r: Success",
+  "device": "Disposable Android API 35 x86_64 emulator; public test seed; no real funds",
+  "cold_start": "PASS",
+  "existing_pin_unlock": "PASS",
+  "existing_custom_btc_visible": true,
+  "existing_scash_receive_address_preserved": "scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv",
+  "screenshots_disabled_black_capture": true,
+  "startup_flutter_androidruntime_errors": 0,
+  "limits": [
+    "Not a physical-phone test",
+    "No real-fund broadcast",
+    "No uninstall/restore exercise"
+  ]
+}
