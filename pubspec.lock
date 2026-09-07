@@ -791,10 +791,9 @@ packages:
   flutter_secure_storage:
     dependency: "direct main"
     description:
-      name: flutter_secure_storage
-      sha256: "22dbf16f23a4bcf9d35e51be1c84ad5bb6f627750565edd70dab70f3ff5fff8f"
-      url: "https://pub.dev"
-    source: hosted
+      path: "vendor/flutter_secure_storage"
+      relative: true
+    source: path
     version: "8.1.0"
   flutter_secure_storage_linux:
     dependency: transitive
@@ -1804,10 +1803,9 @@ packages:
   sqlite3_flutter_libs:
     dependency: "direct main"
     description:
-      name: sqlite3_flutter_libs
-      sha256: ccd29dd6cf6fb9351fa07cd6f92895809adbf0779c1d986acf5e3d53b3250e33
-      url: "https://pub.dev"
-    source: hosted
+      path: "vendor/sqlite3_flutter_libs"
+      relative: true
+    source: path
     version: "0.5.25"
   sqlparser:
     dependency: transitive

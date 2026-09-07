@@ -316,6 +316,13 @@ flutter_native_splash:
     color_dark: "0644F1"
 
 dependency_overrides:
+  # GOwallet Android storage: fail closed and preserve legacy data until verified.
+  flutter_secure_storage:
+    path: vendor/flutter_secure_storage
+
+  sqlite3_flutter_libs:
+    path: vendor/sqlite3_flutter_libs
+
   logger:
     git:
       url: https://github.com/cypherstack/logger

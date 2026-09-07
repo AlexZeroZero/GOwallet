@@ -18,3 +18,9 @@ Optional inherited submodules (not enabled in the GOwallet Android flavor) retai
 - frostdart: `395765297a52c5f867ae6256636cf51e0ad20876`
 
 Official release signing keys are intentionally not distributed. Building with your own key produces a separate signing identity and cannot overwrite an official installation. Independent bit-for-bit reproducibility of the APK has not been established.
+
+GOwallet 1.0.1 additionally vendors flutter_secure_storage 8.1.0 (upstream BSD
+license) for Android storage failure/migration hardening, and sqlite3_flutter_libs
+0.5.25 (upstream MIT license) for rebuilding the same public-domain SQLite 3.46.1
+source with Android compiler hardening. Their original licenses and precise patch
+notes are retained in each vendor directory. This does not imply upstream endorsement.
