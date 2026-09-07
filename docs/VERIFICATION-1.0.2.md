@@ -61,6 +61,6 @@ c944ad5725d5836e5428459043a82f217267b68db7b4dce20ec8a9afa2b37b4a
 
 Android API 24+，target SDK 36，支持 ARM64/x86_64；附带 ARMv7 原生库不代表完整 Flutter ARMv7 支持。MobSF PDF 的版本/SDK 自动提取字段为空，这是工具限制；这里的版本与 SDK 已使用 Android 构建工具独立核对，并完成实际安装。
 
-证据目录内 [SHA256SUMS](../evidence/1.0.2/SHA256SUMS) 校验公开文件；[release.json](../evidence/1.0.2/release.json) 记录原始导出哈希和测试范围。PDF 与工具导出逐字节相同，JSON 仅调整缩进、解析值不变。公钥摘要是公开签名信息，密钥扫描仅对已核实的精确值设置允许项；未整体排除报告目录。1.0.0、1.0.1 的历史 APK 与报告保留。
+证据目录内 [SHA256SUMS](../evidence/1.0.2/SHA256SUMS) 校验公开文件；[release.json](../evidence/1.0.2/release.json) 记录原始导出哈希和测试范围。PDF 与工具导出逐字节相同，JSON 仅调整缩进、解析值不变。公钥摘要是公开签名信息，密钥扫描仅对已核实的精确值设置允许项；未整体排除报告目录。1.0.1 Release 和仓库内的历史证据保留。发布前核查时 GitHub 的 v1.0.0 Release 已不可用；本次修复没有执行删除旧 Release、标签或附件的操作。
 
 **确认离线助记词备份后直接覆盖安装，不要先卸载或清除数据。** GOwallet 是非托管式钱包；节点由币种官方或第三方独立运营。节点自身故障属于节点服务侧问题，APP 自身逻辑或安全缺陷仍应向本项目反馈。TLS 不保证节点诚实，更换兼容节点或升级 APP 无需转移链上资产。详见 [Electrum 与责任边界](ELECTRUM.md)。
