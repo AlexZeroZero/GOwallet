@@ -41,16 +41,9 @@ Push-Location $BuildRoot
 try {
     & $Python tool/configure_electrum_wallet.py
     if ($LASTEXITCODE) { throw 'Flavor generation failed' }
-    & flutter pub get *> wallet-pub-get.log
+    & flutter pub get --enforce-lockfile *> wallet-pub-get.log
     if ($LASTEXITCODE) {
-        $walletPubLog = Get-Content -Raw wallet-pub-get.log
-        if ($walletPubLog -notmatch '(Got dependencies!|Changed \d+ dependencies!)' -or
-            $walletPubLog -notmatch 'Building with plugins requires symlink support') {
-            throw 'Dependency resolution failed; see wallet-pub-get.log'
-        }
-        # Resolution and Android plugin metadata have completed at this point.
-        # Only desktop plugin-link generation failed; this builds Android only.
-        Write-Host 'Android dependencies resolved; desktop symlink setup is unavailable.'
+        throw 'Dependency/platform generation failed; see wallet-pub-get.log. Enable Windows Developer Mode if Flutter requires symlink support.'
     }
     $goMode = if ($Release) { 'release' } else { 'debug' }
     & flutter build apk "--$goMode" --no-pub --target-platform android-arm64,android-x64

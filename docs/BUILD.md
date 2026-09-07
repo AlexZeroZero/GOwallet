@@ -27,6 +27,8 @@ Other build hosts may use the generator and Flutter directly, providing `GOWALLE
 
 ## Regression checks
 
+On Windows the signing tests require `build/secp256k1.dll`. Build bitcoin-core/secp256k1 revision `e3a885d42a7800c1ccebad94ad1e2b82c4df5c65` (v0.5.0) with a compatible x64 C compiler/CMake, shared-library output and `SECP256K1_ENABLE_MODULE_RECOVERY=ON`, then place the resulting DLL at that path. The release checks used the existing locally compiled DLL; Android builds compile their own native library via `vendor/coinlib_flutter/src/CMakeLists.txt`. Do not substitute an unknown downloaded DLL.
+
 ```powershell
 $tests = @(Get-ChildItem test/gowallet*_test.dart | ForEach-Object FullName)
 flutter test --no-pub --reporter expanded @tests test/scash_shic_signing_test.dart test/scash_shic_wallet_test.dart
