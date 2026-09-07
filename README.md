@@ -70,6 +70,6 @@ Electrum / ElectrumX：查询历史、UTXO、费用，转发已签名交易
 
 ## 开源与来源
 
-采用 [GPLv3](LICENSE)。基于 [BitFinite Wallet v2.3.0](https://github.com/bitfinitechain/bitfinite-wallet/releases/tag/v2.3.0)，并继承 Stack Wallet / Cypher Stack 的代码与版权；上游来源和第三方依赖见 [NOTICE](NOTICE.md)。GOwallet 是独立衍生项目，不代表上游官方背书。
+采用 [GPLv3](LICENSE)。基于 Stack Wallet 二次开发 / Cypher Stack 的代码与版权；上游来源和第三方依赖见 [NOTICE](NOTICE.md)。GOwallet 是独立衍生项目，不代表上游官方背书。
 
 公开仓库从经过整理的源码快照开始，包含构建模板、资源、锁定依赖和安全测试；不包含开发机运维日志、钱包数据或发布私钥。问题反馈请勿粘贴助记词、私钥、备份文件或未脱敏日志；漏洞披露方式见 [SECURITY.md](SECURITY.md)。
