@@ -1,5 +1,9 @@
 # GOwallet 1.0
 
+[Browse 8 Chinese/English screenshots](SCREENSHOTS.md) captured from the released Android APK using unfunded test wallets.
+
+**Noncustodial wallet and node-service notice:** Nodes are independently deployed and operated by the relevant coin projects or third-party operators. Inclusion in GOwallet does not establish official project endorsement. Outages, attacks, synchronization delays, incorrect responses and service termination originating at the node are node-service issues, separate from the GOwallet client itself. GOwallet does not guarantee node uptime, response accuracy or timely broadcast. You can switch compatible nodes to check on-chain status; a node outage alone does not change ownership of on-chain funds. Defects in the app itself should still be reported to this project.
+
 An open-source, noncustodial Android wallet for small PoW coins. Supports SCASH, SHIC and Pepecoin (PEP), compatible custom coin profiles, and configurable Electrum TCP/TLS servers. Includes Chinese/English UI, local signing, encrypted backups, PIN protection and configurable screenshot protection.
 
 [Download v1.0.0](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.0) · [Build](BUILD.md) · [Verification](VERIFICATION.md) · [Security review](SECURITY-REVIEW.md) · [Electrum](ELECTRUM.md)

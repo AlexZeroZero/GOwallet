@@ -8,6 +8,20 @@
 
 上图为实际 Flutter 启动画面渲染预览；手机上的系统图标形状和启动时序取决于 Android 设备。
 
+## APP 演示截图
+
+下图直接截取自 1.0.0 正式 APK 的 Android 测试模拟器，使用无真实资金的演示钱包。未制作虚假余额；“等待同步”和未计入估值是实际界面状态。BTC 为自定义兼容币种示例。安全页的截屏开关仅为制作演示临时开启，拍摄后已恢复关闭；默认仍禁止截屏。
+
+| 资产首页 | 币种侧栏 | 自定义币种 |
+| --- | --- | --- |
+| <img src="docs/screenshots/01-home-zh.png" alt="GOwallet 中文资产首页" width="230"> | <img src="docs/screenshots/02-coins-drawer-zh.png" alt="已添加和支持的币种" width="230"> | <img src="docs/screenshots/05-custom-coin-zh.png" alt="自定义兼容币种参数" width="230"> |
+
+| 网络与节点 | 新增 Electrum 网络 | 安全中心 |
+| --- | --- | --- |
+| <img src="docs/screenshots/03-networks-zh.png" alt="网络与节点列表" width="230"> | <img src="docs/screenshots/04-add-network-zh.png" alt="新增网络和 TLS 配置" width="230"> | <img src="docs/screenshots/06-security-zh.png" alt="安全中心及截图开关" width="230"> |
+
+[查看全部 8 张中英文截图与原图](docs/SCREENSHOTS.md)。
+
 ## 功能
 
 - 中文、英文界面，紧凑资产首页、币种侧栏与统一 GOwallet 视觉。
@@ -24,6 +38,12 @@
 请离线妥善保管助记词。拥有助记词的人可以控制资产；手机 PIN 不能替代助记词备份。被控制的操作系统、恶意输入法/无障碍服务、主动截图或泄露备份仍可能造成资产损失。
 
 ## Electrum 如何工作
+
+### 节点服务与责任边界
+
+**GOwallet 是非托管式钱包客户端。所连接的节点由相关币种项目官方或第三方节点运营者独立部署、运行和维护，APP 不托管用户资产，也不保证节点持续在线或返回的数据始终准确。** 节点是否属于项目官方，以该项目公布的信息为准；被 GOwallet 收录不代表官方认证。
+
+**因节点自身故障、停机、攻击、同步延迟、错误响应或停止服务引起的连接、余额显示、交易查询或广播问题，属于节点服务侧问题，与 GOwallet APP 软件本身无关。** 可尝试切换兼容节点并核实链上状态；节点离线本身不会改变链上资产归属。若问题来自 APP 自身逻辑或安全缺陷，应按 APP 问题反馈处理。
 
 ```text
 GOwallet：本地密钥、构造与签名交易

@@ -1,0 +1,63 @@
+{
+  "app_version": "1.0.0+9",
+  "apk_sha256": "a960cc5ad89c6586061e704247e586b50e171723050b5d9cb1434bcb6e5fc901",
+  "capture_date": "2026-09-07",
+  "device": "Android API 35 x86_64 test emulator",
+  "capture_method": "Native adb screencap, unedited",
+  "wallets": "Unfunded public test fixtures; custom BTC pending sync",
+  "restored_after_capture": {
+    "language": "zh",
+    "screenshots_allowed": false,
+    "black_capture_verified": true
+  },
+  "screenshots": [
+    {
+      "file": "01-home-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "bf5447353113ee49826d908a6c7d3db969cdc98a8f75d60d7ac71f8b4b084af1"
+    },
+    {
+      "file": "02-coins-drawer-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d77a1580dbd104d9591198ec530e5df2d1c9fe194ee284ea5ddca377dfcf6fcc"
+    },
+    {
+      "file": "03-networks-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2f8e63a9bea8c2c8b992f490beea0ef3689dce57079fe3064ed02c002bda7797"
+    },
+    {
+      "file": "04-add-network-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4e8b667882bb77508cbace899c564278c482ec01ba273663e41d670b4a2ec38e"
+    },
+    {
+      "file": "05-custom-coin-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4f1d7bea5d0b0aa1f04bb89a569ff3ee9b33ed67ba5a6fa77cdfda1c039c136e"
+    },
+    {
+      "file": "06-security-zh.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "86f67b861251acc742970e6c4dbf0bc12a8604d8f20ae5fbbd82150f0ec5a300"
+    },
+    {
+      "file": "07-home-en.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4ad7e6a32765c9827d363afb5f53efdf3e4b40cb919a55c667c19a4e3d0de201"
+    },
+    {
+      "file": "08-networks-en.png",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "811ccf2d1439c8a8f655c5e521a36ab5d159bba15f92c4eca9385e2e216de0a1"
+    }
+  ]
+}
