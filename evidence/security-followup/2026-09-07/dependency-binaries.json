@@ -1,0 +1,44 @@
+[
+  {
+    "apk_path": "lib/arm64-v8a/libisar.so",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "dependency_sha256": "bb7cfb05483a137e9e9f8174a8011f16c72d8a19055707c6078de30ade992767",
+    "apk_sha256": "e19ceba8bfdba9a32e4699c42ea00232909ac2fa9f366f0815da76970b1cf561",
+    "byte_identical": false
+  },
+  {
+    "apk_path": "lib/arm64-v8a/libsqlite3.so",
+    "dependency": "eu.simonbinder:sqlite3-native-library:3.46.1+1",
+    "dependency_sha256": "1a81dcf865e59af60c37349a4ec6a2bf096686b4c56e3fe3ec31becf38c6ea20",
+    "apk_sha256": "1a81dcf865e59af60c37349a4ec6a2bf096686b4c56e3fe3ec31becf38c6ea20",
+    "byte_identical": true
+  },
+  {
+    "apk_path": "lib/armeabi-v7a/libisar.so",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "dependency_sha256": "617e24f5237dc9ab7476f6d8d611dc2c2ac1b46acfc971009c38623758d2352a",
+    "apk_sha256": "074d45d8eb0a86743f2d33292d29e2f01c2a257cf559713239bf9d6b32d95dc4",
+    "byte_identical": false
+  },
+  {
+    "apk_path": "lib/armeabi-v7a/libsqlite3.so",
+    "dependency": "eu.simonbinder:sqlite3-native-library:3.46.1+1",
+    "dependency_sha256": "53e8991de13de499e3238233882845ecd189f600da586d03ee5fcf4a2130bf3e",
+    "apk_sha256": "53e8991de13de499e3238233882845ecd189f600da586d03ee5fcf4a2130bf3e",
+    "byte_identical": true
+  },
+  {
+    "apk_path": "lib/x86_64/libisar.so",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "dependency_sha256": "7eae45351e506722abe630c1ab8c34f803822d329ef484d3f872c9c98b3be9ae",
+    "apk_sha256": "e6d416ee49e649c3837a5aa52e2bf7d8142a4e7fc03fffcd00e935afd66be59d",
+    "byte_identical": false
+  },
+  {
+    "apk_path": "lib/x86_64/libsqlite3.so",
+    "dependency": "eu.simonbinder:sqlite3-native-library:3.46.1+1",
+    "dependency_sha256": "5f9277281109b14d94447d50b880ea7bfbab99a922fe54498d6146a7c96aafcf",
+    "apk_sha256": "5f9277281109b14d94447d50b880ea7bfbab99a922fe54498d6146a7c96aafcf",
+    "byte_identical": true
+  }
+]

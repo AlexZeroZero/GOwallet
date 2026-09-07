@@ -1,0 +1,113 @@
+{
+  "scope": "Static source and APK decompiler review; no runtime exploit validation. Dependency excerpts retain their upstream authorship; see NOTICE.md and the named package licenses.",
+  "sources": [
+    {
+      "source": "GOwallet/lib/providers/global/secure_store_provider.dart",
+      "file_sha256": "983831799216fb4e273cc21bd7ed089c4715a0851638cadf3668f9736f80854a",
+      "excerpts": [
+        {
+          "start_line": 24,
+          "end_line": 34,
+          "text": "    );\n  } else {\n    return const SecureStorageWrapper(\n      store: FlutterSecureStorage(\n              aOptions: AndroidOptions(encryptedSharedPreferences: true, resetOnError: false),\n              iOptions: IOSOptions(accessibility: KeychainAccessibility.unlocked_this_device),\n            ),\n      isDesktop: false,\n    );\n  }\n});"
+        }
+      ]
+    },
+    {
+      "source": "GOwallet/lib/main.dart",
+      "file_sha256": "6eaafd1acbcdd6ccb17f19f7d7d72991ad4f8ad01ec7410d7645c66d624206ef",
+      "excerpts": [
+        {
+          "start_line": 269,
+          "end_line": 274,
+          "text": "  if (AppConfig.appName == \"Campfire\" &&\n      !Util.isDesktop &&\n      !CampfireMigration.didRun) {\n    await CampfireMigration.init();\n  }\n"
+        },
+        {
+          "start_line": 321,
+          "end_line": 336,
+          "text": "        await DbVersionMigrator().migrate(\n          dbVersion,\n          secureStore: const SecureStorageWrapper(\n            store: FlutterSecureStorage(\n              aOptions: AndroidOptions(\n                encryptedSharedPreferences: true,\n                resetOnError: false,\n              ),\n              iOptions: IOSOptions(\n                accessibility: KeychainAccessibility.unlocked_this_device,\n              ),\n            ),\n            isDesktop: false,\n          ),\n        );\n      } catch (e, s) {"
+        }
+      ]
+    },
+    {
+      "source": "flutter_secure_storage@8.1.0/FlutterSecureStorage.java",
+      "file_sha256": "18304467821c442800df8c3e498f8d802d419924e7945a077c5ba9032e236c82",
+      "excerpts": [
+        {
+          "start_line": 49,
+          "end_line": 60,
+          "text": "    @SuppressWarnings({\"ConstantConditions\"})\n    boolean getResetOnError() {\n        return options.containsKey(\"resetOnError\") && options.get(\"resetOnError\").equals(\"true\");\n    }\n\n    @SuppressWarnings({\"ConstantConditions\"})\n    private boolean getUseEncryptedSharedPreferences() {\n        if (failedToUseEncryptedSharedPreferences) {\n            return false;\n        }\n        return options.containsKey(\"encryptedSharedPreferences\") && options.get(\"encryptedSharedPreferences\").equals(\"true\") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;\n    }"
+        },
+        {
+          "start_line": 134,
+          "end_line": 174,
+          "text": "    @SuppressWarnings({\"ConstantConditions\"})\n    private void ensureInitialized() {\n        // Check if already initialized.\n        // TODO: Disable for now because this will break mixed usage of secureSharedPreference\n//        if (preferences != null) return;\n\n        if (options.containsKey(\"sharedPreferencesName\") && !((String) options.get(\"sharedPreferencesName\")).isEmpty()) {\n            SHARED_PREFERENCES_NAME = (String) options.get(\"sharedPreferencesName\");\n        }\n\n        if (options.containsKey(\"preferencesKeyPrefix\") && !((String) options.get(\"preferencesKeyPrefix\")).isEmpty()) {\n            ELEMENT_PREFERENCES_KEY_PREFIX = (String) options.get(\"preferencesKeyPrefix\");\n        }\n\n        SharedPreferences nonEncryptedPreferences = applicationContext.getSharedPreferences(\n                SHARED_PREFERENCES_NAME,\n                Context.MODE_PRIVATE\n        );\n        if (storageCipher == null) {\n            try {\n                initStorageCipher(nonEncryptedPreferences);\n\n            } catch (Exception e) {\n                Log.e(TAG, \"StorageCipher initialization failed\", e);\n            }\n        }\n        if (getUseEncryptedSharedPreferences() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {\n            try {\n                preferences = initializeEncryptedSharedPreferencesManager(applicationContext);\n                checkAndMigrateToEncrypted(nonEncryptedPreferences, preferences);\n            } catch (Exception e) {\n                Log.e(TAG, \"EncryptedSharedPreferences initialization failed\", e);\n                preferences = nonEncryptedPreferences;\n                failedToUseEncryptedSharedPreferences = true;\n            }\n        } else {\n            preferences = nonEncryptedPreferences;\n        }\n    }\n\n    private void initStorageCipher(SharedPreferences source) throws Exception {"
+        },
+        {
+          "start_line": 211,
+          "end_line": 228,
+          "text": "    private void checkAndMigrateToEncrypted(SharedPreferences source, SharedPreferences target) {\n        try {\n            for (Map.Entry<String, ?> entry : source.getAll().entrySet()) {\n                Object v = entry.getValue();\n                String key = entry.getKey();\n                if (v instanceof String && key.contains(ELEMENT_PREFERENCES_KEY_PREFIX)) {\n                    final String decodedValue = decodeRawValue((String) v);\n                    target.edit().putString(key, (decodedValue)).apply();\n                    source.edit().remove(key).apply();\n                }\n            }\n            final SharedPreferences.Editor sourceEditor = source.edit();\n            storageCipherFactory.removeCurrentAlgorithms(sourceEditor);\n            sourceEditor.apply();\n        } catch (Exception e) {\n            Log.e(TAG, \"Data migration failed\", e);\n        }\n    }"
+        },
+        {
+          "start_line": 231,
+          "end_line": 252,
+          "text": "    private SharedPreferences initializeEncryptedSharedPreferencesManager(Context context) throws GeneralSecurityException, IOException {\n        MasterKey key = new MasterKey.Builder(context)\n                .setKeyGenParameterSpec(\n                        new KeyGenParameterSpec\n                                .Builder(MasterKey.DEFAULT_MASTER_KEY_ALIAS, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)\n                                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)\n                                .setBlockModes(KeyProperties.BLOCK_MODE_GCM)\n                                .setKeySize(256).build())\n                .build();\n        return EncryptedSharedPreferences.create(\n                context,\n                SHARED_PREFERENCES_NAME,\n                key,\n                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,\n                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM\n        );\n    }\n\n    private String decodeRawValue(String value) throws Exception {\n        if (value == null) {\n            return null;\n        }"
+        }
+      ]
+    },
+    {
+      "source": "flutter_secure_storage@8.1.0/ciphers/StorageCipherFactory.java",
+      "file_sha256": "cdb2e3a79152b35cfc09fc6b5006b9a0920aed1310e5609f5b6f8f523d8bc680",
+      "excerpts": [
+        {
+          "start_line": 43,
+          "end_line": 58,
+          "text": "}\n\npublic class StorageCipherFactory {\n    private static final String ELEMENT_PREFERENCES_ALGORITHM_PREFIX = \"FlutterSecureSAlgorithm\";\n    private static final String ELEMENT_PREFERENCES_ALGORITHM_KEY = ELEMENT_PREFERENCES_ALGORITHM_PREFIX + \"Key\";\n    private static final String ELEMENT_PREFERENCES_ALGORITHM_STORAGE = ELEMENT_PREFERENCES_ALGORITHM_PREFIX + \"Storage\";\n    private static final KeyCipherAlgorithm DEFAULT_KEY_ALGORITHM = KeyCipherAlgorithm.RSA_ECB_PKCS1Padding;\n    private static final StorageCipherAlgorithm DEFAULT_STORAGE_ALGORITHM = StorageCipherAlgorithm.AES_CBC_PKCS7Padding;\n\n    private final KeyCipherAlgorithm savedKeyAlgorithm;\n    private final StorageCipherAlgorithm savedStorageAlgorithm;\n    private final KeyCipherAlgorithm currentKeyAlgorithm;\n    private final StorageCipherAlgorithm currentStorageAlgorithm;\n\n    public StorageCipherFactory(SharedPreferences source, Map<String, Object> options) {\n        savedKeyAlgorithm = KeyCipherAlgorithm.valueOf(source.getString(ELEMENT_PREFERENCES_ALGORITHM_KEY, DEFAULT_KEY_ALGORITHM.name()));"
+        }
+      ]
+    },
+    {
+      "source": "flutter_secure_storage@8.1.0/ciphers/StorageCipher18Implementation.java",
+      "file_sha256": "027cc72595ba41176e60e7500676f1f2eed67e63955dca6db1853a4e3c324048",
+      "excerpts": [
+        {
+          "start_line": 50,
+          "end_line": 104,
+          "text": "        byte[] encryptedKey = rsaCipher.wrap(secretKey);\n        editor.putString(aesPreferencesKey, Base64.encodeToString(encryptedKey, Base64.DEFAULT));\n        editor.apply();\n    }\n\n    protected String getAESPreferencesKey() {\n        return \"VGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK\";\n    }\n\n    protected Cipher getCipher() throws Exception {\n        return Cipher.getInstance(\"AES/CBC/PKCS7Padding\");\n    }\n\n    @Override\n    public byte[] encrypt(byte[] input) throws Exception {\n        byte[] iv = new byte[getIvSize()];\n        secureRandom.nextBytes(iv);\n\n        AlgorithmParameterSpec ivParameterSpec = getParameterSpec(iv);\n\n        cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec);\n\n        byte[] payload = cipher.doFinal(input);\n        byte[] combined = new byte[iv.length + payload.length];\n\n        System.arraycopy(iv, 0, combined, 0, iv.length);\n        System.arraycopy(payload, 0, combined, iv.length, payload.length);\n\n        return combined;\n    }\n\n    @Override\n    public byte[] decrypt(byte[] input) throws Exception {\n        byte[] iv = new byte[getIvSize()];\n        System.arraycopy(input, 0, iv, 0, iv.length);\n        AlgorithmParameterSpec ivParameterSpec = getParameterSpec(iv);\n\n        int payloadSize = input.length - getIvSize();\n        byte[] payload = new byte[payloadSize];\n        System.arraycopy(input, iv.length, payload, 0, payloadSize);\n\n        cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);\n\n        return cipher.doFinal(payload);\n    }\n\n    protected int getIvSize() {\n        return 16;\n    }\n\n    protected AlgorithmParameterSpec getParameterSpec(byte[] iv) {\n        return new IvParameterSpec(iv);\n    }\n\n}"
+        }
+      ]
+    },
+    {
+      "source": "APK decompile/s/AbstractC0693i.java",
+      "file_sha256": "1cc15cc39787beea6f54c5350635487baa1a9e78e1162c392e572ac1c2edf8c1",
+      "excerpts": [
+        {
+          "start_line": 94,
+          "end_line": 113,
+          "text": "    public static C0690f.c a() {\n        try {\n            KeyStore keyStore = KeyStore.getInstance(\"AndroidKeyStore\");\n            keyStore.load(null);\n            KeyGenParameterSpec.Builder b3 = a.b(\"androidxBiometric\", 3);\n            a.d(b3);\n            a.e(b3);\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\", \"AndroidKeyStore\");\n            a.c(keyGenerator, a.a(b3));\n            keyGenerator.generateKey();\n            SecretKey secretKey = (SecretKey) keyStore.getKey(\"androidxBiometric\", null);\n            Cipher cipher = Cipher.getInstance(\"AES/CBC/PKCS7Padding\");\n            cipher.init(1, secretKey);\n            return new C0690f.c(cipher);\n        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e3) {\n            Log.w(\"CryptoObjectUtils\", \"Failed to create fake crypto object.\", e3);\n            return null;\n        }\n    }\n"
+        }
+      ]
+    },
+    {
+      "source": "APK decompile/w1/C0768a.java",
+      "file_sha256": "5b4663cdddb844f77b80ccea502fde0fb111e19d3a8234e3a7a6ee52915084f6",
+      "excerpts": [
+        {
+          "start_line": 109,
+          "end_line": 172,
+          "text": "        }\n        SharedPreferences sharedPreferences = this.f8841c.getSharedPreferences(this.f8844f, 0);\n        if (this.f8846h == null) {\n            try {\n                i(sharedPreferences);\n            } catch (Exception e3) {\n                Log.e(\"SecureStorageAndroid\", \"StorageCipher initialization failed\", e3);\n            }\n        }\n        if (h()) {\n            try {\n                SharedPreferences j3 = j(this.f8841c);\n                this.f8845g = j3;\n                a(sharedPreferences, j3);\n                return;\n            } catch (Exception e4) {\n                Log.e(\"SecureStorageAndroid\", \"EncryptedSharedPreferences initialization failed\", e4);\n                this.f8845g = sharedPreferences;\n                this.f8848j = Boolean.TRUE;\n                return;\n            }\n        }\n        this.f8845g = sharedPreferences;\n    }\n\n    public boolean g() {\n        if (this.f8843e.containsKey(\"resetOnError\") && this.f8843e.get(\"resetOnError\").equals(\"true\")) {\n            return true;\n        }\n        return false;\n    }\n\n    public final boolean h() {\n        if (this.f8848j.booleanValue() || !this.f8843e.containsKey(\"encryptedSharedPreferences\") || !this.f8843e.get(\"encryptedSharedPreferences\").equals(\"true\")) {\n            return false;\n        }\n        return true;\n    }\n\n    public final void i(SharedPreferences sharedPreferences) {\n        this.f8847i = new m(sharedPreferences, this.f8843e);\n        if (h()) {\n            this.f8846h = this.f8847i.c(this.f8841c);\n        } else if (this.f8847i.e()) {\n            k(this.f8847i, sharedPreferences);\n        } else {\n            this.f8846h = this.f8847i.a(this.f8841c);\n        }\n    }\n\n    public final SharedPreferences j(Context context) {\n        return SharedPreferencesC0448a.a(context, this.f8844f, new C0450c.a(context).b(new KeyGenParameterSpec.Builder(\"_androidx_security_master_key_\", 3).setEncryptionPaddings(\"NoPadding\").setBlockModes(\"GCM\").setKeySize(256).build()).a(), SharedPreferencesC0448a.d.AES256_SIV, SharedPreferencesC0448a.e.AES256_GCM);\n    }\n\n    public final void k(m mVar, SharedPreferences sharedPreferences) {\n        try {\n            this.f8846h = mVar.c(this.f8841c);\n            HashMap hashMap = new HashMap();\n            for (Map.Entry<String, ?> entry : sharedPreferences.getAll().entrySet()) {\n                Object value = entry.getValue();\n                String key = entry.getKey();\n                if ((value instanceof String) && key.contains(this.f8842d)) {\n                    hashMap.put(key, c((String) value));\n                }"
+        }
+      ]
+    },
+    {
+      "source": "stack-bip39@20bc8ca0bf0a30c6965977a26c41475a9e862020/lib/src/bip39_base.dart",
+      "file_sha256": "8931155f58e684e472bcccc44693138c24e84a7b05301a0b9436d23cf8dc3c7b",
+      "excerpts": [
+        {
+          "start_line": 40,
+          "end_line": 54,
+          "text": "Uint8List _randomBytes(int size) {\n  final rng = Random.secure();\n  final bytes = Uint8List(size);\n  for (var i = 0; i < size; i++) {\n    bytes[i] = rng.nextInt(_SIZE_BYTE);\n  }\n  return bytes;\n}\n\nString generateMnemonic(\n    {int strength = 128, RandomBytes randomBytes = _randomBytes}) {\n  assert(strength % 32 == 0);\n  final entropy = randomBytes(strength ~/ 8);\n  return entropyToMnemonic(HEX.encode(entropy));\n}"
+        }
+      ]
+    }
+  ]
+}

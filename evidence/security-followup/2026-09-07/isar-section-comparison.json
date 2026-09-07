@@ -1,0 +1,128 @@
+[
+  {
+    "abi": "arm64-v8a",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "compared_sections": [
+      {
+        "section": ".text",
+        "equal": true,
+        "apk_sha256": "8c3e148abb6f23c2687e7ecf761fffa6e2f56267672fdb1cb4d9b74fe4bf4821"
+      },
+      {
+        "section": ".rodata",
+        "equal": true,
+        "apk_sha256": "07aeb56d9acf72d03b1c4d16bada0ba95aae9e9225d2fc7b247419188583e5c3"
+      },
+      {
+        "section": ".data",
+        "equal": true,
+        "apk_sha256": "61403f7243741a93a03b21929df34d2c0833f83e49d7d015f3a9b6148e5bd7b7"
+      },
+      {
+        "section": ".data.rel.ro",
+        "equal": true,
+        "apk_sha256": "5990e643726523a866f0a3749162aaaabced731f98c7bbfed3415a9164bac4f9"
+      },
+      {
+        "section": ".dynsym",
+        "equal": true,
+        "apk_sha256": "20f23518b5e9c761e132634fc332669612a14503a4a95d0902dcfd682e28ecf2"
+      },
+      {
+        "section": ".dynstr",
+        "equal": true,
+        "apk_sha256": "f8b24c069855ca615c2c40b4560cc6395953019f208710938599016f74c04c98"
+      },
+      {
+        "section": ".dynamic",
+        "equal": true,
+        "apk_sha256": "5959c7761b4a15765e87169e23234f418632b69538761b0c41446265bafe6b97"
+      }
+    ],
+    "sections_removed_from_dependency": []
+  },
+  {
+    "abi": "armeabi-v7a",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "compared_sections": [
+      {
+        "section": ".text",
+        "equal": true,
+        "apk_sha256": "764609b878359ce88514ade615540a07d644f1dd65660fed94712e2744420ffd"
+      },
+      {
+        "section": ".rodata",
+        "equal": true,
+        "apk_sha256": "3715386f3e5cf87a9f87e550371f406390ce8e12eb6fa2f0d9fabcf5aead48c0"
+      },
+      {
+        "section": ".data",
+        "equal": true,
+        "apk_sha256": "930595fc57277bc0eea63b5e78906391e2c65bf71f9524acf73f18e9d9cff20a"
+      },
+      {
+        "section": ".data.rel.ro",
+        "equal": true,
+        "apk_sha256": "81f83413073f99de4d72d0225bdb5f62f97101783ab069df45466b2a28b0d551"
+      },
+      {
+        "section": ".dynsym",
+        "equal": true,
+        "apk_sha256": "a3142e68ec7d927daf13d431a2ea0e0e5b396b57be935cb515999d6bd32391d6"
+      },
+      {
+        "section": ".dynstr",
+        "equal": true,
+        "apk_sha256": "fc499a2d5db8bca668ffe86e7efe5ea7d469b3a342dd83f04c9f40f8c79967e8"
+      },
+      {
+        "section": ".dynamic",
+        "equal": true,
+        "apk_sha256": "a2075bcd40c92d69ee60a5042608c8ed4c7de6d2d3e2b74821cfb703b2d44d4c"
+      }
+    ],
+    "sections_removed_from_dependency": []
+  },
+  {
+    "abi": "x86_64",
+    "dependency": "isar_community_flutter_libs@3.3.0-dev.2",
+    "compared_sections": [
+      {
+        "section": ".text",
+        "equal": true,
+        "apk_sha256": "bae2a25410830400d55b8540a97cdf5e9f8f50441ab704eacdb396c278f1ad9d"
+      },
+      {
+        "section": ".rodata",
+        "equal": true,
+        "apk_sha256": "fce03e071fabbb9c7b3d71a04bbe810cb781da3aa65d5e06ccdaa9d4d47742e5"
+      },
+      {
+        "section": ".data",
+        "equal": true,
+        "apk_sha256": "c3e83af9cf9531268db9411d4f247a697e16b0106dd9cbf03ed469d91ac0ff4d"
+      },
+      {
+        "section": ".data.rel.ro",
+        "equal": true,
+        "apk_sha256": "8ff48660be2fe5a034f0644c8c59885d7193e9033a2e1792f4b3acfbda5655c6"
+      },
+      {
+        "section": ".dynsym",
+        "equal": true,
+        "apk_sha256": "0825d08712ac10aa774648439879f7890b825cb015386700e376624166529f64"
+      },
+      {
+        "section": ".dynstr",
+        "equal": true,
+        "apk_sha256": "861bd10bfa36132754ed737ea3d3bcf83652d3431c110cfeff57446b374be98b"
+      },
+      {
+        "section": ".dynamic",
+        "equal": true,
+        "apk_sha256": "25130de6f2456bab8988510cbf76b057a94e284f3a9897216113d2b23964835b"
+      }
+    ],
+    "sections_removed_from_dependency": []
+  }
+]

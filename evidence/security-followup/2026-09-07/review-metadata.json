@@ -1,0 +1,7 @@
+{
+  "apk_sha256": "a960cc5ad89c6586061e704247e586b50e171723050b5d9cb1434bcb6e5fc901",
+  "review_base_commit": "36256f457fca5f62853e1a752169458d25a1618f",
+  "activity": "Read-only inspection; no app code, dependency, signature, APK, wallet data or server changes",
+  "interpretation": "Follow-up conclusions do not change original MobSF scores or count as patched vulnerabilities",
+  "analysis_scope": "Storage initialization and migration, CBC helper attribution, ELF load/relocation metadata, dependency binary comparison and BIP39 entropy source; no dynamic device testing"
+}
