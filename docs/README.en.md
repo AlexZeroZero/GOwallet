@@ -16,4 +16,6 @@ Android package: `org.gowallet.pow`, version `1.0.0+9`, minimum API 24, ARM64/x8
 
 The release publishes actual malware-scan evidence, SHA-256 checksums, signature details, regression results and limits. These are not a guarantee of no malware/vulnerabilities and not an independent third-party security certification. The hosted Pub advisory scan does not cover Git/path dependencies, native libraries or SDKs.
 
+[MobSF automated scan reports and finding review](AUTOMATED-SECURITY.md): self-hosted official v4.5.2 analysis of the exact release APK scored **59/100**, with **1 high and 7 warnings** in the scorecard plus additional native hardening findings. Full PDF/JSON/logs/checksums are public; findings remain open for review. This is not an independent audit or a certification from MobSF. A verifiable VirusTotal multi-engine result is not yet available.
+
 Licensed under GPLv3; based on BitFinite Wallet v2.3.0 and earlier Stack Wallet / Cypher Stack work. See [NOTICE](../NOTICE.md) and [LICENSE](../LICENSE). GOwallet is an independent derivative.

@@ -1,0 +1,36 @@
+{
+  "apk_sha256": "a960cc5ad89c6586061e704247e586b50e171723050b5d9cb1434bcb6e5fc901",
+  "operator": "GOwallet project development environment; not an independent auditor",
+  "tool": "MobSF v4.5.2, official pinned container image",
+  "original_export_sha256": {
+    "mobsf-report.json": "430d378593102fc046d348cbe13634955f756746f359618f3b12c65851d8e762",
+    "mobsf-scorecard.json": "0b816eed0c9173e4a54f4d45bb83f6ae4cea3459d0cf21e8be40799882fafc7e",
+    "mobsf-scan-logs.json": "b306cefeeba0dbe380a029de4a9da009441fdf9c04117dc19cf74775856cf5a6",
+    "scan-metadata.json": "f90763dd5f4175b76a87229f792a70955c77e7ba6c9c6a54010d8459d6aee255",
+    "mobsf-report.pdf": "82bb276486f981203522c2b9f00e45cd5b405e0fcfb7c2598027308aa513e3f6"
+  },
+  "publication_transform": "JSON whitespace/indentation only; values and findings unchanged. PDF copied byte-for-byte. No findings suppressed, removed or downgraded.",
+  "pdf_pages": 52,
+  "scorecard_counts": {
+    "high": 1,
+    "warning": 7,
+    "info": 2,
+    "secure": 2,
+    "hotspot": 1
+  },
+  "binary_records_in_original_report": 26,
+  "unique_apk_binary_paths": 13,
+  "unique_binary_rule_counts": {
+    "high": 10,
+    "warning": 11,
+    "info": 83
+  },
+  "limitations": [
+    "Static analysis only; no dynamic-device scan.",
+    "Version and SDK fields are empty in MobSF output; use independent release APK verification.",
+    "PDF cover app-icon image failed to render; preserved as exported.",
+    "Binary paths are duplicated under apktool_out in the original report; no records removed.",
+    "Flutter AOT signing, seed entropy and runtime network behavior are not fully analyzed.",
+    "VirusTotal results are not included; submission pending user acceptance of its terms."
+  ]
+}

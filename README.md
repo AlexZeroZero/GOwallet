@@ -62,6 +62,8 @@ Electrum / ElectrumX：查询历史、UTXO、费用，转发已签名交易
 
 发布包的实际扫描结果、SHA-256、签名指纹和验证步骤在 [查毒验证说明](docs/VERIFICATION.md) 及 Release 附件中公开。源码复核、攻击模拟、依赖公告扫描和验证限制见 [安全审核记录](docs/SECURITY-REVIEW.md)。
 
+新增 [MobSF 自动扫描完整报告与告警说明](docs/AUTOMATED-SECURITY.md)：官方 v4.5.2 在本地隔离环境扫描同一正式 APK，评分 **59/100**；Scorecard 为 **1 high、7 warning**，原生库另有加固告警，均保留公开。提供 PDF、JSON、日志和校验值。**这是第三方工具的自托管扫描，不是独立机构审计通过；VirusTotal 多引擎结果尚未取得。**
+
 这些检查不是“绝对无毒/无漏洞”保证，也不是独立第三方审计认证。下载后应核对当前版本的哈希和签名，不能用旧版本校验值验证新版文件。
 
 ## 安装与升级

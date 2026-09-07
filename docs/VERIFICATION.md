@@ -32,6 +32,12 @@
 
 ## 源码与安全审核
 
+### MobSF 静态扫描补充（2026-09-07）
+
+已使用官方 MobSF v4.5.2 对上述相同 SHA-256 的 APK 完成自托管静态扫描，评分 **59/100**。Scorecard 包含 **1 high、7 warning、2 info、2 secure、1 hotspot**；原生库分析另有加固规则命中。没有将这些告警视为全部修复或扫描通过，也不是 MobSF 官方或独立机构签发的认证。
+
+[查看完整报告、告警核查与扫描限制](AUTOMATED-SECURITY.md)，含 PDF、完整 JSON、日志、环境版本和补充校验值。MobSF 的部分版本/SDK 字段提取为空；Flutter AOT 核心逻辑和运行时行为没有被全面覆盖。原 APK 和已有发布证据保持不变。
+
 APK 中嵌入的构建源码提交为 [`d14c311d4f2ee67d14f7f24efe463a534355fa0f`](https://github.com/AlexZeroZero/GOwallet/commit/d14c311d4f2ee67d14f7f24efe463a534355fa0f)。`v1.0.0` 标签在此之后加入发布说明和检测证据；这些后续提交不改变 APP 源码。源码 ZIP 使用发布标签，GitHub 也提供自动源码归档。没有宣称独立的逐字节可复现构建。
 
 公开源码经过 Gitleaks 8.30.1 检查，检查规则没有整体排除 Markdown 或测试目录；仅精确豁免已核对的 PIN 存储键名和公开 USDC mint 地址。上游内置 Trocador API 常量已清空。检查源码历史与归档（含嵌套资源归档），未检出未处理的规则命中。私钥、运维数据与开发日志不进入公开仓库。

@@ -1,0 +1,2 @@
+# Preserve exact report bytes so hashes survive checkouts on any platform.
+* -text
