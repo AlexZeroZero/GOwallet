@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.14)
 project(gowallet_sqlite3 LANGUAGES C)
 include(FetchContent)
+set(GOWALLET_SQLITE_SOURCE "https://sqlite.org/2024/sqlite-autoconf-3460100.tar.gz")
+# Optional offline archive. The same pinned SHA256 is enforced in either case.
+if(DEFINED ENV{GOWALLET_SQLITE_ARCHIVE})
+    file(TO_CMAKE_PATH "$ENV{GOWALLET_SQLITE_ARCHIVE}" GOWALLET_SQLITE_SOURCE)
+endif()
 FetchContent_Declare(sqlite3
-    URL https://sqlite.org/2024/sqlite-autoconf-3460100.tar.gz
+    URL "${GOWALLET_SQLITE_SOURCE}"
     URL_HASH SHA256=67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071
 )
 FetchContent_MakeAvailable(sqlite3)

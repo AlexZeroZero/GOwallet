@@ -79,7 +79,7 @@ def main():
     seed = hashlib.pbkdf2_hmac('sha512', mnemonic.encode(), b'mnemonic', 2048)
     master = hmac.new(b'Bitcoin seed', seed, hashlib.sha512).digest()
     cases = []
-    for coin, purpose, coin_type in [('scash', 84, 805), ('scash', 44, 805), ('shibacoin', 44, 4474), ('pepecoin', 44, 3434)]:
+    for coin, purpose, coin_type in [('scash', 84, 805), ('scash', 44, 805), ('shibacoin', 44, 4474), ('pepecoin', 44, 3434), ('dingocoin', 44, 3)]:
         key, chain = int.from_bytes(master[:32], 'big'), master[32:]
         path = [purpose+2**31, coin_type+2**31, 2**31, 0, 0]
         for index in path:
@@ -89,7 +89,7 @@ def main():
             chain = value[32:]
         public = pub(key)
         pkhash = hash160(public)
-        address = segwit('scash', pkhash) if purpose == 84 else base58(bytes([{'scash': 0, 'shibacoin': 63, 'pepecoin': 56}[coin]])+pkhash)
+        address = segwit('scash', pkhash) if purpose == 84 else base58(bytes([{'scash': 0, 'shibacoin': 63, 'pepecoin': 56, 'dingocoin': 30}[coin]])+pkhash)
         script = b'\0\x14'+pkhash if purpose == 84 else b'\x76\xa9\x14'+pkhash+b'\x88\xac'
         cases.append({'coin': coin, 'purpose': purpose, 'path': f"m/{purpose}'/{coin_type}'/0'/0/0",
                       'public_key': public.hex(), 'address': address,

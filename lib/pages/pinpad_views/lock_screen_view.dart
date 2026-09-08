@@ -194,7 +194,7 @@ class _LockscreenViewState extends ConsumerState<LockscreenView> {
       await ref.read(prefsChangeNotifierProvider).init();
     }
 
-    if (!mounted || !_authGuard.accepts(ticket)) return;
+    if (!await _authGuard.waitUntilResumed(ticket) || !mounted) return;
     final bool useBiometrics = ref
         .read(prefsChangeNotifierProvider)
         .useBiometrics;
@@ -235,7 +235,9 @@ class _LockscreenViewState extends ConsumerState<LockscreenView> {
         //       await walletsService.getWalletId(currentWalletName));
         // }
 
-        unawaited(_onUnlock(ticket));
+        if (await _authGuard.waitUntilResumed(ticket)) {
+          await _onUnlock(ticket);
+        }
       }
       // leave this commented to enable pin fall back should biometrics not work properly
       // else {

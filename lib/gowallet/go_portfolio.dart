@@ -15,6 +15,7 @@ const goMarketIds = {
   'scash': 'satoshi-cash-network',
   'shibacoin': 'shibacoin',
   'pepecoin': 'pepecoin-network',
+  'dingocoin': 'dingocoin',
 };
 
 class GoQuote {

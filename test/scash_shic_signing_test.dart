@@ -21,6 +21,7 @@ void main() {
       'scash' => Scash(CryptoCurrencyNetwork.main),
       'shibacoin' => Shibacoin(CryptoCurrencyNetwork.main),
       'pepecoin' => Pepecoin(CryptoCurrencyNetwork.main),
+      'dingocoin' => Dingocoin(CryptoCurrencyNetwork.main),
       _ => throw StateError('Unknown fixture currency'),
     };
     test(

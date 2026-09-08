@@ -4,6 +4,63 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  test(
+    'biometric success before resumed completes without a second PIN',
+    () async {
+      final guard = GoAuthGuard();
+      addTearDown(guard.dispose);
+      final ticket = guard.begin();
+      guard.didChangeAppLifecycleState(AppLifecycleState.inactive);
+      var unlocked = false;
+      final pending = guard.waitUntilResumed(ticket).then((accepted) {
+        unlocked = accepted;
+      });
+      await Future<void>.delayed(Duration.zero);
+      expect(unlocked, isFalse);
+      guard.didChangeAppLifecycleState(AppLifecycleState.resumed);
+      await pending;
+      expect(unlocked, isTrue);
+    },
+  );
+  test(
+    'pending biometric success is invalidated by background or a new PIN attempt',
+    () async {
+      for (final state in [
+        AppLifecycleState.paused,
+        AppLifecycleState.hidden,
+        AppLifecycleState.detached,
+      ]) {
+        final guard = GoAuthGuard();
+        final ticket = guard.begin();
+        guard.didChangeAppLifecycleState(AppLifecycleState.inactive);
+        final pending = guard.waitUntilResumed(ticket);
+        guard.didChangeAppLifecycleState(state);
+        guard.didChangeAppLifecycleState(AppLifecycleState.resumed);
+        expect(await pending, isFalse);
+        guard.dispose();
+      }
+      final guard = GoAuthGuard();
+      final ticket = guard.begin();
+      guard.didChangeAppLifecycleState(AppLifecycleState.inactive);
+      final pending = guard.waitUntilResumed(ticket);
+      guard.begin();
+      guard.didChangeAppLifecycleState(AppLifecycleState.resumed);
+      expect(await pending, isFalse);
+      guard.dispose();
+    },
+  );
+  test('pending result expires and disposal cannot authorize it', () async {
+    final guard = GoAuthGuard();
+    final ticket = guard.begin();
+    guard.didChangeAppLifecycleState(AppLifecycleState.inactive);
+    expect(
+      await guard.waitUntilResumed(ticket, timeout: Duration.zero),
+      isFalse,
+    );
+    final pending = guard.waitUntilResumed(ticket);
+    guard.dispose();
+    expect(await pending, isFalse);
+  });
   test('delayed success cannot unlock after background and resume', () async {
     final guard = GoAuthGuard();
     addTearDown(guard.dispose);

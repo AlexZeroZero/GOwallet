@@ -8,6 +8,9 @@ with the inherited Flutter SVG icon renderer; they are not vector redraws.
 - SHIC: https://github.com/shibacoinppc/shibacoin/blob/HEAD/src/qt/res/icons/shibacoin.png
 - Retrieved: 2026-09-06.
 
+- DINGO: https://gozero.trade/coins/dingo.png (published Dingocoin mark, retrieved
+  2026-09-08; native project https://dingocoin.com/). Included without recoloring.
+
 Preserve each project's attribution/license. Application background and controls
 retain GOwallet's approved palette. Coin artwork retains its own source colors.
 

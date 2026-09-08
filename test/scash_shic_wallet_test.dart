@@ -10,7 +10,7 @@ void main() {
   final shic = Shibacoin(CryptoCurrencyNetwork.main);
 
   test('flavor registers both distinct mainnet wallets', () {
-    expect(AppConfig.coins.map((c) => c.ticker), ['SCASH', 'SHIC', 'PEP']);
+    expect(AppConfig.coins.map((c) => c.ticker), ['SCASH', 'SHIC', 'PEP', 'DINGO']);
     expect(scash, isNot(shic));
     expect(() => Scash(CryptoCurrencyNetwork.test), throwsArgumentError);
     expect(() => Shibacoin(CryptoCurrencyNetwork.test), throwsArgumentError);

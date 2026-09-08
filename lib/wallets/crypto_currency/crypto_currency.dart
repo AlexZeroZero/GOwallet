@@ -11,6 +11,7 @@ export 'coins/bitfinite.dart';
 export 'coins/scash.dart';
 export 'coins/custom_electrum.dart';
 export 'coins/shibacoin.dart';
+export 'coins/dingocoin.dart';
 export 'coins/cardano.dart';
 export 'coins/dash.dart';
 export 'coins/dogecoin.dart';

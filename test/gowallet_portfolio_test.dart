@@ -124,7 +124,7 @@ void main() {
         expect(request.url.scheme, 'https');
         expect(request.url.host, 'api.coingecko.com');
         expect(request.url.queryParameters, {
-          'ids': 'satoshi-cash-network,shibacoin,pepecoin-network',
+          'ids': 'satoshi-cash-network,shibacoin,pepecoin-network,dingocoin',
           'vs_currencies': 'cny',
           'include_last_updated_at': 'true',
         });

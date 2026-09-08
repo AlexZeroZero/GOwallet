@@ -32,6 +32,14 @@
       "public_key": "02f84576e2b5c404d4eca0e70c5e32aabe3c4fd48d8cb31441ee3fe8c103373a8c",
       "address": "PsGyoVVSD9VTYoDZGp5FmRB2BSoE69f9ZV",
       "scripthash": "5d22ac0e053e02d5c6bd025f79224efe59a839437f4a25d1eadba0d8ec79e24b"
+    },
+    {
+      "coin": "dingocoin",
+      "purpose": 44,
+      "path": "m/44'/3'/0'/0/0",
+      "public_key": "02cc6b0dc33aabcf3a23643e5e2919a80c50fb3dd2129ce409bbc5f0d4643d05e0",
+      "address": "DBus3bamQjgJULBJtYXpEzDWQRwF5iwxgC",
+      "scripthash": "dfdd84a830adc88a159e4858c7ac91edab6c20a8d152e4ff30c5bfdcd0d32b4f"
     }
   ]
 }

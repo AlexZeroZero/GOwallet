@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:bitfinite/pages/pinpad_views/pinpad_dialog.dart';
+import 'package:bitfinite/widgets/custom_pin_put/custom_pin_put.dart';
 import 'package:bitfinite/models/isar/stack_theme.dart';
 import 'package:bitfinite/themes/stack_colors.dart';
 import 'package:bitfinite/themes/theme_providers.dart';
@@ -39,17 +41,41 @@ class UnusedSecureStore implements SecureStorageInterface {
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
+class TestPinStore implements SecureStorageInterface {
+  final values = <String, String?>{kPinKey: '123456'};
+  @override
+  dynamic noSuchMethod(Invocation invocation) {
+    final key = invocation.namedArguments[#key] as String?;
+    if (invocation.memberName == #read)
+      return Future<String?>.value(values[key]);
+    if (invocation.memberName == #write) {
+      values[key!] = invocation.namedArguments[#value] as String?;
+      return Future<void>.value();
+    }
+    return super.noSuchMethod(invocation);
+  }
+}
+
 void main() {
-  for (final background in [false, true]) {
+  for (final scenario in [
+    'foreground',
+    'inactive',
+    'background',
+    'cancel',
+    'starting_inactive',
+  ]) {
+    final background = scenario == 'background';
     testWidgets(
-      'real lockscreen accepts delayed biometrics only in original foreground: background=$background',
+      'real lockscreen accepts delayed biometrics only in original foreground: scenario=$scenario',
       (tester) async {
         tester.view.physicalSize = const Size(430, 900);
         tester.view.devicePixelRatio = 1;
         addTearDown(tester.view.resetPhysicalSize);
         addTearDown(tester.view.resetDevicePixelRatio);
         tester.binding.handleAppLifecycleStateChanged(
-          AppLifecycleState.resumed,
+          scenario == 'starting_inactive'
+              ? AppLifecycleState.inactive
+              : AppLifecycleState.resumed,
         );
         final bio = PendingBiometrics();
         var unlocked = false;
@@ -60,7 +86,7 @@ void main() {
                 StateController(StackTheme.fromJson(json: lightThemeJsonMap)),
               ),
               prefsChangeNotifierProvider.overrideWithValue(AuthPrefs()),
-              secureStoreProvider.overrideWithValue(UnusedSecureStore()),
+              secureStoreProvider.overrideWithValue(TestPinStore()),
             ],
             child: MaterialApp(
               theme: ThemeData(
@@ -83,6 +109,12 @@ void main() {
           ),
         );
         await tester.pump();
+        if (scenario == 'starting_inactive') {
+          tester.binding.handleAppLifecycleStateChanged(
+            AppLifecycleState.resumed,
+          );
+          await tester.pump();
+        }
         if (background) {
           for (final state in [
             AppLifecycleState.inactive,
@@ -95,12 +127,96 @@ void main() {
             tester.binding.handleAppLifecycleStateChanged(state);
           }
         }
-        bio.result.complete(true);
+        if (scenario == 'inactive') {
+          tester.binding.handleAppLifecycleStateChanged(
+            AppLifecycleState.inactive,
+          );
+        }
+        bio.result.complete(scenario != 'cancel');
+        if (scenario == 'inactive') {
+          await tester.pump();
+          expect(unlocked, isFalse);
+          tester.binding.handleAppLifecycleStateChanged(
+            AppLifecycleState.resumed,
+          );
+        }
         await tester.pumpAndSettle();
-        expect(unlocked, !background);
+        expect(unlocked, !background && scenario != 'cancel');
+        if (scenario == 'cancel') {
+          tester
+              .widget<CustomPinPut>(find.byType(CustomPinPut))
+              .onSubmit
+              ?.call('654321');
+          await tester.pumpAndSettle();
+          expect(unlocked, isFalse);
+          tester
+              .widget<CustomPinPut>(find.byType(CustomPinPut))
+              .onSubmit
+              ?.call('123456');
+          await tester.pumpAndSettle();
+          expect(unlocked, isTrue);
+        }
         expect(tester.takeException(), isNull);
         await tester.pumpWidget(const SizedBox());
       },
     );
   }
+
+  testWidgets(
+    'sensitive-action PIN dialog closes on biometric success before resume',
+    (tester) async {
+      tester.view.physicalSize = const Size(430, 900);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      final bio = PendingBiometrics();
+      String? result;
+      final theme = StackTheme.fromJson(json: lightThemeJsonMap);
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            themeProvider.overrideWithValue(StateController(theme)),
+            prefsChangeNotifierProvider.overrideWithValue(AuthPrefs()),
+            secureStoreProvider.overrideWithValue(UnusedSecureStore()),
+          ],
+          child: MaterialApp(
+            theme: ThemeData(
+              extensions: [StackColors.fromStackColorTheme(theme)],
+            ),
+            home: Builder(
+              builder: (context) => Scaffold(
+                body: TextButton(
+                  onPressed: () async {
+                    result = await showDialog<String>(
+                      context: context,
+                      builder: (_) => PinpadDialog(
+                        biometrics: bio,
+                        biometricsAuthenticationTitle: 'Verify',
+                        biometricsLocalizedReason: 'Verify',
+                        biometricsCancelButtonString: 'PIN',
+                      ),
+                    );
+                  },
+                  child: const Text('Open verification'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Open verification'));
+      await tester.pumpAndSettle();
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+      bio.result.complete(true);
+      await tester.pump();
+      expect(result, isNull);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pumpAndSettle();
+      expect(result, 'verified success');
+      expect(find.byType(PinpadDialog), findsNothing);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+    },
+  );
 }

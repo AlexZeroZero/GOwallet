@@ -34,6 +34,7 @@ class PriceAPI {
     Dash: "dash",
     Dogecoin: "dogecoin",
     Pepecoin: "pepecoin-network",
+    Dingocoin: "dingocoin",
     Bellscoin: "bellscoin",
     Epiccash: "epic-cash",
     Mimblewimblecoin: "mimblewimblecoin",

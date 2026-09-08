@@ -97,7 +97,8 @@ class ThemeService {
   //     theme fallback then serves it under external themes too, ending the
   //     teal-placeholder ₿ the externals painted BFX with.
   // 43: refined GO mark; preserve all existing palette and coin assets.
-  static const _currentDefaultThemeVersion = 43;
+  // 44: Dingocoin official mark in all coin asset slots.
+  static const _currentDefaultThemeVersion = 44;
   ThemeService._();
   static ThemeService? _instance;
   static ThemeService get instance => _instance ??= ThemeService._();

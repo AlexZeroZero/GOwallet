@@ -376,6 +376,8 @@ abstract class Wallet<T extends CryptoCurrency> {
       case const (Scash):
         return PublicElectrumWallet(Scash(net));
 
+      case const (Dingocoin):
+        return PublicElectrumWallet(Dingocoin(net));
       case const (Shibacoin):
         return PublicElectrumWallet(Shibacoin(net));
 

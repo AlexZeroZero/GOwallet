@@ -31,6 +31,7 @@ void main() {
     Scash(CryptoCurrencyNetwork.main),
     Shibacoin(CryptoCurrencyNetwork.main),
     Pepecoin(CryptoCurrencyNetwork.main),
+    Dingocoin(CryptoCurrencyNetwork.main),
   ]) {
     test(
       '${coin.ticker}: real wallet client TLS handshake, fees and history',

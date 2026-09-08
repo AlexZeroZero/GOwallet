@@ -391,6 +391,11 @@ class ElectrumXClient {
           final features = await newClient.request('server.features', <dynamic>[])
               .timeout(connectionTimeoutForSpecialCaseJsonRPCClients);
           verifyElectrumNetwork(features, cryptoCurrency.genesisHash);
+          if (cryptoCurrency is Dingocoin) {
+            final header = await newClient.request('blockchain.block.header', [1])
+                .timeout(connectionTimeoutForSpecialCaseJsonRPCClients);
+            verifyElectrumCheckpoint(header, Dingocoin.blockOneHash);
+          }
         } catch (_) {
           await newClient.close();
           _electrumAdapterChannel = null;

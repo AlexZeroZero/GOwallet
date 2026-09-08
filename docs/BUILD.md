@@ -13,7 +13,7 @@ Install Git, Python 3, Flutter and the Android toolchain. Put Flutter/Dart on PA
 ```powershell
 git clone https://github.com/AlexZeroZero/GOwallet.git
 cd GOwallet
-git checkout v1.0.2
+git checkout v1.0.3
 python tool/configure_electrum_wallet.py
 $env:FLUTTER_WINDOWS = 'false'
 $env:FLUTTER_LINUX = 'false'
@@ -56,3 +56,9 @@ With an API 24+ test device/emulator connected and the generated Android project
 ```
 
 Release evidence used an API 35 x86_64 emulator and 17 tests with isolated synthetic namespaces, not user wallet data. See [verification and limits](VERIFICATION-1.0.1.md). Local `flutter_secure_storage` and `sqlite3_flutter_libs` overrides are intentional; preserve them and the lockfile. SQLite source is fetched with a fixed SHA-256 and compiled locally, so CMake and the specified NDK are required. Original plugin licenses and all platform sources remain under `vendor/`.
+
+For offline SQLite builds, set `GOWALLET_SQLITE_ARCHIVE` to a local copy of
+`sqlite-autoconf-3460100.tar.gz`. CMake still enforces SHA-256
+`67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071`.
+The 1.0.3 build used the verified archive cached during 1.0.2 because
+`sqlite.org` TLS downloads were failing; database source and options are unchanged.
