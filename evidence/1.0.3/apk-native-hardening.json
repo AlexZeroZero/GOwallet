@@ -1,0 +1,55 @@
+{
+  "apk_sha256": "80240f0b537a586b291e55a92efcca74ddcbe03c8e6035e1509e6774d4e337d7",
+  "bytes": 96804263,
+  "isar": [
+    {
+      "path": "lib/arm64-v8a/libisar.so",
+      "sha256": "54990c5e251fe505f6cb4ac809322a403feacb0378fe399cad24aae634eb4be8",
+      "matches_stripped_hardened_build": true,
+      "stack_canary": true,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    },
+    {
+      "path": "lib/armeabi-v7a/libisar.so",
+      "sha256": "85e2499f83f59db48ed3adcfde155c5a2f328d92848eec75484b7e3feb31112b",
+      "matches_stripped_hardened_build": true,
+      "stack_canary": true,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    },
+    {
+      "path": "lib/x86_64/libisar.so",
+      "sha256": "265936d90b01e74319a0734db6cc2759a4f8c4a44f58efb44a9cdef1030c671a",
+      "matches_stripped_hardened_build": true,
+      "stack_canary": true,
+      "fortify_symbols": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ],
+      "relro": true,
+      "bind_now": true,
+      "non_executable_stack": true
+    }
+  ],
+  "app_abis": [
+    "arm64-v8a",
+    "x86_64"
+  ]
+}

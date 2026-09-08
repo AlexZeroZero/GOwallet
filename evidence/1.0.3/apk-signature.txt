@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=GOwallet Local Signing
+Signer #1 certificate SHA-256 digest: 6e796fcb039900ddf4e0bd6b488fe524f665049b37fc480454fcf0f4c5a43f6e
+Signer #1 certificate SHA-1 digest: ed00428a5532cc6bd79599cbcb8a71e85138628a
+Signer #1 certificate MD5 digest: 99c8f6622546bf04e0802fb34225664d
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 6938e5a7ea9a3824f8cb652500bdb8e394f473f1c05afd378ee41a9713b11b6b
+Signer #1 public key SHA-1 digest: 15b30eb2b6b18c30e592a0419c16f1a92f8f3730
+Signer #1 public key MD5 digest: 88954447925b665e9fc9c4f8a837ba24

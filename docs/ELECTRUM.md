@@ -28,3 +28,5 @@ TCP 是明文：网络中间人可能窃听或篡改响应。TLS 使用主机名
 币种参数需匹配地址版本、Bech32 前缀、精度、派生路径、网络标识及 Bitcoin 兼容交易/签名规则。同样叫 Electrum 并不意味着交易格式相同。额外字段、不同 sighash、隐私协议、特殊成熟期或超过当前解析器 1 MB 限制的交易可能不兼容。先使用无资金或小额测试，不能把参数导入当成完整适配审计。
 
 更换同一币种节点只是改变查询/广播服务，不会迁移链上资产。修改派生路径或币种配置可能使旧地址不可见，务必先备份并核对参数。
+
+Dingocoin (DINGO) was added in 1.0.3 using third-party TLS Electrum. See [DINGO parameters and recovery compatibility](DINGO.md). A block-1 checkpoint distinguishes its shared Dogecoin genesis; it does not make this a full SPV wallet.

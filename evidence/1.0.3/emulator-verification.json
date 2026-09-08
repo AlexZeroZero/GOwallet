@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-09-08T09:20:48.646359+00:00",
+  "apk_sha256": "80240f0b537a586b291e55a92efcca74ddcbe03c8e6035e1509e6774d4e337d7",
+  "device": "Android emulator x86_64, synthetic wallets only",
+  "upgrade_from": "1.0.2+11",
+  "upgrade_to": "1.0.3+12",
+  "old_biometric_success_left_pin_screen": true,
+  "new_biometric_success_opens_home_without_pin": true,
+  "resume_automatically_prompts_biometrics": true,
+  "cancel_keeps_locked": true,
+  "original_pin_unlocks_after_cancel": true,
+  "idle_biometric_unlock_preserves_current_route": true,
+  "scash_address_unchanged": "scash1q7r4nylj7vamdp57tkek392dxaw262thqppzchv",
+  "custom_btc_profile_retained": true,
+  "dingo_restored_and_synced": true,
+  "dingo_public_test_vector_address": "DBus3bamQjgJULBJtYXpEzDWQRwF5iwxgC",
+  "real_fund_broadcasts": 0,
+  "physical_device_tested": false
+}
