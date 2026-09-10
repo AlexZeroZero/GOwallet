@@ -1,0 +1,60 @@
+[
+  {
+    "host": "electr.bitfinitechain.org",
+    "tls": true,
+    "protocol": [
+      "bitfinite-electrs/1.1.4",
+      "1.5"
+    ],
+    "checkpoint1000": "0000000000003b851d1069af06aa343c19d9bc90e6a1c6a4d9b0f3fcf2669cf9",
+    "public_history_count": 532,
+    "transaction": {
+      "txid": "f2a9760ac50a7eb7e5072658dd2821fa5533ab3f0ff327461f4c3c7f961f3206",
+      "raw_txid_verified": true,
+      "verbose_fields": [
+        "blockhash",
+        "blocktime",
+        "confirmations",
+        "hash",
+        "hex",
+        "in_active_chain",
+        "locktime",
+        "size",
+        "time",
+        "txid",
+        "version",
+        "vin",
+        "vout"
+      ]
+    }
+  },
+  {
+    "host": "electrum2.bitfinitechain.org",
+    "tls": true,
+    "protocol": [
+      "bitfinite-electrs/1.1.3",
+      "1.5"
+    ],
+    "checkpoint1000": "0000000000003b851d1069af06aa343c19d9bc90e6a1c6a4d9b0f3fcf2669cf9",
+    "public_history_count": 532,
+    "transaction": {
+      "txid": "f2a9760ac50a7eb7e5072658dd2821fa5533ab3f0ff327461f4c3c7f961f3206",
+      "raw_txid_verified": true,
+      "verbose_fields": [
+        "blockhash",
+        "blocktime",
+        "confirmations",
+        "hash",
+        "hex",
+        "in_active_chain",
+        "locktime",
+        "size",
+        "time",
+        "txid",
+        "version",
+        "vin",
+        "vout"
+      ]
+    }
+  }
+]

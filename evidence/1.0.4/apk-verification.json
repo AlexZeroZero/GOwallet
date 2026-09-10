@@ -1,0 +1,50 @@
+{
+  "version": "1.0.4+13",
+  "source_commit": "47884d17bc65bc4ea459a5ffdfe6c617dc022347",
+  "bytes": 97907623,
+  "sha256": "32b6fde40af7f86288c1da94f6b35814ed552a9ffdbc6a04358a092b2b7936eb",
+  "isar": [
+    {
+      "abi": "arm64-v8a",
+      "source_build_matches": true,
+      "canary": true,
+      "relro": true,
+      "bind_now": true,
+      "nx": true,
+      "fortify": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ]
+    },
+    {
+      "abi": "armeabi-v7a",
+      "source_build_matches": true,
+      "canary": true,
+      "relro": true,
+      "bind_now": true,
+      "nx": true,
+      "fortify": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ]
+    },
+    {
+      "abi": "x86_64",
+      "source_build_matches": true,
+      "canary": true,
+      "relro": true,
+      "bind_now": true,
+      "nx": true,
+      "fortify": [
+        "__pread_chk",
+        "__pwrite_chk",
+        "__vsnprintf_chk",
+        "__write_chk"
+      ]
+    }
+  ]
+}
