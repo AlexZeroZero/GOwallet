@@ -305,9 +305,15 @@ class GoCoinIcon extends ConsumerWidget {
 }
 
 class GoHoldingTile extends ConsumerWidget {
-  const GoHoldingTile({super.key, required this.holding, required this.onTap});
+  const GoHoldingTile({
+    super.key,
+    required this.holding,
+    required this.onTap,
+    this.compact = false,
+  });
   final GoHolding holding;
   final VoidCallback onTap;
+  final bool compact;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final hidden = ref.watch(pGoHideAssets);
@@ -328,11 +334,14 @@ class GoHoldingTile extends ConsumerWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(14),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          padding: EdgeInsets.symmetric(
+            horizontal: compact ? 10 : 12,
+            vertical: compact ? 8 : 12,
+          ),
           child: Row(
             children: [
-              GoCoinIcon(holding.coin, size: 30),
-              const SizedBox(width: 10),
+              GoCoinIcon(holding.coin, size: compact ? 24 : 30),
+              SizedBox(width: compact ? 8 : 10),
               Expanded(
                 flex: 4,
                 child: Column(
@@ -340,8 +349,8 @@ class GoHoldingTile extends ConsumerWidget {
                   children: [
                     Text(
                       holding.coin.ticker,
-                      style: const TextStyle(
-                        fontSize: 13,
+                      style: TextStyle(
+                        fontSize: compact ? 12 : 13,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -372,8 +381,8 @@ class GoHoldingTile extends ConsumerWidget {
                               : holding.balance?.toString() ??
                                     goTr(context, '等待同步'),
                           maxLines: 1,
-                          style: const TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(
+                            fontSize: compact ? 14 : 16,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -480,16 +489,16 @@ class GoCoinDrawer extends ConsumerWidget {
       width: MediaQuery.sizeOf(context).width * .88,
       child: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
           children: [
             Row(
               children: [
-                const GoMark(size: 30),
-                const SizedBox(width: 10),
+                const GoMark(size: 26),
+                const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
                     'GOwallet',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                   ),
                 ),
                 IconButton(
@@ -499,36 +508,49 @@ class GoCoinDrawer extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
-            GoSection(title: goTr(context, '已添加币种'), compact: true),
+            const SizedBox(height: 4),
+            _GoDrawerSection(title: goTr(context, '已添加币种')),
             if (holdings.isEmpty) Text(goTr(context, '尚未添加钱包')),
             for (final holding in holdings)
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 6),
                 child: GoHoldingTile(
+                  compact: true,
                   holding: holding,
                   onTap: () => onOpen(holding),
                 ),
               ),
-            const SizedBox(height: 12),
-            GoSection(title: goTr(context, '支持的币种'), compact: true),
+            const SizedBox(height: 6),
+            _GoDrawerSection(title: goTr(context, '支持的币种')),
             for (final coin in AppConfig.coins)
               ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 4),
                 dense: true,
-                minVerticalPadding: 8,
-                visualDensity: const VisualDensity(vertical: -2),
-                leading: GoCoinIcon(coin, size: 26),
-                title: Text(
-                  coin.ticker,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                subtitle: Text(
-                  coin.prettyName,
-                  style: const TextStyle(fontSize: 10),
+                minTileHeight: 48,
+                minVerticalPadding: 4,
+                horizontalTitleGap: 10,
+                minLeadingWidth: 24,
+                visualDensity: VisualDensity.standard,
+                leading: GoCoinIcon(coin, size: 24),
+                title: Wrap(
+                  spacing: 8,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Text(
+                      coin.ticker,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      coin.prettyName,
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
                 ),
                 trailing: const Icon(
                   Icons.add_circle_outline_rounded,
@@ -541,6 +563,20 @@ class GoCoinDrawer extends ConsumerWidget {
       ),
     );
   }
+}
+
+class _GoDrawerSection extends StatelessWidget {
+  const _GoDrawerSection({required this.title});
+  final String title;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(top: 4, bottom: 6),
+    child: Text(
+      title,
+      style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
+    ),
+  );
 }
 
 void goAddCoin(BuildContext context, CryptoCurrency coin) => Navigator.of(

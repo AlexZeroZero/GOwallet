@@ -13,7 +13,7 @@ def build_go_themes(root):
         with zipfile.ZipFile(root / f'asset_sources/default_themes/bitfinite/{mode}.zip') as source:
             files = {name: source.read(name) for name in source.namelist()}
         theme = json.loads(files['theme.json'])
-        theme.update(version=44, name=f'GOwallet {mode.title()}')
+        theme.update(version=45, name=f'GOwallet {mode.title()}')
         c = theme['colors']
         accent = '0xff45e0b5' if dark else '0xff087b63'
         bg = '0xff101a18' if dark else '0xfff3f6f4'
@@ -31,12 +31,14 @@ def build_go_themes(root):
         for key in ('text_dark_three', 'text_subtitle_one', 'text_subtitle_two', 'text_field_default_text', 'text_field_active_label', 'info_item_label', 'radio_button_label_enabled', 'text_field_default_search_icon_left', 'text_field_default_search_icon_right'):
             c[key] = muted
         c.update(button_text_primary='0xff122421' if dark else '0xffffffff', button_back_secondary='0xff2c4037' if dark else '0xffe2ebe5', text_field_active_bg='0xff243930' if dark else '0xffeaf2ed', text_field_default_border='0xff547668' if dark else '0xff809b8e', accent_color_green=accent, settings_icon_back='0xff2c4037' if dark else '0xffe2ebe5')
-        for key, color in [('scash', '#087b63'), ('shibacoin', '#b96a19'), ('dingocoin', '#b17c30')]:
+        for key, color in [('scash', '#087b63'), ('shibacoin', '#b96a19'), ('dingocoin', '#b17c30'), ('bitfinite', '#2258e6')]:
             c['coin'][key] = '0xff' + color[1:]
-            icon = f'svg/coin_icons/{key}-go.svg'
+            # BFX project artwork is a coin icon, distinct from the app brand.
+            asset_name = 'bfx' if key == 'bitfinite' else key
+            icon = f'svg/coin_icons/{asset_name}-go.svg'
             # Preserve the coin project's exact published mark. SVG is a layout
             # wrapper required by the inherited icon renderer, not a vector redraw.
-            png = base64.b64encode((root / f'asset_sources/gowallet/{key}.png').read_bytes()).decode()
+            png = base64.b64encode((root / f'asset_sources/gowallet/{asset_name}.png').read_bytes()).decode()
             files['assets/' + icon] = f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><image x="2" y="2" width="96" height="96" xlink:href="data:image/png;base64,{png}"/></svg>'.encode()
             for slot in ('icons', 'images', 'secondaries'):
                 # Upstream theme schema uses images_secondary for some versions.
@@ -51,9 +53,6 @@ def build_go_themes(root):
         for key in ('coin_placeholder', 'persona_incognito', 'persona_easy', 'theme_preview'):
             theme['assets'][key] = 'svg/gowallet.svg'
         # Remove inherited coin branding, mascot artwork and theme previews.
-        for slot in theme['assets']['coins'].values():
-            if isinstance(slot, dict):
-                slot.pop('bitfinite', None)
         for name in list(files):
             if any(part in name.lower() for part in ('bitfinite', 'stack-icon', 'stack.svg', 'persona-', 'png/light-mode', 'png/dark-mode')):
                 del files[name]

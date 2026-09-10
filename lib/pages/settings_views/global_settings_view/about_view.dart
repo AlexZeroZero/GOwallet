@@ -328,23 +328,43 @@ class AboutView extends ConsumerWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  goTr(context, "Upstream source"),
+                                  goTr(context, "开源来源与致谢"),
                                   style: STextStyles.titleBold12(context),
                                 ),
-                                const SizedBox(height: 4),
+                                const SizedBox(height: 8),
+                                Text(
+                                  goTr(
+                                    context,
+                                    'GOwallet 使用的源代码来源于 Stack Wallet 开源项目，并在此基础上进行二次开发和完善。感谢 Stack Wallet / Cypher Stack 提供开源代码。',
+                                  ),
+                                  style: STextStyles.label(
+                                    context,
+                                  ).copyWith(height: 1.5),
+                                ),
+                                const SizedBox(height: 8),
                                 CustomTextButton(
                                   text:
-                                      "https://github.com/bitfinitechain/bitfinite-wallet",
+                                      "https://github.com/cypherstack/stack_wallet",
                                   onTap: () {
                                     launchUrl(
                                       Uri.parse(
-                                        "https://github.com/bitfinitechain/bitfinite-wallet",
+                                        "https://github.com/cypherstack/stack_wallet",
                                       ),
                                       mode: LaunchMode.externalApplication,
                                     );
                                   },
                                 ),
                               ],
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          CustomTextButton(
+                            text: goTr(context, 'GPLv3 许可与完整来源记录'),
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                'https://github.com/AlexZeroZero/GOwallet/blob/main/NOTICE.md',
+                              ),
+                              mode: LaunchMode.externalApplication,
                             ),
                           ),
                           if (AppConfig.coins.whereType<Tezos>().isNotEmpty)
@@ -361,11 +381,11 @@ class AboutView extends ConsumerWidget {
                                   const SizedBox(height: 4),
                                   CustomTextButton(
                                     text:
-                                        "https://github.com/bitfinitechain/bitfinite-wallet",
+                                        "https://github.com/cypherstack/stack_wallet",
                                     onTap: () {
                                       launchUrl(
                                         Uri.parse(
-                                          "https://github.com/bitfinitechain/bitfinite-wallet",
+                                          "https://github.com/cypherstack/stack_wallet",
                                         ),
                                         mode: LaunchMode.externalApplication,
                                       );
@@ -403,7 +423,7 @@ class AboutView extends ConsumerWidget {
                           Text(
                             goTr(
                               context,
-                              "Based on BitFinite Wallet v2.3.0 and Stack Wallet. Keys stay on your device. Electrum servers receive address queries and signed transactions. TCP is unencrypted; TLS is available with compatible servers.",
+                              "GOwallet is a non-custodial wallet. Keys stay on your device. Electrum nodes are operated by third parties or project teams; their availability is outside GOwallet’s control. Servers receive address queries and signed transactions. TCP is unencrypted; compatible servers support TLS.",
                             ),
                             textAlign: TextAlign.center,
                             style: STextStyles.label(context),

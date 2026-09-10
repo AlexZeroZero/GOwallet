@@ -63,7 +63,7 @@ try {
     & flutter build apk "--$goMode" --no-pub --target-platform android-arm64,android-x64
     if ($LASTEXITCODE) { throw 'Android build failed' }
     New-Item -ItemType Directory -Path dist -Force | Out-Null
-    $goApk = "gowallet-1.0.3-android-$goMode.apk"
+    $goApk = "gowallet-1.0.4-android-$goMode.apk"
     Copy-Item -LiteralPath "build/app/outputs/flutter-apk/app-$goMode.apk" -Destination "dist/$goApk"
     $walletHash = (Get-FileHash "dist/$goApk" -Algorithm SHA256).Hash.ToLowerInvariant()
     Set-Content dist/GOWALLET-SHA256SUMS "$walletHash  $goApk"

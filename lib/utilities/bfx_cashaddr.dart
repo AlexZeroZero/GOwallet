@@ -36,7 +36,12 @@ class BfxCashAddr {
     int type = typeP2PKH,
     String prefix = mainnetPrefix,
   }) {
-    assert(hash160.length == 20, "only 160-bit hashes supported here");
+    if (hash160.length != 20 || (type != typeP2PKH && type != typeP2SH)) {
+      throw ArgumentError('Only 160-bit P2PKH/P2SH addresses are supported');
+    }
+    if (prefix != mainnetPrefix && prefix != testnetPrefix) {
+      throw ArgumentError('Unsupported BFX network prefix');
+    }
     final versionByte = (type << 3) | _sizeCode(hash160.length);
     final payload = Uint8List.fromList([versionByte, ...hash160]);
     final payload5 = _convertBits(payload, 8, 5, pad: true);
@@ -50,11 +55,24 @@ class BfxCashAddr {
   }
 
   /// Decode a BFX cashaddr into (type, hash160). Throws on bad checksum/format.
-  static ({int type, Uint8List hash160}) decode(String address) {
+  static ({int type, Uint8List hash160}) decode(
+    String address, {
+    String expectedPrefix = mainnetPrefix,
+  }) {
+    if (address != address.toLowerCase() && address != address.toUpperCase()) {
+      throw const FormatException('Mixed-case cashaddr');
+    }
     final lower = address.toLowerCase();
     final idx = lower.indexOf(":");
-    final prefix = idx >= 0 ? lower.substring(0, idx) : mainnetPrefix;
+    final prefix = idx >= 0 ? lower.substring(0, idx) : expectedPrefix;
     final body = idx >= 0 ? lower.substring(idx + 1) : lower;
+    if (prefix != expectedPrefix ||
+        (prefix != mainnetPrefix && prefix != testnetPrefix) ||
+        body.length != 42) {
+      throw const FormatException(
+        'Wrong network or unsupported cashaddr length',
+      );
+    }
 
     final values = <int>[];
     for (final c in body.split("")) {
@@ -73,14 +91,19 @@ class BfxCashAddr {
       pad: false,
     );
     final versionByte = payload[0];
+    // Reject reserved versions, token-aware/unknown types and mismatched hash
+    // size before any script is constructed from the decoded payload.
+    if (payload.length != 21 || (versionByte != 0 && versionByte != 8)) {
+      throw const FormatException('Unsupported cashaddr version or hash size');
+    }
     final type = (versionByte >> 3) & 0x1f;
     final hash160 = Uint8List.fromList(payload.sublist(1));
     return (type: type, hash160: hash160);
   }
 
-  static bool isValid(String address) {
+  static bool isValid(String address, {String expectedPrefix = mainnetPrefix}) {
     try {
-      decode(address);
+      decode(address, expectedPrefix: expectedPrefix);
       return true;
     } catch (_) {
       return false;
@@ -132,12 +155,16 @@ class BfxCashAddr {
     }
     if (pad && bits > 0) {
       out.add((acc << (to - bits)) & maxv);
+    } else if (!pad && (bits >= from || ((acc << (to - bits)) & maxv) != 0)) {
+      throw const FormatException('Invalid cashaddr padding');
     }
     return out;
   }
 
-  static List<int> _prefixExpand(String prefix) =>
-      [...prefix.codeUnits.map((c) => c & 0x1f), 0];
+  static List<int> _prefixExpand(String prefix) => [
+    ...prefix.codeUnits.map((c) => c & 0x1f),
+    0,
+  ];
 
   static int _polyMod(List<int> data) {
     var c = 1;
@@ -154,7 +181,18 @@ class BfxCashAddr {
   }
 
   static List<int> _createChecksum(String prefix, List<int> payload5) {
-    final data = [..._prefixExpand(prefix), ...payload5, 0, 0, 0, 0, 0, 0, 0, 0];
+    final data = [
+      ..._prefixExpand(prefix),
+      ...payload5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ];
     final mod = _polyMod(data);
     return List<int>.generate(8, (i) => (mod >> (5 * (7 - i))) & 0x1f);
   }

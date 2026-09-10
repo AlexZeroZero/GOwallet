@@ -98,7 +98,8 @@ class ThemeService {
   //     teal-placeholder ₿ the externals painted BFX with.
   // 43: refined GO mark; preserve all existing palette and coin assets.
   // 44: Dingocoin official mark in all coin asset slots.
-  static const _currentDefaultThemeVersion = 44;
+  // 45: selected open G + ring identity and the BFX project's coin artwork.
+  static const _currentDefaultThemeVersion = 45;
   ThemeService._();
   static ThemeService? _instance;
   static ThemeService get instance => _instance ??= ThemeService._();

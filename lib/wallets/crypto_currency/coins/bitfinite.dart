@@ -135,6 +135,9 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
 
   @override
   String addressToScriptHash({required String address}) {
+    if (!validateAddress(address)) {
+      throw const FormatException('Invalid BFX address');
+    }
     try {
       if (BfxCashAddr.isValid(address)) {
         final decoded = BfxCashAddr.decode(address);
@@ -146,9 +149,14 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
           script = Uint8List.fromList([0xa9, 0x14, ...decoded.hash160, 0x87]);
         } else {
           // P2PKH: OP_DUP OP_HASH160 <20> OP_EQUALVERIFY OP_CHECKSIG
-          script = Uint8List.fromList(
-            [0x76, 0xa9, 0x14, ...decoded.hash160, 0x88, 0xac],
-          );
+          script = Uint8List.fromList([
+            0x76,
+            0xa9,
+            0x14,
+            ...decoded.hash160,
+            0x88,
+            0xac,
+          ]);
         }
         return Bip39HDCurrency.convertBytesToScriptHash(script);
       }
@@ -223,14 +231,18 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
   @override
   bool validateAddress(String address) {
     try {
+      // Testnet is not enabled in GOwallet.
       if (network.isTestNet) {
-        return true;
+        return false;
       }
       // BFX cashaddr (checksum-validated under the BFX alphabet), or legacy base58.
       if (BfxCashAddr.isValid(address)) {
         return true;
       }
-      return address.startsWith("1") || address.startsWith("3");
+      final decoded = bs58check.decode(address);
+      return decoded.length == 21 &&
+          (decoded[0] == networkParams.p2pkhPrefix ||
+              decoded[0] == networkParams.p2shPrefix);
     } catch (e) {
       return false;
     }
@@ -238,6 +250,9 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
 
   @override
   AddressType? getAddressType(String address) {
+    if (!validateAddress(address)) {
+      return null;
+    }
     if (BfxCashAddr.isValid(address)) {
       final decoded = BfxCashAddr.decode(address);
       return decoded.type == BfxCashAddr.typeP2SH
@@ -249,6 +264,9 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
 
   @override
   DerivePathType addressType({required String address}) {
+    if (!validateAddress(address)) {
+      throw const FormatException('Invalid BFX address');
+    }
     if (BfxCashAddr.isValid(address)) {
       final decoded = BfxCashAddr.decode(address);
       if (decoded.type == BfxCashAddr.typeP2PKH) return DerivePathType.bip44;
@@ -257,8 +275,10 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
     }
     // Legacy base58.
     final decodeBase58 = bs58check.decode(address);
-    if (decodeBase58[0] == networkParams.p2pkhPrefix) return DerivePathType.bip44;
-    if (decodeBase58[0] == networkParams.p2shPrefix) return DerivePathType.bip49;
+    if (decodeBase58[0] == networkParams.p2pkhPrefix)
+      return DerivePathType.bip44;
+    if (decodeBase58[0] == networkParams.p2shPrefix)
+      return DerivePathType.bip49;
     throw ArgumentError('$address has no matching Script');
   }
 
@@ -294,27 +314,27 @@ class Bitfinite extends Bip39HDCurrency with ElectrumXCurrencyInterface {
   @override
   List<NodeModel> get additionalDefaultNodes =>
       network == CryptoCurrencyNetwork.main
-          ? [
-            // Secondary public Electrum server (raw ElectrumX SSL on the
-            // carrier-safe port 443). isFailover:true → ElectrumXClient moves
-            // here when a request to the primary fails, and stays here for
-            // subsequent requests rather than retrying the primary each time.
-            NodeModel(
-              host: "electrum2.bitfinitechain.org",
-              port: 443,
-              name: "BitFinite Electrum 2",
-              id: "${DefaultNodes.defaultNodeIdPrefix}${identifier}_electrum2",
-              useSSL: true,
-              enabled: true,
-              coinName: identifier,
-              isFailover: true,
-              isDown: false,
-              torEnabled: true,
-              clearnetEnabled: true,
-              isPrimary: false,
-            ),
-          ]
-          : const [];
+      ? [
+          // Secondary public Electrum server (raw ElectrumX SSL on the
+          // carrier-safe port 443). isFailover:true → ElectrumXClient moves
+          // here when a request to the primary fails, and stays here for
+          // subsequent requests rather than retrying the primary each time.
+          NodeModel(
+            host: "electrum2.bitfinitechain.org",
+            port: 443,
+            name: "BitFinite Electrum 2",
+            id: "${DefaultNodes.defaultNodeIdPrefix}${identifier}_electrum2",
+            useSSL: true,
+            enabled: true,
+            coinName: identifier,
+            isFailover: true,
+            isDown: false,
+            torEnabled: true,
+            clearnetEnabled: true,
+            isPrimary: false,
+          ),
+        ]
+      : const [];
 
   @override
   int get defaultSeedPhraseLength => 12;

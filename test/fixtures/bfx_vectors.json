@@ -1,0 +1,16 @@
+{
+  "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+  "path": "m/44'/9116'/0'/0/0",
+  "public_key": "0262dabdeb853bb3e5a46ee2aa6bb5ad12725bc5b30f3c7b7c761a092b11c6cdfe",
+  "legacy": "1A6yQwyXSSLvC9VcPsyLjy25rb1HHMsCuW",
+  "cashaddr": "bfx:fp3a5nv0c7tw7fc0pwqfc8javr0gm59yuyrqdsc5t8",
+  "script": "76a91463da4d8fc796ef030f0b920c1e5d60de8dd0a4e188ac",
+  "scripthash": "f677976cb859c4e512904db4e260677da763fd546058ef7d3b305df6815979f7",
+  "forkid_digest": "b4704f437bf0c27146b46c563fe5659952e4fd7398d89e7332d345f09ed313b7",
+  "malformed": [
+    "bfx:f93a5nv0c7tw7fc0pwqfc8javr0gm59yuyvsg4lzk8",
+    "bfx:zp3a5nv0c7tw7fc0pwqfc8javr0gm59yuyyr7wkj55",
+    "bfx:sp3a5nv0c7tw7fc0pwqfc8javr0gm59yuyjtcknd9j"
+  ],
+  "foreign": "bfxtest:fp3a5nv0c7tw7fc0pwqfc8javr0gm59yuy48ws5ca3"
+}

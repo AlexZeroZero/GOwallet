@@ -15,28 +15,32 @@ void main() {
     final dir = await Directory.systemTemp.createTemp('wallet_tcp_test_');
     await Logging.instance.initialize(dir.path, level: Level.off);
   });
-  ElectrumXClient connect(CryptoCurrency coin, int port, {String? host}) => ElectrumXClient(
-    host: host ?? coin.defaultNode(isPrimary: true).host,
-    port: port,
-    useSSL: true,
-    prefs: MockPrefs(),
-    failovers: [],
-    cryptoCurrency: coin,
-    netType: TorPlainNetworkOption.both,
-    globalEventBusForTesting: EventBus(),
-    connectionTimeoutForSpecialCaseJsonRPCClients: const Duration(seconds: 30),
-  );
+  ElectrumXClient connect(CryptoCurrency coin, int port, {String? host}) =>
+      ElectrumXClient(
+        host: host ?? coin.defaultNode(isPrimary: true).host,
+        port: port,
+        useSSL: true,
+        prefs: MockPrefs(),
+        failovers: [],
+        cryptoCurrency: coin,
+        netType: TorPlainNetworkOption.both,
+        globalEventBusForTesting: EventBus(),
+        connectionTimeoutForSpecialCaseJsonRPCClients: const Duration(
+          seconds: 30,
+        ),
+      );
 
   for (final coin in [
     Scash(CryptoCurrencyNetwork.main),
     Shibacoin(CryptoCurrencyNetwork.main),
     Pepecoin(CryptoCurrencyNetwork.main),
     Dingocoin(CryptoCurrencyNetwork.main),
+    Bitfinite(CryptoCurrencyNetwork.main),
   ]) {
     test(
       '${coin.ticker}: real wallet client TLS handshake, fees and history',
       () async {
-        final client = connect(coin, coin.defaultNode(isPrimary: true).port!);
+        final client = connect(coin, coin.defaultNode(isPrimary: true).port);
         try {
           final features = await client.getServerFeatures();
           expect(features['genesis_hash'], coin.genesisHash);
@@ -59,13 +63,13 @@ void main() {
             command: 'blockchain.scripthash.get_history',
             args: [hash],
           );
-          expect(history, isA<List>());
+          expect(history, isA<List<dynamic>>());
           if (coin is Shibacoin) expect(history, isNotEmpty);
           final utxos = await client.request(
             command: 'blockchain.scripthash.listunspent',
             args: [hash],
           );
-          expect(utxos, isA<List>());
+          expect(utxos, isA<List<dynamic>>());
           final balance = await client.request(
             command: 'blockchain.scripthash.get_balance',
             args: [hash],
@@ -83,6 +87,33 @@ void main() {
       timeout: const Timeout(Duration(minutes: 3)),
     );
   }
+
+  test(
+    'BFX backup: actual wallet client negotiates 1.5 and verifies genesis',
+    () async {
+      final coin = Bitfinite(CryptoCurrencyNetwork.main);
+      final node = coin.additionalDefaultNodes.single;
+      final client = connect(coin, node.port, host: node.host);
+      try {
+        final features = await client.getServerFeatures();
+        expect(features['genesis_hash'], coin.genesisHash);
+        final tip = await client.request(
+          command: 'blockchain.headers.subscribe',
+        );
+        expect(tip['height'], greaterThan(0));
+        final history = await client.request(
+          command: 'blockchain.scripthash.get_history',
+          args: ['0' * 64],
+        );
+        expect(history, isA<List<dynamic>>());
+        print('BFX backup: TLS PASS, indexed height ${tip['height']}');
+      } finally {
+        await ClientManager.sharedInstance.remove(cryptoCurrency: coin);
+      }
+    },
+    skip: !live,
+    timeout: const Timeout(Duration(minutes: 2)),
+  );
 
   test(
     'actual SHIC endpoint rejects a SCASH wallet before registration',

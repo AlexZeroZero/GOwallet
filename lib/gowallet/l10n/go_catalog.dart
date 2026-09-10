@@ -1,5 +1,9 @@
 // Offline presentation catalog. Never translate user data.
 const Map<String, List<String>> goCatalog = {
+  "开源来源与致谢": ["开源来源与致谢", "Open-source origins & thanks"],
+  "GOwallet 使用的源代码来源于 Stack Wallet 开源项目，并在此基础上进行二次开发和完善。感谢 Stack Wallet / Cypher Stack 提供开源代码。": ["GOwallet 使用的源代码来源于 Stack Wallet 开源项目，并在此基础上进行二次开发和完善。感谢 Stack Wallet / Cypher Stack 提供开源代码。", "GOwallet is built on the open-source Stack Wallet project, with further development and improvements. Thank you to Stack Wallet / Cypher Stack for providing the open-source code."],
+  "GPLv3 许可与完整来源记录": ["GPLv3 许可与完整来源记录", "GPLv3 license & full source provenance"],
+  "GOwallet is a non-custodial wallet. Keys stay on your device. Electrum nodes are operated by third parties or project teams; their availability is outside GOwallet’s control. Servers receive address queries and signed transactions. TCP is unencrypted; compatible servers support TLS.": ["GOwallet 是非托管式钱包，密钥保留在你的设备中。Electrum 节点由第三方或币种项目方运行，其可用性不受 GOwallet 控制。节点接收地址查询和已签名交易。TCP 不加密，兼容节点支持 TLS。", "GOwallet is a non-custodial wallet. Keys stay on your device. Electrum nodes are operated by third parties or project teams; their availability is outside GOwallet’s control. Servers receive address queries and signed transactions. TCP is unencrypted; compatible servers support TLS."],
   "新增网络": ["新增网络", "Add network"],
   "自定义币种": ["自定义币种", "Custom coin"],
   "为币种添加第三方 Electrum 服务器，可设为首选或备用。": ["为币种添加第三方 Electrum 服务器，可设为首选或备用。", "Add a third-party Electrum server as a primary or fallback for a coin."],
