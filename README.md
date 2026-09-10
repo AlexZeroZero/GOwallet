@@ -1,12 +1,18 @@
 # GOwallet 1.0
 
-面向小型 PoW 币种的开源、非托管 Android 钱包。当前版本 **1.0.3（versionCode 12）**，支持 SCASH、SHIC、Pepecoin（PEP）、Dingocoin（DINGO），以及交易格式兼容的自定义 Electrum 币种与网络。
+面向小型 PoW 币种的开源、非托管 Android 钱包。当前版本 **1.0.4（versionCode 13）**，支持 SCASH、SHIC、Pepecoin（PEP）、Dingocoin（DINGO）、BitFinite（BFX），以及交易格式兼容的自定义 Electrum 币种与网络。
 
-[下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.3) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.3 修复与文件校验](docs/VERIFICATION-1.0.3.md) · [构建源码](docs/BUILD.md)
+[下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.4) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.4 更新与文件校验](docs/VERIFICATION-1.0.4.md) · [构建源码](docs/BUILD.md)
 
-<img src="docs/go042-launch-widget-zh.png" alt="GOwallet 中文启动画面" width="260"> <img src="docs/go042-launch-widget-en.png" alt="GOwallet English launch screen" width="260">
+## 1.0.4 更新
 
-上图为实际 Flutter 启动画面渲染预览；手机上的系统图标形状和启动时序取决于 Android 设备。
+- 增加 BFX 币种。
+- 调整左侧币种间距。
+- 更新 Logo。
+
+<img src="evidence/1.0.4/after-drawer.png" alt="1.0.4 新 Logo 与紧凑币种侧栏" width="260"> <img src="evidence/1.0.4/bfx-receive.png" alt="1.0.4 BFX 测试钱包收款界面" width="260">
+
+以上为 1.0.4 最终 APK 的模拟器截图，使用无资金测试钱包；BFX 地址对应公开测试密钥，请勿转入资金。接入参数见 [BFX 说明](docs/BFX.md)。
 
 ## APP 演示截图
 
@@ -26,7 +32,7 @@
 
 - 中文、英文界面，紧凑资产首页、币种侧栏与统一 GOwallet 视觉。
 - 本地创建、恢复钱包与交易签名；收款、发送、余额及交易记录查询。
-- SCASH、SHIC、PEP、DINGO 默认使用 TLS Electrum 节点；可以添加自己的 TCP/TLS 节点。
+- SCASH、SHIC、PEP、DINGO、BFX 默认使用 TLS Electrum 节点；可以添加自己的 TCP/TLS 节点。
 - 可配置兼容币种的网络参数。自定义参数不等于自动支持所有小币，必须确认地址、派生路径和交易签名格式兼容。
 - 生物识别成功或 PIN 正确即可通过验证；取消或无法使用生物识别时可使用 PIN。后台锁定、默认禁止截图；可在安全设置中手动允许截图。
 - 加密备份；新建备份口令至少 12 个 Unicode 字符，建议使用独立的随机长口令。
@@ -64,7 +70,7 @@ Electrum / ElectrumX：查询历史、UTXO、费用，转发已签名交易
 
 发布包的实际扫描结果、SHA-256、签名指纹和验证步骤在 [查毒验证说明](docs/VERIFICATION.md) 及 Release 附件中公开。源码复核、攻击模拟、依赖公告扫描和验证限制见 [安全审核记录](docs/SECURITY-REVIEW.md)。
 
-1.0.3 修复生物识别与前台恢复之间的时序问题，增加 DINGO。已通过 109 项回归与 DINGO 实际客户端联网测试。本次没有重新运行 MobSF、ClamAV 或 VirusTotal；以下扫描数据属于历史 1.0.2，不能用于验证 1.0.3 APK。
+1.0.4 增加 BFX 币种、调整左侧币种间距并更新 Logo。已通过 120 项回归、两个 BFX TLS 节点的实际客户端联网测试及模拟器覆盖升级验证。本次没有重新运行 MobSF、ClamAV 或 VirusTotal；以下扫描数据属于历史 1.0.2，不能用于验证 1.0.4 APK。
 
 1.0.2 在此前存储修复基础上完成 Isar 原生加固，保持原数据库版本与格式。98 项钱包回归、最终 APK 内数据库双向兼容/批量写入/中断恢复、同签名覆盖安装验证通过；ClamAV 感染文件 0。Isar 的 3 项高等级、3 项警告已消除，原生规则总数降为 **4 high / 5 warning**，MobSF 综合评分仍为 **59/100**。详见 [1.0.2 完整报告、证据与剩余边界](docs/VERIFICATION-1.0.2.md)。
 
