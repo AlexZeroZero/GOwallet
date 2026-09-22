@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "GOwallet",
+  "version": "0.1.0",
+  "description": "非托管 SCASH、SHIC、PEP、DINGO Electrum 钱包",
+  "permissions": ["storage"],
+  "action": {"default_title":"GOwallet","default_popup":"popup.html"},
+  "icons": {"128":"assets/logo.png"},
+  "content_security_policy": {"extension_pages":"script-src 'self'; object-src 'self'"}
+}
