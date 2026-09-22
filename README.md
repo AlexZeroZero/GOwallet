@@ -4,7 +4,7 @@
 
 [下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.4) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.4 更新与文件校验](docs/VERIFICATION-1.0.4.md) · [构建源码](docs/BUILD.md)
 
-Chrome 扩展钱包：[源码与网关](browser-extension/) · [下载 browser-v0.1.0](https://github.com/AlexZeroZero/GOwallet/releases/tag/browser-v0.1.0)。首版支持 SCASH、SHIC、PEP、DINGO 的本地地址、余额和收款；发送交易待网关与签名回归完成后开放。
+Chrome 扩展钱包：[源码与网关](browser-extension/) · [下载 browser-v0.1.1](https://github.com/AlexZeroZero/GOwallet/releases/tag/browser-v0.1.1)。首版支持 SCASH、SHIC、PEP、DINGO 的本地地址、余额和收款；发送交易待网关与签名回归完成后开放。
 
 ## 1.0.4 更新
 
@@ -89,3 +89,4 @@ Electrum / ElectrumX：查询历史、UTXO、费用，转发已签名交易
 采用 [GPLv3](LICENSE)。基于 Stack Wallet 二次开发 / Cypher Stack 的代码与版权；上游来源和第三方依赖见 [NOTICE](NOTICE.md)。GOwallet 是独立衍生项目，不代表上游官方背书。
 
 公开仓库从经过整理的源码快照开始，包含构建模板、资源、锁定依赖和安全测试；不包含开发机运维日志、钱包数据或发布私钥。问题反馈请勿粘贴助记词、私钥、备份文件或未脱敏日志；漏洞披露方式见 [SECURITY.md](SECURITY.md)。
+
