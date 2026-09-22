@@ -4,7 +4,7 @@
 
 [下载正式版](https://github.com/AlexZeroZero/GOwallet/releases/tag/v1.0.4) · [English](docs/README.en.md) · [安全审核与验证](docs/SECURITY-REVIEW.md) · [1.0.4 更新与文件校验](docs/VERIFICATION-1.0.4.md) · [构建源码](docs/BUILD.md)
 
-Chrome 扩展钱包：[源码与网关](browser-extension/) · [下载 browser-v0.1.2](https://github.com/AlexZeroZero/GOwallet/releases/tag/browser-v0.1.2)。支持 SCASH、SHIC、PEP、DINGO 的本地地址、余额和收款；发送交易待网关与签名回归完成后开放。
+Chrome 扩展钱包：[源码与网关](browser-extension/) · [下载 browser-v0.1.1](https://github.com/AlexZeroZero/GOwallet/releases/tag/browser-v0.1.1)。首版支持 SCASH、SHIC、PEP、DINGO 的本地地址、余额和收款；发送交易待网关与签名回归完成后开放。
 
 ## 1.0.4 更新
 
